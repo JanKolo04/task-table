@@ -1,0 +1,40 @@
+<!------Create New div on button click and append value from text input--->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Create task</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	function myFunction() {
+
+		//get value from input text
+		document.querySelector('#getText').innerHTML = document.querySelector('#myText').value;
+
+		//clear text input
+		document.getElementById('myText').value = '';
+
+		//get div
+	  	let div = document.createElement('div');
+
+	  	//text has been added to div
+	  	div.innerText = document.getElementById('getText').innerText;
+
+	  	//append value from input text to div
+	  	document.body.appendChild(div);
+
+	}
+</script>
+
+
+<input type="text" id="myText" placeholder="Task...">
+
+<button id="add" onclick="myFunction()">Add</button>
+
+<div id="getText" style="display: none;"></div>
+
+</body>
+</html>
