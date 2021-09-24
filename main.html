@@ -7,12 +7,20 @@
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+	<div class="header">		
+		<!---input bar---->
+		<input type="text" id="myText" required size="1" placeholder="Task...">
+		<!---add button--->
+		<button class="add_button" onclick="myFunction()">Add</button>
+	</div>
 
-	<!---input bar---->
-	<input type="text" id="myText" placeholder="Task...">
-	<!---add button--->
-	<button class="add_button" onclick="myFunction()">Add</button>
+	<h1 class="all_task_text">All tasks</h1>
+
+	<!---taskt div--->
 	<div id="tasks"></div>
+
+	<!----vertical line---->
+	<div class="vl"></div>
 
 </body>
 </html>

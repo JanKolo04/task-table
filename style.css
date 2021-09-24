@@ -2,32 +2,68 @@ body {
 	background-color: #0C3DBA;
 }
 
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 80px;
+	width: 100%;
+  	display: flex;
+  	flex-direction: row;
+}
+
 
 #myText {
 	width: 90%;
 	height: 50px;
 	margin-top: 20px;
-	margin-left: 10px;
+	margin-left: 30px;
 	border: none;
 	border-radius: 5px;
+	font-size: 22px;
+	display: flex;
 }
 
 .add_button {
-	height: 48px;
+	font-size: 40px;
+	height: 47px;
 	width: 90px;
 	background-color: #11E58C;
 	border: none;
 	border-radius: 5px;
-	margin-left: 10px;
+  	display: flex;
+  	margin-left: 20px;
+  	margin-right: 20px;
+  	margin-top: 22px;
 }
 
+.all_task_text {
+	position: absolute;
+	margin-left: 135px;
+	top: 130px;
+}
+
+
+.vl {
+	margin-left: 400px;
+	margin-top: 200px;
+	border-left: 4px solid black;
+	height: 600px;
+}
+
+
+#tasks {
+	position: absolute;
+	width: 100px;
+	margin-left: 100px;
+	top: 240px;
+}
 
 #tasks div {
 	display: flex;
   	justify-content: center;
   	align-items: center;
-  	margin-top: 5px;
-	height: 50px;
-	width: 100px;
+	height: 80px;
+	width: 200px;
 	background-color: #760ACB;
 }
