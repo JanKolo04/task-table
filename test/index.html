@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+jQuery(function($){
+	var $email = $('#email1'), count = 1;
+	$('#addemail').click(function(e){
+		e.preventDefault();
+		var idname = 'email' + (++count);
+		$email.parent().append($email.clone().attr({id: idname, name: idname}));
+	});
+	
+});
+</script>
+<style type="text/css">
+#emails input {
+	display: block;
+}
+</style>
+</head>
+<body>
+<div id="emails">
+<input type="text" id="email1" name="email1">
+</div>
+<a id="addemail" href="#">Add Email Field</a>
+</body>
+</html>
