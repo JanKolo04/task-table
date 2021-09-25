@@ -1,6 +1,13 @@
 # task-table
 Website with tasks
 
+# NOTES
+```txt
+Dodac klase dla taska. Po czym dodac dla taska
+przycisk DELETE.
+```
+
+
 
 
 ## TASKS
