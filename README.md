@@ -5,6 +5,9 @@ Website with tasks
 ```txt
 Dodac klase dla taska. Po czym dodac dla taska
 przycisk DELETE.
+
+TWORZENIE KLASY DLA DIVA
+div.className = "ClassName";
 ```
 
 
