@@ -16,6 +16,7 @@ body {
 #myText {
 	width: 90%;
 	height: 50px;
+	min-width: 50%;
 	margin-top: 20px;
 	margin-left: 30px;
 	border: none;
@@ -47,21 +48,33 @@ body {
   	flex-direction: row;
 }
 
+.text1 {
+	width: 31%;
+}
+
 .all_task_text {
-	margin-left: 12%;
-	margin-top: 2%;
+	margin-left: 34%;
+	margin-top: 10%;
 	display: flex;
+}
+
+.text2 {
+	width: 36%;
 }
 
 .tasks_in_progress {
-	margin-left: 23%;
-	margin-top: 2%;
+	margin-left: 32%;
+	margin-top: 10%;
 	display: flex;
 }
 
+.text3 {
+	width: 36%;
+}
+
 .end_tasks {
-	margin-left: 25%;
-	margin-top: 2%;
+	margin-left: 38%;
+	margin-top: 10%;
 	display: flex;
 }
 

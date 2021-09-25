@@ -10,4 +10,19 @@ function myFunction() {
   	
   	//clear text input
 	document.getElementById('myText').value = '';
+
 }
+
+
+
+ $(document).ready(function () {
+            $(document).on('mouseenter', 'div[id^=divbutton]', function () {
+                $(this).find(":button").show();
+            }).on('mouseleave', 'div[id^=divbutton]', function () {
+                $(this).find(":button").hide();
+            });
+           $(document).on('click', 'button#i', function () {
+                $(this).closest("div").remove();
+            });
+
+ });
