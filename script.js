@@ -3,6 +3,7 @@ function myFunction() {
 	var tasks_div = document.getElementById("tasks");
 	//create new div
   	var new_div = document.createElement("DIV");
+  	new_div.className = "task";
   	//get value from text input
   	new_div.innerHTML = document.querySelector('#myText').value;
   	//append text from input text to new div
