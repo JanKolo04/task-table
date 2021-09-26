@@ -1,6 +1,6 @@
 function myFunction() {
 	//get tasks div
-	var tasks_div = document.getElementById("tasks");
+	var tasks_div = document.getElementById("tasks_all");
 	//create new div
   	var new_div = document.createElement("DIV");
   	new_div.className = "task";
