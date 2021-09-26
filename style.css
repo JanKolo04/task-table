@@ -50,32 +50,32 @@ body {
 
 .text1 {
 	width: 31%;
+	display: flex;
 }
 
 .all_task_text {
 	margin-left: 34%;
 	margin-top: 10%;
-	display: flex;
 }
 
 .text2 {
 	width: 36%;
+	display: flex;
 }
 
 .tasks_in_progress {
-	margin-left: 32%;
+	margin-left: 28%;
 	margin-top: 10%;
-	display: flex;
 }
 
 .text3 {
 	width: 36%;
+	display: flex;
 }
 
 .end_tasks {
-	margin-left: 38%;
+	margin-left: 40%;
 	margin-top: 10%;
-	display: flex;
 }
 
 
