@@ -12,7 +12,6 @@ div.className = "ClassName";
 -------------------
 dodac for loop do nazw tasków 
 
-np.
 for (i=0; ++1)
 
 var task = document.createElement("DIV");
