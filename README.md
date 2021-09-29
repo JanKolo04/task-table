@@ -25,3 +25,6 @@ task.id = ("task" + i);
 ## TASKS
 - [ ] if input text is empty add was block
 - [ ] make delete button in task
+
+
+
