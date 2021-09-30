@@ -8,6 +8,15 @@ przycisk DELETE.
 
 TWORZENIE KLASY DLA DIVA
 div.className = "ClassName";
+
+-------------------
+dodac for loop do nazw tasków 
+
+for (i=0; ++1)
+
+var task = document.createElement("DIV");
+task.id = ("task" + i);
+
 ```
 
 
@@ -16,3 +25,6 @@ div.className = "ClassName";
 ## TASKS
 - [ ] if input text is empty add was block
 - [ ] make delete button in task
+
+
+
