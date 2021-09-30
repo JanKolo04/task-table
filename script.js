@@ -5,7 +5,9 @@ function add_task() {
 	//create new div
   	var task = document.createElement("DIV");
 
-  	//class name
+
+
+  	//id name
   	task.id = "task";
 
   	//append text from text input to task
@@ -20,14 +22,14 @@ function add_task() {
 
 
 	//get task
-	var task = document.getElementById("task");
+	var task2 = document.getElementById("task");
 	//create button
 	var button = document.createElement("BUTTON");
 	//add name into button
 	button.innerHTML = "Add";
 
 	//append button to task
-	task.appendChild(button);
+	task2.appendChild(button);
 
 }
 
