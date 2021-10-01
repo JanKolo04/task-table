@@ -1,35 +1,40 @@
 function add_task() {
 	//get tasks div
 	var tasks_div = document.getElementById("tasks_all");
-
-	//create new div
-  	var task = document.createElement("DIV");
+	var text1 = document.getElementById("all_task_text");
 
 
+  	for (var i=0; i<1; ++i) {
+	 	//create new div
+	  	var task = document.createElement("DIV");
 
-  	//id name
-  	task.id = "task";
+	  	//id name
+	  	task.id = "task" + i;
 
-  	//append text from text input to task
-  	task.innerHTML = document.querySelector('#myText').value;
+	  	//append text from text input to task
+	  	task.innerHTML = document.querySelector('#myText').value;
 
-  	//append task to all tasks
-  	tasks_div.appendChild(task);
+	  	//append task to all tasks
+	  	tasks_div.appendChild(task);
+
+
+		//create button
+		var button = document.createElement("BUTTON");
+		//add name into button
+		button.innerHTML = "Add";
+
+		//append button to task
+		task.appendChild(button);
+
+  	}
+
+
+  	var numberOfTasks = tasks_div.children.length;
+  	text1.innerHTML = "All tasks: " + numberOfTasks;
   	
   	//clear text input
 	document.getElementById('myText').value = '';
 
-
-
-	//get task
-	var task2 = document.getElementById("task");
-	//create button
-	var button = document.createElement("BUTTON");
-	//add name into button
-	button.innerHTML = "Add";
-
-	//append button to task
-	task2.appendChild(button);
 
 }
 
