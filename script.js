@@ -1,7 +1,12 @@
 function add_task() {
 	//get tasks div
 	var tasks_div = document.getElementById("tasks_all");
+	var tasks_progress = document.getElementById("progress_task");
+	var tasks_end = document.getElementById("task_end")
+
 	var text1 = document.getElementById("all_task_text");
+	var text2 = document.getElementById("tasks_in_progress");
+	var text3 = document.getElementById("end_tasks");
 
 
   	for (var i=0; i<1; ++i) {
@@ -31,6 +36,14 @@ function add_task() {
 
   	var numberOfTasks = tasks_div.children.length;
   	text1.innerHTML = "All tasks: " + numberOfTasks;
+
+  	var progressTaskNumber = tasks_progress.children.length;
+  	text2.innerHTML = "Tasks in progress: " + progressTaskNumber;
+
+  	var endTaskNumber = tasks_end.children.length;
+  	text3.innerHTML = "End tasks: " + endTaskNumber;
+
+  	
   	
   	//clear text input
 	document.getElementById('myText').value = '';

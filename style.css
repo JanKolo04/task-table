@@ -54,7 +54,8 @@ body {
 }
 
 .all_task_text {
-	margin-left: 38%;
+	margin-left: 36%;
+	margin-right: 2%;
 	margin-top: 25px;
 }
 
@@ -64,7 +65,7 @@ body {
 }
 
 .tasks_in_progress {
-	margin-left: 30%;
+	margin-left: 27%;
 	margin-top: 25px
 }
 
@@ -74,7 +75,7 @@ body {
 }
 
 .end_tasks {
-	margin-left: 40%;
+	margin-left: 38%;
 	margin-top: 25px
 }
 
