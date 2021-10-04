@@ -54,15 +54,12 @@ function add_task() {
 
 
 
-
-
-
 function add_remove_button() {
 
 
 	var all_tasks = document.getElementById("tasks_all");
 
-	var task = document.getElementById("task");
+	var task = document.getElementById("task0");
 
 	var in_progress = document.getElementById("progress_task");
 

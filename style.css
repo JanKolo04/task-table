@@ -59,6 +59,7 @@ body {
 	margin-top: 25px;
 }
 
+
 .text2 {
 	width: 580px;
 	display: flex;
@@ -133,6 +134,16 @@ body {
 	width: 579px;
 	border-left: 3px solid black;
 	border-right: 3px solid black;
+}
+
+#progress_task div {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	height: 80px;
+	width: 200px;
+	margin: 10px;
+	background-color: #760ACB;
 }
 
 
