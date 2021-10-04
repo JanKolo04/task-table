@@ -134,6 +134,9 @@ body {
 	width: 579px;
 	border-left: 3px solid black;
 	border-right: 3px solid black;
+	flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
 }
 
 #progress_task div {
@@ -149,6 +152,9 @@ body {
 
 #task_end {
 	width: 579px;
+	flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
 }
 
 #task_end div {
