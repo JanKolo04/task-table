@@ -151,3 +151,13 @@ body {
 	width: 579px;
 }
 
+#task_end div {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	height: 80px;
+	width: 200px;
+	margin: 10px;
+	background-color: #760ACB;
+}
+
