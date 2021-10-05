@@ -110,9 +110,10 @@ function disableAdd() {
 	  	}
 
 	  	else if (inputLenght > 0) {
+	  		//activae button
 	  		addButton.disabled = false;
 	  	}
-	  	
+
 	}, 1);
 }
 
