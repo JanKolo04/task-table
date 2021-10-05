@@ -91,6 +91,31 @@ function add_task() {
 
 
 
+window.onload = function() {
+	disableAdd();
+}
+
+
+function disableAdd() {
+
+	setInterval(function(){
+		//add button
+		var addButton = document.getElementById("add_button");
+		//input text value
+	  	var inputLenght = document.getElementById('myText').value.length;
+	  	
+	  	if (inputLenght == 0) {
+	  		//disable Add button
+	  		addButton.disabled = true;
+	  	}
+
+	  	else if (inputLenght > 0) {
+	  		addButton.disabled = false;
+	  	}
+	  	
+	}, 1);
+}
+
 
 
 
