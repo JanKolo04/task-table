@@ -36,31 +36,34 @@ function add_task() {
 
   	}
 
-  	//all data from all tasks
-  	var numberOfTasks = tasks_div.children.length;
-  	text1.innerHTML = "All tasks: " + numberOfTasks;
-  	//all data from div progress
-  	var progressTaskNumber = tasks_progress.children.length;
-  	text2.innerHTML = "Tasks in progress: " + progressTaskNumber;
-  	//all data from end task
-  	var endTaskNumber = tasks_end.children.length;
-  	text3.innerHTML = "End tasks: " + endTaskNumber;
 
-  	
-  	
+
   	//clear text input
 	document.getElementById('myText').value = '';
 
-	//disable add button
-	var addButton = document.getElementById("add_button");
-	//if task count is == 14 button has been disable
-	if (numberOfTasks == 14) {
-		//disable
-		addButton.disabled = true;
-	}
+
 
 	//this code runs every second 
 	setInterval(function(){ 
+
+	  	//all data from all tasks
+	  	var numberOfTasks = tasks_div.children.length;
+	  	text1.innerHTML = "All tasks: " + numberOfTasks;
+	  	//all data from div progress
+	  	var progressTaskNumber = tasks_progress.children.length;
+	  	text2.innerHTML = "Tasks in progress: " + progressTaskNumber;
+	  	//all data from end task
+	  	var endTaskNumber = tasks_end.children.length;
+	  	text3.innerHTML = "End tasks: " + endTaskNumber;
+
+
+		//disable add button
+		var addButton = document.getElementById("add_button");
+		//if task count is == 14 button has been disable
+		if (numberOfTasks == 14) {
+			//disable
+			addButton.disabled = true;
+		}
 
 		//button in task
 		var progresButton = document.getElementById("progressButton");
@@ -80,12 +83,11 @@ function add_task() {
 			all_tasks.removeChild(task);
 
 		}
-	}, 1000);
+	}, 1);
 
 
 
 }
-
 
 
 
