@@ -62,7 +62,7 @@ Dodać for loop do id przycisku
 
 
 ## TASKS
-- [ ] if input text is empty add was block
+- [x] if input text is empty add was block
 - [ ] make delete button in task
 
 
