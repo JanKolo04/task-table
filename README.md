@@ -51,6 +51,11 @@ All task: 2  |  In progress: 1  |  End task: 0  |
              |                  |               |
              |                  |               |
 
+
+Odświeżanie ilości taskow co sekundę
+
+
+Dodać for loop do id przycisku
 ```
 
 
