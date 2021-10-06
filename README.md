@@ -66,7 +66,7 @@ Dodać for loop do id przycisku
 - [x] make delete button in task
 - [ ] make for loop to taskBelt for indexing
 - [ ] make one div and two in it (div: firstDiv:text, secondDiv:tasks) all flex
-- [ ] create <p> in task and add to it text
+- [ ] create P in task and add to it text
 
 
 
