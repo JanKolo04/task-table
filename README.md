@@ -64,6 +64,7 @@ Dodać for loop do id przycisku
 ## TASKS
 - [x] if input text is empty add was block
 - [ ] make delete button in task
+- [ ] make for loop to taskBelt for indexing
 
 
 
