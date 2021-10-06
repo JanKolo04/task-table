@@ -67,6 +67,7 @@ Dodać for loop do id przycisku
 - [ ] make for loop to taskBelt for indexing
 - [ ] make one div and two in it (div: firstDiv:text, secondDiv:tasks) all flex
 - [ ] create P in task and add to it text
+- [ ] add SQL and PHP session for user
 
 
 
