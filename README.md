@@ -64,7 +64,7 @@ Dodać for loop do id przycisku
 ## TASKS
 - [x] if input text is empty add was block
 - [x] make delete button in task
-- [ ] make for loop to taskBelt for indexing
+- [x] make working porgress and delete button
 - [ ] make one div and two in it (div: firstDiv:text, secondDiv:tasks) all flex
 - [ ] create P in task and add to it text
 - [ ] add SQL and PHP session for user
