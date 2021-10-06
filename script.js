@@ -23,45 +23,39 @@ function add_task() {
 	  	//append task to all tasks
 	  	tasks_div.appendChild(task);
 
-
-		//div to task
-		var taskBelt = document.createElement("DIV");
-		//flex button id 
-		taskBelt.id = "taskBelt";
-
-		//append to task
-		task.appendChild(taskBelt);
-
-
-		//get taskBelt
-		var idTaskBelt = document.getElementById("taskBelt");
+	}
 
 
 
-		//create delete button
-		var deleteButton = document.createElement("BUTTON");
-		//add name into button
-		deleteButton.innerHTML = "Delete";
-		//id for delete button
-		deleteButton.id = "deleteButton";
+  	//div to task
+	var taskBelt = document.createElement("DIV");
+	//flex button id 
+	taskBelt.id = "taskBelt";
 
-		//append delete button to idTaskBelt
-		idTaskBelt.appendChild(deleteButton);
+	//append to task
+	task.appendChild(taskBelt);
 
 
-		//create progress button
-		var progressButton = document.createElement("BUTTON");
-		//add name into button
-		progressButton.innerHTML = "Add";
-		//id for progress button
-		progressButton.id = "progressButton";
+	//create delete button
+	var deleteButton = document.createElement("BUTTON");
+	//add name into button
+	deleteButton.innerHTML = "Delete";
+	//id for delete button
+	deleteButton.id = "deleteButton";
 
-		//append button to idTaskBelt
-		idTaskBelt.appendChild(progressButton);
+	//append delete button to taskBelt
+	taskBelt.appendChild(deleteButton);
 
 
-  	}
+	//create progress button
+	var progressButton = document.createElement("BUTTON");
+	//add name into button
+	progressButton.innerHTML = "Add";
+	//id for progress button
+	progressButton.id = "progressButton";
 
+	//append button to taskBelt
+	taskBelt.appendChild(progressButton);
 
 
   	//clear text input
@@ -91,32 +85,23 @@ function add_task() {
 			addButton.disabled = true;
 		}
 
-		//button in task
-		var progresButton = document.getElementById("progressButton");
-		progresButton.onclick = function() {
 
-			//all tasks div
-			var all_tasks = document.getElementById("tasks_all");
-			//task
-			var task = document.getElementById("task0");
-			//progress div
-			var in_progress = document.getElementById("progress_task");
-
+		//Inscruction for progress button
+		progressButton.onclick = function() {
 
 			//append task to progress
-			in_progress.appendChild(task);
+			tasks_progress.appendChild(task);
 			//remove task from all
-			all_tasks.removeChild(task);
+			tasks_div.removeChild(task);
 
 		}
 
-
-
+		//inscruction for delete button
+		deleteButton.onclick = function() {
+			task.remove();
+		}
 
 	}, 1);
-
-
-
 }
 
 
