@@ -24,15 +24,41 @@ function add_task() {
 	  	tasks_div.appendChild(task);
 
 
-		//create button
-		var button = document.createElement("BUTTON");
+		//div to task
+		var taskBelt = document.createElement("DIV");
+		//flex button id 
+		taskBelt.id = "taskBelt";
+
+		//append to task
+		task.appendChild(taskBelt);
+
+
+		//get taskBelt
+		var idTaskBelt = document.getElementById("taskBelt");
+
+
+
+		//create delete button
+		var deleteButton = document.createElement("BUTTON");
 		//add name into button
-		button.innerHTML = "Add";
+		deleteButton.innerHTML = "Delete";
+		//id for delete button
+		deleteButton.id = "deleteButton";
 
-		button.id = "progressButton";
+		//append delete button to idTaskBelt
+		idTaskBelt.appendChild(deleteButton);
 
-		//append button to task
-		task.appendChild(button);
+
+		//create progress button
+		var progressButton = document.createElement("BUTTON");
+		//add name into button
+		progressButton.innerHTML = "Add";
+		//id for progress button
+		progressButton.id = "progressButton";
+
+		//append button to idTaskBelt
+		idTaskBelt.appendChild(progressButton);
+
 
   	}
 
@@ -83,6 +109,10 @@ function add_task() {
 			all_tasks.removeChild(task);
 
 		}
+
+
+
+
 	}, 1);
 
 
