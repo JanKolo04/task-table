@@ -1,6 +1,13 @@
 # task-table
 Website with tasks
 
+
+# Actually website design
+
+<img width="1792" alt="Zrzut ekranu 2021-10-7 o 13 26 36" src="https://user-images.githubusercontent.com/76879087/136375373-6c757f9a-90fd-43c6-99b6-72bc3e9a35ce.png">
+
+
+
 # NOTES
 ```txt
 Dodac klase dla taska. Po czym dodac dla taska
@@ -68,6 +75,9 @@ Dodać for loop do id przycisku
 - [ ] make one div and two in it (div: firstDiv:text, secondDiv:tasks) all flex
 - [ ] create P in task and add to it text
 - [ ] add SQL and PHP session for user
+- [ ] chnage text in button
+- [ ] change variables name in js
+- [ ] make login page
 
 
 
