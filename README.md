@@ -75,7 +75,7 @@ Dodać for loop do id przycisku
 - [ ] make one div and two in it (div: firstDiv:text, secondDiv:tasks) all flex
 - [ ] create P in task and add to it text
 - [ ] add SQL and PHP session for user
-- [ ] change button name
+- [ ] chnage text in button
 - [ ] change variables name in js
 
 
