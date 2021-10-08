@@ -76,6 +76,7 @@ Dodać for loop do id przycisku
 - [ ] add SQL and PHP session for user
 - [ ] chnage text in button
 - [ ] make login page
+- [ ] change task posittion
 
 
 
