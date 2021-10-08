@@ -1,0 +1,101 @@
+.header {
+	position: absolute;
+	display: flex;
+	top: 0;
+	left: 0;
+	height: 100px;
+	width: 100%;
+	justify-content: center;
+  	align-items: center;
+	background-color: #2480D6;
+}
+
+.main {
+	position: absolute;
+	display: flex;
+	top: 100px;
+	left: 0;
+	height: calc(100% - 100px);
+	width: 100%;
+	justify-content: center;
+  	align-items: center;
+	background-color: red;
+}
+
+.white-background {
+	position: absolute;
+	height: 350px;
+	width: 35%;
+	top: 10%;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.login {
+	display: block;
+  	width: 250px;
+  	height: 30px;
+  	margin-top: 100px;
+  	margin-right: auto;
+  	margin-left: auto;
+  	resize: none;
+  	border-radius: 5px;
+  	border: 1px solid black;
+  	white-space: nowrap;
+  	overflow: hidden;
+    background-color: white;
+  	color: black;
+}
+
+
+.passwd {
+	display: block;
+  	width: 250px;
+  	height: 30px;
+  	margin-top: 20px;
+  	margin-right: auto;
+  	margin-left: auto;
+  	resize: none;
+  	border-radius: 5px;
+  	border: 1px solid black;
+  	white-space: nowrap;
+  	overflow: hidden;
+    background-color: white;
+  	color: black;	
+}
+
+.check-submit {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 50px;
+	margin-top: 10px;
+}
+
+#label {
+	width: 50%;
+	display: flex;
+	white-space: nowrap;
+}
+
+#button {
+	width: 50%;
+	display: flex;
+}
+
+
+.remember {
+	margin-top: 20px;
+	margin-left: 210px;
+}
+
+.submit {
+	margin-top: 10px;
+	margin-left: 45px;
+	height: 30px;
+	width: 80px;
+	border: 1px solid black;
+	border-radius: 5px;
+	color: white;
+	background-color: #2480D6;
+}
