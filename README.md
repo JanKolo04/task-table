@@ -72,11 +72,9 @@ Dodać for loop do id przycisku
 - [x] if input text is empty add was block
 - [x] make delete button in task
 - [x] make working porgress and delete button
-- [ ] make one div and two in it (div: firstDiv:text, secondDiv:tasks) all flex
 - [ ] create P in task and add to it text
 - [ ] add SQL and PHP session for user
 - [ ] chnage text in button
-- [ ] change variables name in js
 - [ ] make login page
 
 
