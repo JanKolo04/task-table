@@ -50,7 +50,7 @@ function add_task() {
 	//create progress button
 	var progressButton = document.createElement("BUTTON");
 	//add name into button
-	progressButton.innerHTML = "Add";
+	progressButton.innerHTML = "Take";
 	//id for progress button
 	progressButton.id = "progressButton";
 
@@ -60,6 +60,42 @@ function add_task() {
 
   	//clear text input
 	document.getElementById('myText').value = '';
+
+
+	//create end task button
+	var endButton = document.createElement("BUTTON");
+	//get id for end button
+	endButton.id = "endButton";
+	//append text 
+	endButton.innerHTML = "End";
+
+
+	//Inscruction for progress button
+	progressButton.onclick = function() {
+		//append end button
+		taskBelt.appendChild(endButton);
+		//append task to progress
+		tasks_progress.appendChild(task);
+		//remove task from all
+		tasks_div.removeChild(task);
+	}
+
+
+	//instruction for end button
+	endButton.onclick = function() {
+		//append task to end task
+		tasks_end.appendChild(task);
+		//remove task from progress
+		tasks_progress.removeChild(task);
+	}
+
+
+
+	//inscruction for delete button
+	deleteButton.onclick = function() {
+		//delete task
+		task.remove();
+	}
 
 
 
@@ -85,20 +121,16 @@ function add_task() {
 			addButton.disabled = true;
 		}
 
+		//chech if task is in progress div
+		if (tasks_progress.contains(task)) {
+			//remove progress button
+			progressButton.remove();
+		} 
 
-		//Inscruction for progress button
-		progressButton.onclick = function() {
-
-			//append task to progress
-			tasks_progress.appendChild(task);
-			//remove task from all
-			tasks_div.removeChild(task);
-
-		}
-
-		//inscruction for delete button
-		deleteButton.onclick = function() {
-			task.remove();
+		//check if task is in end div
+		if (tasks_end.contains(task)) {
+			//remove end button
+			endButton.remove();
 		}
 
 	}, 1);

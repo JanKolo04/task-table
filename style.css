@@ -49,52 +49,27 @@ body {
 }
 
 .text1 {
-	width: 580px;
+	width: 700px;
 	display: flex;
+	justify-content: center;
+  	align-items: center;
 }
 
-.all_task_text {
-	margin-left: 36%;
-	margin-right: 2%;
-	margin-top: 25px;
-}
 
 
 .text2 {
-	width: 580px;
+	width: 700px;
 	display: flex;
+	justify-content: center;
+  	align-items: center;
 }
 
-.tasks_in_progress {
-	margin-left: 27%;
-	margin-top: 25px
-}
 
 .text3 {
-	width: 580px;
+	width: 700px;
 	display: flex;
-}
-
-.end_tasks {
-	margin-left: 38%;
-	margin-top: 25px
-}
-
-
-.vl1 {
-	position: fixed;
-	margin-left: 570px;
-	margin-top: 12%;
-	border-left: 4px solid black;
-	height: 60%;
-}
-
-.vl2 {
-	position: absolute;
-	margin-left: 50px;
-	margin-top: 12%;
-	border-left: 4px solid black;
-	height: 60%;
+	justify-content: center;
+  	align-items: center;
 }
 
 
@@ -110,12 +85,13 @@ body {
 
 
 #tasks_all {
-	width: 580px;
+	width: 700px;
 	height: 700px;
 	flex-wrap: wrap;
 	display: flex;
 	flex-direction: column;
 }
+
 
 
 #task0 {
@@ -140,14 +116,15 @@ body {
 	border-top: 1px solid;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+  	justify-content: center;
+  	align-items: center;
 }
 
 
 
 #progressButton {
 	display: flex;
-	margin-left: 90px;
-	margin-top: 4.5px;
+	margin: 4.5px;
 	border-radius: 5px;
 	border: none;
 	width: 50px;
@@ -157,10 +134,21 @@ body {
   	align-items: center;
 }
 
+#endButton {
+	display: flex;
+	margin: 4.5px;
+	border-radius: 5px;
+	border: none;
+	width: 50px;
+	height: 20px;
+	background-color: green;
+  	justify-content: center;
+  	align-items: center;	
+}
+
 #deleteButton {
 	display: flex;
-	margin-top: 4.5px;
-	margin-left: 5px;
+	margin: 4.5px;
 	border-radius: 5px;
 	border: none;
 	width: 50px;
@@ -172,7 +160,7 @@ body {
 
 
 #progress_task {
-	width: 579px;
+	width: 700px;
 	border-left: 3px solid black;
 	border-right: 3px solid black;
 	flex-wrap: wrap;
@@ -182,7 +170,7 @@ body {
 
 
 #task_end {
-	width: 579px;
+	width: 700px;
 	flex-wrap: wrap;
 	display: flex;
 	flex-direction: column;
