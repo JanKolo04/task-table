@@ -93,11 +93,10 @@ body {
 }
 
 
-
-#task0 {
+/*task*/
+.taskClass {
 	display: flex;
-  	justify-content: center;
-  	align-items: center;
+	flex-direction: column;
 	height: 100px;
 	width: 200px;
 	margin: 10px;
@@ -106,10 +105,11 @@ body {
 }
 
 
-#taskBelt {
+/*task belt*/
+.taskBelt {
 	display: flex;
-	flex-direction: row;
 	position: absolute;
+	flex-direction: row;
 	margin-top: 70px;
 	height: 30px;
 	width: 200px;
@@ -119,6 +119,21 @@ body {
   	justify-content: center;
   	align-items: center;
 }
+
+
+.textDiv {
+	position: absolute;
+	text-align: center;
+	background-color: blue;
+	overflow-wrap: break-word;
+	width: 200px;
+	height: 70px;
+	justify-content: center;
+  	align-items: center;
+  	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
 
 
 
@@ -159,6 +174,7 @@ body {
 }
 
 
+
 #progress_task {
 	width: 700px;
 	height: 700px;
@@ -170,12 +186,35 @@ body {
 }
 
 
+.progress_task  div {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	height: 100px;
+	width: 200px;
+	margin: 10px;
+	border-radius: 5px;
+	background-color: #ea069e;
+}
+
+
 #task_end {
 	width: 700px;
 	height: 700px;
 	flex-wrap: wrap;
 	display: flex;
 	flex-direction: column;
+}
+
+.task_end  div {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	height: 100px;
+	width: 200px;
+	margin: 10px;
+	border-radius: 5px;
+	background-color: #ea069e;
 }
 
 

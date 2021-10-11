@@ -1,3 +1,5 @@
+var taskNumber = 0;
+
 function add_task() {
 
 	//get tasks div
@@ -9,28 +11,45 @@ function add_task() {
 	var text2 = document.getElementById("tasks_in_progress");
 	var text3 = document.getElementById("end_tasks");
 
-
   	for (var i=0; i<1; ++i) {
 	 	//create new div
 	  	var task = document.createElement("DIV");
 
-	  	//id name
-	  	task.id = "task" + i;
-
-	  	//append text from text input to task
-	  	task.innerHTML = document.querySelector('#myText').value;
+	  	if (taskNumber == 0)
+	  	{
+	  		//id name
+	  		task.id = "task" + taskNumber;
+	  		taskNumber = taskNumber + 1;
+	  	}
+	  	else
+	  	{
+	  		task.id = "task" + taskNumber;
+	  		taskNumber = taskNumber + 1;
+	  	}
 
 	  	//append task to all tasks
 	  	tasks_div.appendChild(task);
 
 	}
 
+	//add class to tasks all
+	task.className = "taskClass";
+
+	var textDiv = document.createElement("DIV");
+	task.appendChild(textDiv);
+	//add class to span
+	textDiv.className = "textDiv";
+
+	//append text from text input to task
+	textDiv.innerHTML = document.querySelector('#myText').value;
 
 
+
+	
   	//div to task
 	var taskBelt = document.createElement("DIV");
-	//flex button id 
-	taskBelt.id = "taskBelt";
+	//add class to belt
+	taskBelt.className = "taskBelt";
 
 	//append to task
 	task.appendChild(taskBelt);
@@ -72,6 +91,8 @@ function add_task() {
 
 	//Inscruction for progress button
 	progressButton.onclick = function() {
+		//add class to task
+		task.className = "taskClass"; 
 		//append end button
 		taskBelt.appendChild(endButton);
 		//append task to progress
@@ -83,6 +104,8 @@ function add_task() {
 
 	//instruction for end button
 	endButton.onclick = function() {
+		//add class to task
+		task.className = "taskClass"; 
 		//append task to end task
 		tasks_end.appendChild(task);
 		//remove task from progress
