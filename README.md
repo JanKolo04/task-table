@@ -4,7 +4,8 @@ Website with tasks
 
 # Actually website design
 
-<img width="1792" alt="Zrzut ekranu 2021-10-7 o 13 26 36" src="https://user-images.githubusercontent.com/76879087/136375373-6c757f9a-90fd-43c6-99b6-72bc3e9a35ce.png">
+<img width="1792" alt="Zrzut ekranu 2021-10-11 o 20 18 19" src="https://user-images.githubusercontent.com/76879087/136836271-ba40121e-8623-49cc-9112-a18670757e91.png">
+
 
 
 
@@ -75,8 +76,9 @@ Dodać for loop do id przycisku
 - [ ] create P in task and add to it text
 - [ ] add SQL and PHP session for user
 - [ ] chnage text in button
-- [ ] make login page
+- [ ] frontend for login page
 - [ ] change task posittion for responsive
+- [ ] make vertical middle text in task
 
 
 
