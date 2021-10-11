@@ -124,7 +124,6 @@ body {
 .textDiv {
 	position: absolute;
 	text-align: center;
-	background-color: blue;
 	overflow-wrap: break-word;
 	width: 200px;
 	height: 70px;
