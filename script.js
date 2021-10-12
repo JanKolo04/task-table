@@ -32,9 +32,10 @@ function add_task() {
 
 	}
 
-	//add class to tasks all
+	//add class to task
 	task.className = "taskClass";
 
+	//create text div
 	var textDiv = document.createElement("DIV");
 	task.appendChild(textDiv);
 	//add class to span
@@ -58,7 +59,7 @@ function add_task() {
 	//create delete button
 	var deleteButton = document.createElement("BUTTON");
 	//add name into button
-	deleteButton.innerHTML = "Delete";
+	deleteButton.innerHTML = "Remove";
 	//id for delete button
 	deleteButton.id = "deleteButton";
 
@@ -86,7 +87,7 @@ function add_task() {
 	//get id for end button
 	endButton.id = "endButton";
 	//append text 
-	endButton.innerHTML = "End";
+	endButton.innerHTML = "Complete";
 
 
 	//Inscruction for progress button
@@ -161,11 +162,13 @@ function add_task() {
 
 
 
+//load function when page has loaded
 window.onload = function() {
 	disableAdd();
 }
 
 
+//function fot disable add button
 function disableAdd() {
 
 	setInterval(function(){
