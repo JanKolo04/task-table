@@ -73,12 +73,11 @@ Dodać for loop do id przycisku
 - [x] if input text is empty add was block
 - [x] make delete button in task
 - [x] make working porgress and delete button
-- [ ] create P in task and add to it text
 - [ ] add SQL and PHP session for user
 - [ ] chnage text in button
 - [ ] frontend for login page
 - [ ] change task posittion for responsive
-- [ ] make vertical middle text in task
+- [x] make vertical middle text in task
 
 
 
