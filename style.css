@@ -124,10 +124,11 @@ body {
 .textDiv {
 	position: absolute;
 	text-align: center;
-	overflow-wrap: break-word;
+	word-break:break-all;
 	width: 200px;
 	height: 70px;
-	justify-content: center;
+  	display: flex;
+  	justify-content: center;
   	align-items: center;
   	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
