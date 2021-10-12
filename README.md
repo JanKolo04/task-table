@@ -74,7 +74,7 @@ Dodać for loop do id przycisku
 - [x] make delete button in task
 - [x] make working porgress and delete button
 - [ ] add SQL and PHP session for user
-- [ ] chnage text in button
+- [x] chnage text in button
 - [ ] frontend for login page
 - [ ] change task posittion for responsive
 - [x] make vertical middle text in task
