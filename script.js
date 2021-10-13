@@ -5,7 +5,7 @@ function add_task() {
 	//get tasks div
 	var tasks_div = document.getElementById("tasks_all");
 	var tasks_progress = document.getElementById("progress_task");
-	var tasks_end = document.getElementById("task_end")
+	var tasks_end = document.getElementById("task_end");
 
 	var text1 = document.getElementById("all_task_text");
 	var text2 = document.getElementById("tasks_in_progress");
@@ -140,7 +140,7 @@ function add_task() {
 		//disable add button
 		var addButton = document.getElementById("add_button");
 		//if task count is == 14 button has been disable
-		if (numberOfTasks == 14) {
+		if (numberOfTasks == 10) {
 			//disable
 			addButton.disabled = true;
 		}
