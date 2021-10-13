@@ -1,48 +1,52 @@
-.header {
-	position: absolute;
-	display: flex;
-	top: 0;
-	left: 0;
-	height: 100px;
-	width: 100%;
-	justify-content: center;
-  	align-items: center;
-	background-color: #1877f2;
-}
-
 .main {
 	position: absolute;
 	display: flex;
-	top: 100px;
-	left: 0;
-	height: calc(100% - 100px);
+	top: 0px;
+	left: 0px;
+	height: 100%;
 	width: 100%;
 	justify-content: center;
   	align-items: center;
-	background-color: #1877f2;
+	background-image: linear-gradient(to right, #00ffff, #cc33ff);
 }
 
 .white-background {
 	position: absolute;
-	height: 400px;
-	width: 25%;
+	height: 700px;
+	width: 35%;
   	top: 50%;
   	left: 50%;
-  	transform: translate(20%, -80%);
+  	transform: translate(-50%, -50%);
 	border-radius: 6px;
 	background-color: white;
 }
+
+
+#text1 {
+	font-size: 40px;
+	margin-top: 100px;
+	text-align: center;
+	color: #00ffff;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#text2 {
+	text-align: center;
+	color: #dadde1;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 
 .login {
 	display: block;
     font-size: 18px;
     line-height: 48px;
     width: 400px;
-  	margin-top: 20px;
+  	margin-top: 80px;
   	margin-right: auto;
   	margin-left: auto;
-  	border-radius: 6px;
-  	border: 1px solid #dadde1;
+  	border: none;
+  	border-bottom: 1px solid #dadde1;
   	white-space: nowrap;
   	overflow: hidden;
     background-color: white;
@@ -58,8 +62,8 @@
   	margin-top: 20px;
   	margin-right: auto;
   	margin-left: auto;
-  	border-radius: 6px;
-  	border: 1px solid #dadde1;
+  	border: none;
+  	border-bottom: 1px solid #dadde1;
   	white-space: nowrap;
   	overflow: hidden;
     background-color: white;
@@ -86,7 +90,7 @@
     border-radius: 6px;
     font-size: 25px;
     color: white;
-    background-color: #1877f2;
+    background-image: linear-gradient(to right, #ff00ff, #6600ff);
 }
 
 
@@ -98,16 +102,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
 }
-
-
-.horizontal-line {
-	margin-top: 30px;
-	width: 80%;
-	transform: translate(10%, 0%);
-	border: 1px solid #dadde1;
-}
-
 
 
 #register-div {
@@ -120,18 +117,11 @@
 }
 
 
-.register {
-	width: 200px;
-	height: 48px;
-    border: none;
-    border-radius: 6px;
-    font-size: 25px;
-    color: white;
-    background-color: #42b72a;
+
+#register {
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
 }
-
-
-
 
 
 
