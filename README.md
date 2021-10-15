@@ -83,8 +83,3 @@ Dodać for loop do id przycisku
 - [ ] frontend for login page
 - [ ] change task posittion
 - [x] make vertical middle text in task
-
-
-
-
-
