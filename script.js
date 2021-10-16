@@ -7,6 +7,11 @@ function add_task() {
 	var tasks_progress = document.getElementById("progress_task");
 	var tasks_end = document.getElementById("task_end");
 
+
+	var tasksHolder1 = document.getElementById("tasksHolder1");
+	var tasksHolder2 = document.getElementById("tasksHolder2");
+	var tasksHolder3 = document.getElementById("tasksHolder3");
+
 	var text1 = document.getElementById("all_task_text");
 	var text2 = document.getElementById("tasks_in_progress");
 	var text3 = document.getElementById("end_tasks");
@@ -28,7 +33,7 @@ function add_task() {
 	  	}
 
 	  	//append task to all tasks
-	  	tasks_div.appendChild(task);
+	  	tasksHolder1.appendChild(task);
 
 	}
 
@@ -44,10 +49,8 @@ function add_task() {
 	//append text from text input to task
 	textDiv.innerHTML = document.querySelector('#myText').value;
 
-
-
 	
-  	//div to task
+  	//cerate task belt
 	var taskBelt = document.createElement("DIV");
 	//add class to belt
 	taskBelt.className = "taskBelt";
@@ -97,9 +100,9 @@ function add_task() {
 		//append end button
 		taskBelt.appendChild(endButton);
 		//append task to progress
-		tasks_progress.appendChild(task);
+		tasksHolder2.appendChild(task);
 		//remove task from all
-		tasks_div.removeChild(task);
+		tasksHolder1.removeChild(task);
 	}
 
 
@@ -108,9 +111,9 @@ function add_task() {
 		//add class to task
 		task.className = "taskClass"; 
 		//append task to end task
-		tasks_end.appendChild(task);
+		tasksHolder3.appendChild(task);
 		//remove task from progress
-		tasks_progress.removeChild(task);
+		tasksHolder2.removeChild(task);
 	}
 
 
@@ -127,32 +130,32 @@ function add_task() {
 	setInterval(function(){ 
 
 	  	//all data from all tasks
-	  	var numberOfTasks = tasks_div.children.length;
-	  	text1.innerHTML = "All tasks: " + numberOfTasks;
+	  	var allTaskNumber = tasksHolder1.children.length;
+	  	text1.innerHTML = "All tasks: " + allTaskNumber;
 	  	//all data from div progress
-	  	var progressTaskNumber = tasks_progress.children.length;
+	  	var progressTaskNumber = tasksHolder2.children.length;
 	  	text2.innerHTML = "Tasks in progress: " + progressTaskNumber;
 	  	//all data from end task
-	  	var endTaskNumber = tasks_end.children.length;
+	  	var endTaskNumber = tasksHolder3.children.length;
 	  	text3.innerHTML = "End tasks: " + endTaskNumber;
 
 
 		//disable add button
 		var addButton = document.getElementById("add_button");
 		//if task count is == 14 button has been disable
-		if (numberOfTasks == 10) {
+		if (allTaskNumber == 10) {
 			//disable
 			addButton.disabled = true;
 		}
 
 		//chech if task is in progress div
-		if (tasks_progress.contains(task)) {
+		if (tasksHolder2.contains(task)) {
 			//remove progress button
 			progressButton.remove();
 		} 
 
 		//check if task is in end div
-		if (tasks_end.contains(task)) {
+		if (tasksHolder3.contains(task)) {
 			//remove end button
 			endButton.remove();
 		}

@@ -88,6 +88,14 @@ body {
 	width: 700px;
 	height: 700px;
 	display: flex;
+}
+
+
+#tasksHolder1 {
+	display: flex;
+	width: 77%;
+	height: 600px;
+	margin: auto;
 	flex-direction: column;
 	flex-wrap: wrap;
 	overflow: auto;
@@ -100,8 +108,6 @@ body {
 	flex-direction: column;
 	height: 100px;
 	margin: 10px;
-	margin-top: 20px;
-	margin-left: 55px;
 	width: 200px;
 	border-radius: 5px;
 	background-color: #ea069e;
@@ -180,9 +186,16 @@ body {
 	height: 700px;
 	border-left: 3px solid black;
 	border-right: 3px solid black;
-	flex-wrap: wrap;
 	display: flex;
+}
+
+#tasksHolder2 {
+	display: flex;
+	width: 77%;
+	height: 600px;
+	margin: auto;
 	flex-direction: column;
+	flex-wrap: wrap;
 	overflow: auto;
 }
 
@@ -190,9 +203,16 @@ body {
 #task_end {
 	width: 700px;
 	height: 700px;
-	flex-wrap: wrap;
 	display: flex;
+}
+
+#tasksHolder3 {
+	display: flex;
+	width: 77%;
+	height: 600px;
+	margin: auto;
 	flex-direction: column;
+	flex-wrap: wrap;
 	overflow: auto;
 }
 
