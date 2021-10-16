@@ -81,5 +81,6 @@ Dodać for loop do id przycisku
 - [ ] add SQL and PHP session for user
 - [x] chnage text in button
 - [ ] frontend for login page
-- [ ] add task container to taskAll and make his center
+- [x] add task container to taskAll and make his center
 - [x] make vertical middle text in task
+- [ ] make static text div to task div 
