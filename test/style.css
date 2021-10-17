@@ -1,33 +1,17 @@
-body {
-	background-color: #0C3DBA;
-}
-
-
-#myText {
-	width: 90%;
-	height: 50px;
-	margin-top: 20px;
-	margin-left: 10px;
-	border: none;
-	border-radius: 5px;
-}
-
-.add_button {
-	height: 48px;
-	width: 90px;
-	background-color: #11E58C;
-	border: none;
-	border-radius: 5px;
-	margin-left: 10px;
-}
-
-
-#tasks div {
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-  	margin-top: 5px;
-	height: 50px;
-	width: 100px;
-	background-color: #760ACB;
-}
+body{   
+    background: #eee;  
+}  
+#frm{  
+    border: solid gray 1px;  
+    width:25%;  
+    border-radius: 2px;  
+    margin: 120px auto;  
+    background: white;  
+    padding: 50px;  
+}  
+#btn{  
+    color: #fff;  
+    background: #337ab7;  
+    padding: 7px;  
+    margin-left: 70%;  
+}  
