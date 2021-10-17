@@ -84,3 +84,4 @@ Dodać for loop do id przycisku
 - [x] add task container to taskAll and make his center
 - [x] make vertical middle text in task
 - [ ] make static text div to task div 
+- [ ] add max text input lenght in password and login in register
