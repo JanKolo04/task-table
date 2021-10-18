@@ -85,3 +85,5 @@ Dodać for loop do id przycisku
 - [x] make vertical middle text in task
 - [ ] make static text div to task div 
 - [ ] add max text input lenght in password and login in register
+- [ ] make in order login page
+- [ ] replace login frontend
