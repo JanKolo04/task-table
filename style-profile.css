@@ -1,0 +1,220 @@
+body {
+	background-image: url("images/background.jpeg");
+}
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 80px;
+	width: 100%;
+  	display: flex;
+  	flex-direction: row;
+}
+
+
+#myText {
+	width: 90%;
+	height: 50px;
+	min-width: 50%;
+	margin-top: 20px;
+	margin-left: 30px;
+	border: none;
+	border-radius: 5px;
+	font-size: 22px;
+	display: flex;
+}
+
+.add_button {
+	font-size: 40px;
+	height: 47px;
+	width: 90px;
+	background-color: #11E58C;
+	border: none;
+	border-radius: 5px;
+  	display: flex;
+  	margin-left: 20px;
+  	margin-right: 20px;
+  	margin-top: 22px;
+}
+
+.texts {
+	position: absolute;
+	top: 80px;
+	left: 0;
+	height: 100px;
+	width: 100%;
+  	display: flex;
+  	flex-direction: row;
+}
+
+.text1 {
+	width: 700px;
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+}
+
+
+
+.text2 {
+	width: 700px;
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+}
+
+
+.text3 {
+	width: 700px;
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+}
+
+
+.tasks {
+	position: absolute;
+	width: 100%;
+	top: 180px;
+	left: 0;
+	height: 700px;
+	display: flex;
+  	flex-direction: row;
+}
+
+
+#tasks_all {
+	width: 700px;
+	height: 700px;
+	display: flex;
+}
+
+
+#tasksHolder1 {
+	display: flex;
+	width: 77%;
+	height: 600px;
+	margin: auto;
+	flex-direction: column;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+
+/*task*/
+.taskClass {
+	display: flex;
+	flex-direction: column;
+	height: 100px;
+	margin: 10px;
+	width: 200px;
+	border-radius: 5px;
+	background-color: #ea069e;
+}
+
+
+/*task belt*/
+.taskBelt {
+	display: flex;
+	flex-direction: row;
+	height: 30px;
+	width: 200px;
+	border-top: 1px solid;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+  	justify-content: center;
+  	align-items: center;
+}
+
+
+.textDiv {
+	text-align: center;
+	word-break:break-all;
+	width: 200px;
+	height: 70px;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+
+
+
+#progressButton {
+	display: flex;
+	margin: 4.5px;
+	border-radius: 5px;
+	border: none;
+	width: 60px;
+	height: 20px;
+	background-color: green;
+  	justify-content: center;
+  	align-items: center;
+}
+
+#endButton {
+	display: flex;
+	margin: 4.5px;
+	border-radius: 5px;
+	border: none;
+	width: 60px;
+	height: 20px;
+	background-color: green;
+  	justify-content: center;
+  	align-items: center;	
+}
+
+#deleteButton {
+	display: flex;
+	margin: 4.5px;
+	border-radius: 5px;
+	border: none;
+	width: 60px;
+	height: 20px;
+	background-color: red;	
+	justify-content: center;
+  	align-items: center;
+}
+
+
+
+#progress_task {
+	width: 700px;
+	height: 700px;
+	border-left: 3px solid black;
+	border-right: 3px solid black;
+	display: flex;
+}
+
+#tasksHolder2 {
+	display: flex;
+	width: 77%;
+	height: 600px;
+	margin: auto;
+	flex-direction: column;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+
+#task_end {
+	width: 700px;
+	height: 700px;
+	display: flex;
+}
+
+#tasksHolder3 {
+	display: flex;
+	width: 77%;
+	height: 600px;
+	margin: auto;
+	flex-direction: column;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+
+
