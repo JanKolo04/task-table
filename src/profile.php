@@ -16,8 +16,8 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<title>Tasks</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style-profile.css">
+	<script type="text/javascript" src="script-profile.js"></script>
 </head>
 <body>
 	<div class="header">		
