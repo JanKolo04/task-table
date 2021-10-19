@@ -80,3 +80,5 @@ Dodać for loop do id przycisku
 - [ ] add max text input lenght in password and login in register
 - [ ] make in order login page
 - [ ] replace login frontend
+- [ ] make register page 
+- [ ] create documentation for php
