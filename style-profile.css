@@ -2,22 +2,79 @@ body {
 	background-image: url("images/background.jpeg");
 }
 
-.header {
+.baner {
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 80px;
 	width: 100%;
+	background-color: grey;
+	display: flex;
+	flex-direction: row;
+}
+
+
+.textBaner {
+	display: flex;
+	height: 80px;
+	width: 220px;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#banerText {
+	font-size: 32px;
+	color: white;
+}
+
+
+.linkBaner {
+	height: 80px;
+	width: calc(100% - 220px);
+	display: flex;
+	align-items: center;
+	justify-content: right;
+}
+
+
+#logoutLink {
+	font-size: 32px;
+	margin-right: 10px;
+	text-decoration: none;
+	color: white;
+}
+
+
+#logoutLink:hover {
+	text-decoration: underline;
+}
+
+
+.header {
+	position: absolute;
+	top: 80px;
+	left: 0;
+	height: 80px;
+	width: 100%;
   	display: flex;
   	flex-direction: row;
+  	align-items: center;
+}
+
+
+.main {
+	position: absolute;
+	top: 160px;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 160px);
 }
 
 
 #myText {
 	width: 90%;
 	height: 50px;
-	min-width: 50%;
-	margin-top: 20px;
 	margin-left: 30px;
 	border: none;
 	border-radius: 5px;
@@ -27,7 +84,7 @@ body {
 
 .add_button {
 	font-size: 40px;
-	height: 47px;
+	height: 50px;
 	width: 90px;
 	background-color: #11E58C;
 	border: none;
@@ -35,12 +92,10 @@ body {
   	display: flex;
   	margin-left: 20px;
   	margin-right: 20px;
-  	margin-top: 22px;
 }
 
 .texts {
 	position: absolute;
-	top: 80px;
 	left: 0;
 	height: 100px;
 	width: 100%;
@@ -75,10 +130,10 @@ body {
 
 .tasks {
 	position: absolute;
+	top: 100px;
 	width: 100%;
-	top: 180px;
 	left: 0;
-	height: 700px;
+	height: 724px;
 	display: flex;
   	flex-direction: row;
 }
