@@ -78,7 +78,6 @@ Dodać for loop do id przycisku
 - [ ] add SQL and PHP session for user
 - [ ] make static text div to task div 
 - [ ] add max text input lenght in password and login in register
-- [ ] make in order login page
-- [ ] replace login frontend
+- [x] replace login frontend
 - [ ] make register page 
 - [ ] create documentation for php
