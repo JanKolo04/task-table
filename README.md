@@ -81,3 +81,4 @@ Dodać for loop do id przycisku
 - [x] replace login frontend
 - [ ] make register page 
 - [ ] create documentation for php
+- [ ] ban users
