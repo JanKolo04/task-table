@@ -63,8 +63,8 @@ session_start();
 			<div class="allStuff">
 				
 				<form method="post">
-					<center><input id="text" type="text" name="user_name" class="login" required placeholder="Login"></center>
-					<center><input id="text" type="password" name="password" class="passwd" required placeholder="Password"></center>
+					<center><input id="text" type="text" name="user_name" class="login" required placeholder="Login" maxlength="20"></center>
+					<center><input id="text" type="password" name="password" class="passwd" required placeholder="Password" maxlength="30"></center>
 
 					<div id="forgot">
 						<a id="forgot-text" href="signup.php">Forgot password</a>
