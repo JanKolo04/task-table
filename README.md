@@ -77,7 +77,7 @@ Dodać for loop do id przycisku
 ## TASKS
 - [ ] add SQL and PHP session for user
 - [ ] make static text div to task div 
-- [ ] add max text input lenght in password and login in register
+- [x] add max text input lenght in password and login in register
 - [x] replace login frontend
 - [ ] make register page 
 - [ ] create documentation for php
