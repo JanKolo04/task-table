@@ -82,3 +82,5 @@ Dodać for loop do id przycisku
 - [ ] make register page 
 - [ ] create documentation for php
 - [ ] ban users
+- [ ] create new database for user 
+- [ ] create new database for tasks
