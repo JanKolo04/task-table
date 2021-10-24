@@ -33,52 +33,59 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Signup</title>
+	<meta charset="utf-8">
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="style-register.css">
+	<script type="text/javascript" src="login-script.js"></script>
 </head>
 <body>
 
-	<style type="text/css">
-	
-	#text{
+	<div class="main">
+		<div class="white-background">
 
-		height: 25px;
-		border-radius: 5px;
-		padding: 4px;
-		border: solid thin #aaa;
-		width: 100%;
-	}
 
-	#button{
-
-		padding: 10px;
-		width: 100px;
-		color: white;
-		background-color: lightblue;
-		border: none;
-	}
-
-	#box{
-
-		background-color: grey;
-		margin: auto;
-		width: 300px;
-		padding: 20px;
-	}
-
-	</style>
-
-	<div id="box">
 		
-		<form method="post">
-			<div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
+			<h1 id="text1">Register</h1>
+			<p id="text2">Enter login e-mail and password to create account</p>
 
-			<input id="text" type="text" name="user_name"><br><br>
-			<input id="text" type="password" name="password"><br><br>
+			<div class="allStuff">
+				<form method="post">
 
-			<input id="button" type="submit" value="Signup"><br><br>
+					<div class="login-email">
+						<div class="Login">
+							<center><input type="text" id="login" required placeholder="Login"></center>
+						</div>
 
-			<a href="login.php">Click to Login</a><br><br>
-		</form>
+						<div class="Email">
+							<center><input type="text" id="email" required placeholder="E-mail"></center>
+						</div>
+					</div>
+
+
+					<div class="passwords">
+						<div class="passwd1">
+							<center><input type="password" id="passwd" required placeholder="Password"></center>
+						</div>
+
+						<div class="passwd2">
+							<center><input type="password" id="rPasswd" required placeholder="Repeat Password"></center>
+						</div>
+					</div>
+
+
+					<div class="submit-login">
+						<div id="submit-div">
+							<input type="submit" value="Submit" class="submit" id="submit">
+						</div>
+
+						<div id="login-div">
+							<p id="loginText">If you have an account? <a id="loginLink" href="login.php">Login</a></p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
+
 </body>
 </html>

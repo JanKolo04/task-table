@@ -1,17 +1,21 @@
-body{   
-    background: #eee;  
-}  
-#frm{  
-    border: solid gray 1px;  
-    width:25%;  
-    border-radius: 2px;  
-    margin: 120px auto;  
-    background: white;  
-    padding: 50px;  
-}  
-#btn{  
-    color: #fff;  
-    background: #337ab7;  
-    padding: 7px;  
-    margin-left: 70%;  
-}  
+.container {
+    background-color: red;
+    margin-top: 10px;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.div1 {
+    background-color: green;
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.div2 {
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+}
