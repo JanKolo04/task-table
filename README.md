@@ -21,7 +21,7 @@ Website with tasks
 - [ ] make static text div to task div 
 - [x] add max text input lenght in password and login in register
 - [x] replace login frontend
-- [ ] make register page 
+- [x] make register page 
 - [ ] create documentation for php
 - [ ] ban users
 - [ ] create better database for user 
