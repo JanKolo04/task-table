@@ -17,13 +17,13 @@ Website with tasks
 
 
 ## TASKS
-- [ ] add SQL and PHP session for user
-- [ ] make static text div to task div 
+- [x] add SQL and PHP session for user
+- [x] add min-width to task place and text
 - [x] add max text input lenght in password and login in register
 - [x] replace login frontend
 - [x] make register page 
 - [ ] create documentation for php
 - [ ] ban users
 - [x] create diagram for databases
-- [ ] create better database for user 
+- [x] create better database for user 
 - [ ] create new database for tasks
