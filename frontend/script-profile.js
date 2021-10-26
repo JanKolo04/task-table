@@ -3,11 +3,6 @@ var taskNumber = 0;
 function add_task() {
 
 	//get tasks div
-	var tasks_div = document.getElementById("tasks_all");
-	var tasks_progress = document.getElementById("progress_task");
-	var tasks_end = document.getElementById("task_end");
-
-
 	var tasksHolder1 = document.getElementById("tasksHolder1");
 	var tasksHolder2 = document.getElementById("tasksHolder2");
 	var tasksHolder3 = document.getElementById("tasksHolder3");
@@ -142,7 +137,7 @@ function add_task() {
 
 		//disable add button
 		var addButton = document.getElementById("add_button");
-		//if task count is == 14 button has been disable
+		//if task count is == 10 button has been disable
 		if (allTaskNumber == 10) {
 			//disable
 			addButton.disabled = true;
