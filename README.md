@@ -23,5 +23,3 @@ Website with tasks
 - [x] create diagram for databases
 - [x] create database for user 
 - [ ] create database for tasks
-
-
