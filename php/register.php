@@ -7,20 +7,26 @@ session_start();
     $login = $_POST['login'];
     $email = $_POST['email'];
     $password = $_POST['passwd'];
-    $rpassword = $_POST['rpassword'];
+    $rpassword = $_POST['rpasswd'];
 
-    //adding to table
+
     $sql = "INSERT INTO users (login, email, password) VALUES ('$login', '$email', '$password')";
 
-    //if connection is aproved things has been added
-    if ($con->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } 
+    if(!empty($login) && !empty($email) && !empty($password) && !empty($rpassword)) {
+        if ($con->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } 
 
-    //else print error
-    else {
-        echo "Error: " . $sql . "<br>" . $con->error;
+        else {
+            echo "Error: " . $sql . "<br>" . $con->error;
+        }
     }
+
+    else {
+        $con->close();
+    }
+
+
 ?>
 
 
@@ -30,7 +36,7 @@ session_start();
 <head>
     <meta charset="utf-8">
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="style-register.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
