@@ -1,6 +1,7 @@
 body {
 	background-image: url("../images/background.jpeg");
-	overflow: hidden;
+	overflow: auto;
+	font-family: 'Trebuchet MS', sans-serif;
 }
 
 .baner {
@@ -60,9 +61,45 @@ body {
 	width: 100%;
   	display: flex;
   	flex-direction: row;
-  	align-items: center;
 }
 
+
+.inputDiv {
+	width: calc(100% - 170px);
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+#myText {
+	width: 98%;
+	margin-left: ;
+	height: 50px;
+	border: none;
+	border-radius: 5px;
+	font-size: 22px;
+	display: flex;
+	margin-left: 11px;
+	margin-right: 11px;
+}
+
+.buttonDiv {
+	width: 170px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.add_button {
+	font-size: 40px;
+	height: 50px;
+	width: 100px;
+	background-color: #11E58C;
+	border: none;
+	border-radius: 5px;
+}
 
 .main {
 	position: absolute;
@@ -72,28 +109,6 @@ body {
 	height: calc(100% - 160px);
 }
 
-
-#myText {
-	width: 90%;
-	height: 50px;
-	margin-left: 30px;
-	border: none;
-	border-radius: 5px;
-	font-size: 22px;
-	display: flex;
-}
-
-.add_button {
-	font-size: 40px;
-	height: 50px;
-	width: 90px;
-	background-color: #11E58C;
-	border: none;
-	border-radius: 5px;
-  	display: flex;
-  	margin-left: 20px;
-  	margin-right: 20px;
-}
 
 .texts {
 	position: absolute;
