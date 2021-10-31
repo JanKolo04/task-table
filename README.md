@@ -23,4 +23,4 @@ Website with tasks
 - [x] create diagram for databases
 - [x] create database for user 
 - [ ] create database for tasks
-- [ ] add scroll for main pager and relative baner
+- [ ] better design for profile page
