@@ -14,6 +14,7 @@ session_start();
 
     if(!empty($login) && !empty($email) && !empty($password) && !empty($rpassword)) {
         if ($con->query($sql) === TRUE) {
+            header("Location: login.php");
             echo "New record created successfully";
         } 
 
