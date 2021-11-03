@@ -25,3 +25,4 @@ Website with tasks
 - [ ] create database for tasks
 - [ ] better design for profile page
 - [ ] if inputs texts is empty adding to table has been blocked JS
+- [ ] add tasks to database
