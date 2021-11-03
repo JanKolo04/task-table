@@ -3,20 +3,19 @@
 session_start();
 
 	include("connection.php");
-	include("functions.php");
 
 
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		//something was posted
-		$user_name = $_POST['user_name'];
-		$password = $_POST['password'];
+		$login = $_POST['login'];
+		$password = $_POST['passwd'];
 
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
+		if(!empty($login) && !empty($password))
 		{
 
 			//read from database
-			$query = "select * from users where user_name = '$user_name' limit 1";
+			$query = "select * from users where login = '$login' limit 1";
 			$result = mysqli_query($con, $query);
 
 			if($result)
@@ -29,8 +28,7 @@ session_start();
 					if($user_data['password'] === $password)
 					{
 
-						$_SESSION['user_id'] = $user_data['user_id'];
-						header("Location: profile.php");
+						header("Location: profile.html");
 						die;
 					}
 				}
@@ -63,8 +61,8 @@ session_start();
 			<div class="allStuff">
 				
 				<form method="post">
-					<center><input type="text" name="user_name" class="login" required placeholder="Login" maxlength="20"></center>
-					<center><input type="password" name="password" class="passwd" required placeholder="Password" maxlength="30"></center>
+					<center><input type="text" name="login" class="login" required placeholder="Login" maxlength="20"></center>
+					<center><input type="password" name="passwd" class="passwd" required placeholder="Password" maxlength="30"></center>
 
 					<div id="forgot">
 						<a id="forgot-text" href="signup.php">Forgot password</a>
