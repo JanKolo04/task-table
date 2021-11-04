@@ -26,3 +26,6 @@ Website with tasks
 - [ ] better design for profile page
 - [ ] if inputs texts is empty adding to table has been blocked JS
 - [ ] add tasks to database
+- [ ] if password and repeat password didnt same submit dosent work
+- [ ] if some input is empty and clicnt click submit appears alert with comunicat
+- [ ] 2 previous tasks i must do to login page
