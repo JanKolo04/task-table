@@ -1,83 +1,87 @@
 <?php
+// Initialize the session
 session_start();
-
-    include("connection.php");
-
-    //posted items
-    $login = $_POST['login'];
-    $email = $_POST['email'];
-    $password = $_POST['passwd'];
-    $rpassword = $_POST['rpassword'];
-
-
-    $sql = "INSERT INTO users (login, email, password) VALUES ('$login', '$email', '$password')";
-
-    if ($con->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } 
-
-    else {
-        echo "Error: " . $sql . "<br>" . $con->error;
+ 
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: profil.html");
+    exit;
+}
+ 
+// Include config file
+require_once "connection.php";
+ 
+// Define variables and initialize with empty values
+$login = $password = "";
+$login_err = $password_err = $login_err = "";
+ 
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
+    // Check if login is empty
+    if(empty(trim($_POST["login"]))){
+        $login_err = "Please enter login.";
+    } else{
+        $login = trim($_POST["login"]);
     }
-?>
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-
-    <div class="main">
-        <div class="white-background">
-
-
+    
+    // Check if password is empty
+    if(empty(trim($_POST["passwd"]))){
+        $password_err = "Please enter your password.";
+    } else{
+        $password = trim($_POST["passwd"]);
+    }
+    
+    // Validate credentials
+    if(empty($login_err) && empty($password_err)){
+        // Prepare a select statement
+        $sql = "SELECT login, password FROM users WHERE login = ?";
         
-            <h1 id="text1">Register</h1>
-            <p id="text2">Enter login e-mail and password to create account</p>
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_login);
+            
+            // Set parameters
+            $param_login = $login;
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                // Store result
+                mysqli_stmt_store_result($stmt);
+                
+                // Check if login exists, if yes then verify password
+                if(mysqli_stmt_num_rows($stmt) == 1){                    
+                    // Bind result variables
+                    mysqli_stmt_bind_result($stmt, $id, $login, $hashed_password);
+                    if(mysqli_stmt_fetch($stmt)){
+                        if(password_verify($password, $hashed_password)){
+                            // Password is correct, so start a new session
+                            session_start();
+                            
+                            // Store data in session variables
+                            $_SESSION["login"] = $login;                            
+                            
+                            // Redirect user to welcome page
+                            header("location: profil.html");
+                        } else{
+                            // Password is not valid, display a generic error message
+                            $login_err = "Invalid login or password.";
+                        }
+                    }
+                } else{
+                    // login doesn't exist, display a generic error message
+                    $login_err = "Invalid login or password.";
+                }
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
 
-            <div class="allStuff">
-                <form method="post">
-
-                    <div class="login-email">
-                        <div class="Login">
-                            <center><input type="text" id="login" name="login" required placeholder="Login"></center>
-                        </div>
-
-                        <div class="Email">
-                            <center><input type="text" id="email" name="email" required placeholder="E-mail"></center>
-                        </div>
-                    </div>
-
-
-                    <div class="passwords">
-                        <div class="passwd1">
-                            <center><input type="password" id="passwd" name="passwd" required placeholder="Password"></center>
-                        </div>
-
-                        <div class="passwd2">
-                            <center><input type="password" id="rPasswd" name="rpasswd" required placeholder="Repeat Password"></center>
-                        </div>
-                    </div>
-
-
-                    <div class="submit-login">
-                        <div id="submit-div">
-                            <input type="submit" value="Submit" class="submit" id="submit">
-                        </div>
-
-                        <div id="login-div">
-                            <p id="loginText">If you have an account? <a id="loginLink" href="login.php">Login</a></p>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+    }
+    
+    // Close connection
+    mysqli_close($link);
+}
+?>

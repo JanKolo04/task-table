@@ -1,21 +1,10 @@
-function validation() {  
-	var id=document.f1.user.value;  
-	var ps=document.f1.pass.value;  
+function test() {
 
-	if(id.length=="" && ps.length=="") {  
-		alert("User Name and Password fields are empty");  
-		return false;  
-	}  
+	var passwd = document.getElementById("passwd");
+	var rpasswd = document.getElementById("rpasswd");
 
-	else {
-		if(id.length=="") {  
-			alert("User Name is empty");  
-			return false;
-		}   
-		
-		if (ps.length=="") {
-			alert("Password field is empty");  
-			return false;  
-		}  
-	}                             
-}  
+	if (passwd != rpasswd) {
+		alert("Passwords is difrends!");
+	}
+}
+
