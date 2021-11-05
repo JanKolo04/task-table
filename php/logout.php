@@ -1,6 +1,7 @@
 <?php
 
-session_start();
+include("login.php");
+
 
 if(isset($_SESSION['login']))
 {
@@ -8,5 +9,6 @@ if(isset($_SESSION['login']))
 
 }
 
-header("Location: login.php");
-die;
+$logged = 0;
+
+?>
