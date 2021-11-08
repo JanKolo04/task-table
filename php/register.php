@@ -13,9 +13,12 @@ session_start();
     $sql = "INSERT INTO users (login, email, password) VALUES ('$login', '$email', '$password')";
 
     if(!empty($login) && !empty($email) && !empty($password) && !empty($rpassword)) {
-        if ($con->query($sql) === TRUE) {
+        if ($password != $rpassword) {
+            session_start();
+        }
+
+        else if ($con->query($sql) === TRUE) {
             header("Location: login.php");
-            echo "New record created successfully";
         } 
 
         else {
@@ -37,7 +40,8 @@ session_start();
 <head>
     <meta charset="utf-8">
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style-register.css">
+    <script type="text/javascript" src="script-register.js"></script>
 </head>
 <body>
 
@@ -76,7 +80,7 @@ session_start();
 
                     <div class="submit-login">
                         <div id="submit-div">
-                            <input type="submit" value="Submit" class="submit" id="submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" onclick="correctPasswd()">
                         </div>
 
                         <div id="login-div">

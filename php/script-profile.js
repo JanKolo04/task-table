@@ -161,9 +161,6 @@ function add_task() {
 
 
 //load function when page has loaded
-window.onload = function() {
-	disableAdd();
-}
 
 
 //function fot disable add button

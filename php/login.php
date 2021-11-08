@@ -26,6 +26,11 @@ session_start();
 					
 					if($user_data['password'] == $password) {
 						$logged = 1;
+						$append = "INSERT INTO tasks (login) VALUES ('$login')";
+						$resultt = mysqli_query($con, $append);
+
+						echo "<script>console.log('how has login: " . $login . "' );</script>";
+						
 				
 					}
 
@@ -62,7 +67,7 @@ session_start();
 	<?php
 	if ($logged == 0) {
 		echo "
-		<div class='main'>
+		<div class='mainLogin'>
 			<div class='white-background'>
 			
 				<h1 id='text1'>Login</h1>
@@ -122,7 +127,7 @@ session_start();
 				</div>
 			</div>
 
-			<div class='main'>
+			<div class='mainProfile'>
 
 				<div class='texts'>
 				<!---text--->
@@ -162,6 +167,11 @@ session_start();
 
 
 	?>
+
+
+
+
+
 
 
 </body>

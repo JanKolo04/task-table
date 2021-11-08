@@ -11,4 +11,6 @@ if(isset($_SESSION['login']))
 
 $logged = 0;
 
+header("Location: login.php");
+
 ?>
