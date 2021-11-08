@@ -25,4 +25,6 @@ Website with tasks
 - [ ] create database for tasks
 - [ ] better design for profile page
 - [ ] add tasks to database
-- [ ] alerst showing after click sunnitów button in login page
+
+
+
