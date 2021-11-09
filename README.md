@@ -24,7 +24,7 @@ Website with tasks
 - [x] create database for user 
 - [ ] create database for tasks
 - [ ] better design for profile page
-- [ ] add tasks to database
+- [ ] add text from tasks to database
 
 
 
