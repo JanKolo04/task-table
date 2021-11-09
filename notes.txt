@@ -20,3 +20,5 @@ ID | login |  All  |  Progress | End
 
 
 6. Jeśli sesja sie zakończy wstawia dane do tabeli
+
+7. Jeśli jest duplikat loginu w rejstracji ponawia sesje
