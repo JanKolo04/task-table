@@ -146,7 +146,7 @@ session_start();
 				</div>
 
 
-				<!---taskt div--->
+				<!---task div--->
 				<div class='tasks'>
 					<div id='tasks_all'>
 						<div id='tasksHolder1'></div>
