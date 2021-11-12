@@ -22,9 +22,10 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 <body>
 <?php
 $html =  <<<HTML
+<form method="POST">
 	<div id="div1" style="width: 100px; height: 80px; background-color: red; text-align: center;">
-		<p id="text1">Div1</p>
-		<input type="submit" id="input1" name="input1" value="Click me!" onclick="return input1()">
+		<p id="text1">Siema</p>
+		<input type="submit" id="input1" name="input1" value="Click me!">
 	</div>
 
 
@@ -38,10 +39,13 @@ $html =  <<<HTML
 		<p id="text3">Div3</p>
 		<input type="submit" id="input3" name="input3" value="Click me!">
 	</div>
+</form>
 HTML;
 
 echo $html;
+
 ?>
+
 </body>
 </html>
 
@@ -53,15 +57,23 @@ $doc->loadHTML($html);
 
 $text = $doc->getElementById('text1');
 $output = $text->textContent;
-echo $output;
 
-function input1() {
+
+if(array_key_exists('input1', $_POST)) {
+	adding();
+
+}
+        
+
+
+function adding() {
 	global $output;
 	global $con;
 	$sql = "INSERT INTO tasks (login) VALUES ('$output')";
 	$query = mysqli_query($con, $sql);
 	echo "Done";
 }
+
 
 
 ?>
