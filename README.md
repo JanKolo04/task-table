@@ -26,6 +26,8 @@ Kiedy dane beda dodawane do bazy danych i aktualizowane:
   "progressTasks" do "endTasks".
 4.Gdy klikniemy przycisk remove task usunie sie 
   z kolumny "endTasks".
+
+INFO do zrobienia listy:
 ```
 
 
@@ -39,4 +41,5 @@ Kiedy dane beda dodawane do bazy danych i aktualizowane:
 - [ ] create database for tasks
 - [ ] better design for profile page
 - [x] add text from tasks to database
+- [ ] find info about php to make points from the list
 
