@@ -12,7 +12,21 @@ Website with tasks
 
 <img width="1792" alt="Zrzut ekranu 2021-10-13 o 23 57 15" src="https://user-images.githubusercontent.com/76879087/137218233-2020a9ee-90af-4d9c-8753-56c0f2ec5ae0.png">
 
+# Notes 
+```txt
 
+Kiedy dane beda dodawane do bazy danych i aktualizowane:
+
+1.Po kliknieciu przycisku add doda sie
+  task do bazy danych do kolumny "allTasks".
+2.Po kliknieciu przycisku progress przeniesie
+  sie task z "allTasks" do "progressTasks" i usunie sie
+  z columny "allTasks".
+3.Po zakonczeniu tasks task przeniesie sie z kolumny
+  "progressTasks" do "endTasks".
+4.Gdy klikniemy przycisk remove task usunie sie 
+  z kolumny "endTasks".
+```
 
 
 
@@ -25,5 +39,4 @@ Website with tasks
 - [ ] create database for tasks
 - [ ] better design for profile page
 - [x] add text from tasks to database
-
 
