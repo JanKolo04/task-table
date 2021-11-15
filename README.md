@@ -42,4 +42,5 @@ INFO do zrobienia listy:
 - [ ] better design for profile page
 - [x] add text from tasks to database
 - [ ] find info about php to make points from the list
+- [ ] add url links
 
