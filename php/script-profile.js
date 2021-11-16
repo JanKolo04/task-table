@@ -40,6 +40,7 @@ function add_task() {
 	task.appendChild(textDiv);
 	//add class to span
 	textDiv.className = "textDiv";
+	textDiv.id = "textDiv";
 
 	//append text from text input to task
 	textDiv.innerHTML = document.querySelector('#myText').value;

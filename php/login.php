@@ -1,7 +1,5 @@
 <?php 
 
-session_start();
-
 
 	include("connection.php");
 
@@ -25,11 +23,13 @@ session_start();
 					$user_data = mysqli_fetch_assoc($result);
 					
 					if($user_data['password'] == $password) {
+						echo "<script>console.log('how has login: " . $login . "' );</script>";
 						$logged = 1;
+
+						//whoes has been loged
+						//append login to table 
 						$append = "INSERT INTO tasks (login) VALUES ('$login')";
 						$resultt = mysqli_query($con, $append);
-
-						echo "<script>console.log('how has login: " . $login . "' );</script>";
 						
 				
 					}
@@ -65,6 +65,7 @@ session_start();
 </head>
 <body>
 	<?php
+
 	if ($logged == 0) {
 		echo "
 		<div class='mainLogin'>
@@ -98,81 +99,86 @@ session_start();
 	}
 
 	else {
-		echo "
-			
+		include_once("functions.php");
+		if ($logged == 1)
+			header("Location: login.php");
+		$html = <<<HTML
+		<form method="POST">
 			<script>
 				disableAdd();
 			</script>
 
-			<div class='baner'>
-				<div class='textBaner'>
-					<h1 id='banerText'>TASK BOARD</h1>
+			<div class="baner">
+				<div class="textBaner">
+					<h1 id="banerText">TASK BOARD</h1>
 				</div>
 
-				<div class='linkBaner'>
-					<a href='logout.php' id='logoutLink'>Logout</a>
+				<div class="linkBaner">
+					<a href="logout.php" id="logoutLink">Logout</a>
 				</div>
 			</div>
 
 
-			<div class='header'>		
+			<div class="header">		
 				<!---input text---->
-				<div class='inputDiv'>
-					<input type='text' id='myText' required size='1' placeholder='Task...'>
+				<div class="inputDiv">
+					<input type="text" id="myText" required size="1" placeholder="Task...">
 				</div>
 
 				<!---add button--->
-				<div class='buttonDiv'>
-					<button class='add_button' id='add_button' onclick='add_task()'>Add</button>
+				<div class="buttonDiv">
+					<input type="submit" class="add_button" id="add_button" name="add_button" onclick="add_task()" value="Add">
 				</div>
 			</div>
 
-			<div class='mainProfile'>
+			<div class="mainProfile">
 
-				<div class='texts'>
+				<div class="texts">
 				<!---text--->
-					<div class='text1'>
-						<h1 class='all_task_text' id='all_task_text'>All tasks: 0</h1>
+					<div class="text1">
+						<h1 class="all_task_text" id="all_task_text">All tasks: 0</h1>
 					</div>
 
-					<div class='text2'>
-						<h1 class='tasks_in_progress' id='tasks_in_progress'>Tasks in progress: 0</h1>
+					<div class="text2">
+						<h1 class="tasks_in_progress" id="tasks_in_progress">Tasks in progress: 0</h1>
 					</div>
 
-					<div class='text3'>
-						<h1 class='end_tasks' id='end_tasks'>End tasks: 0</h1>
+					<div class="text3">
+						<h1 class="end_tasks" id="end_tasks">End tasks: 0</h1>
 					</div>
 					
 				</div>
 
 
 				<!---task div--->
-				<div class='tasks'>
-					<div id='tasks_all'>
-						<div id='tasksHolder1'></div>
+				<div class="tasks">
+					<div id="tasks_all">
+						<div id="tasksHolder1"></div>
 					</div>
 
-					<div id='progress_task'>
-						<div id='tasksHolder2'></div>
+					<div id="progress_task">
+						<div id="tasksHolder2"></div>
 					</div>
 
-					<div id='task_end'>
-						<div id='tasksHolder3'></div>
+					<div id="task_end">
+						<div id="tasksHolder3"></div>
 					</div>
 				</div>
 			</div>
-		";
+		</form>
+		HTML;
 
+		echo $html;
 	}
-
-
 	?>
-
-
-
-
-
-
 
 </body>
 </html>
+
+
+
+
+
+
+
+
