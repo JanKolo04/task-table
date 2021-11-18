@@ -35,10 +35,7 @@ INFO do zrobienia listy:
 
 
 ## TASKS
-- [ ] create new login system
-- [x] make register page 
 - [ ] ban users
-- [x] create diagram for databases
 - [x] create database for user 
 - [ ] create database for tasks
 - [ ] better design for profile page
