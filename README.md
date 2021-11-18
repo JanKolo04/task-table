@@ -45,4 +45,5 @@ INFO do zrobienia listy:
 - [x] add text from tasks to database
 - [ ] find info about php to make points from the list
 - [ ] add url links
+- [ ] fix problem with comunnicat in register 'password is difrents'
 
