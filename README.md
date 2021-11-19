@@ -27,7 +27,8 @@ Kiedy dane beda dodawane do bazy danych i aktualizowane:
 4.Gdy klikniemy przycisk remove task usunie sie 
   z kolumny "endTasks".
   
-  
+
+Sprawdzenie mozliwosci wysłania tasków p zamknieciu sesji
 
 INFO do zrobienia listy:
 ```
