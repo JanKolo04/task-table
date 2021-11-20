@@ -99,9 +99,6 @@
 	}
 
 	else {
-		include_once("functions.php");
-		if ($logged == 1)
-			header("Location: login.php");
 		$html = <<<HTML
 		<form method="POST">
 			<script>
