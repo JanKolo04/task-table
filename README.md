@@ -43,5 +43,5 @@ INFO do zrobienia listy:
 - [x] add text from tasks to database
 - [ ] find info about php to make points from the list
 - [ ] add url links
-- [x] fix problem with comunnicat in register 'password is difrents'
+- [ ] fix problem with 2 undefited offset in adding taslk to data base
 
