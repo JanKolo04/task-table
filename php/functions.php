@@ -37,7 +37,7 @@ $html = <<<HTML
 				<p class="textP">Na przycisk3</p>
 			</div>
 
-			<div id="div3" style="width: 100px; height: 80px; background-color: red; text-align: center;">
+			<div id="div4" style="width: 100px; height: 80px; background-color: red; text-align: center;">
 				<p class="textP">Na przycisk4</p>
 			</div>
 		</div>
@@ -63,21 +63,27 @@ function adding() {
     $spans = $a->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
 
     for ($i = $spans->length - 1; $i > -1; $i--) {
-        $result[] = $spans->item($i)->firstChild->nodeValue;
-        $result2 = $result[$i];
-		$sql = "INSERT INTO tasks (tasks, progress, endTask) VALUES ('$result2', NULL, NULL)";
-		$query = mysqli_query($con, $sql);
-		echo "Done";
-
-       
+        $result[] = $spans->item($i)->firstChild->nodeValue;  
     }
+
     echo "<pre>";
     print_r($result);
+
+
+
+  	$len = count($result);
+
+    for($y=$len-1; $y>=0; $y--){
+      	echo $result[$y]."<br>";
+	    $sql = "INSERT INTO tasks (tasks, progress, endTask) VALUES ('$result[$y]', NULL, NULL)";
+		$query = mysqli_query($con, $sql);
+    }
 }
 
 
 	/*
-
+	    $sql = "INSERT INTO tasks (tasks, progress, endTask) VALUES ('$result[$y]', NULL, NULL)";
+		$query = mysqli_query($con, $sql);
 	*/
 
 ?>
