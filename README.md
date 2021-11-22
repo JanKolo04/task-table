@@ -43,5 +43,6 @@ INFO do zrobienia listy:
 - [x] add text from tasks to database
 - [ ] find info about php to make points from the list
 - [ ] add url links
-- [ ] fix problem with 2 undefited offset in adding taslk to data base
+- [x] fix problem with 2 undefited offset in adding taslk to data base
+- [ ] read about cookies
 
