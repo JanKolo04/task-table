@@ -45,5 +45,5 @@ INFO do zrobienia listy:
 - [ ] add custom url links
 - [x] fix problem with 2 undefited offset in adding taslk to data base
 - [ ] best way to adding task to database (not algorithm)
-- [ ] learn something about jQuery session checking
+- [ ] if client close webite or some send data to databse
 
