@@ -44,6 +44,6 @@ INFO do zrobienia listy:
 - [ ] find info about php to make points from the list
 - [ ] add custom url links
 - [x] fix problem with 2 undefited offset in adding taslk to data base
-- [ ] best way to adding task to database (not algorithm)
+- [x] best way to adding task to database (not algorithm)
 - [ ] if client close webite or some send data to databse
 
