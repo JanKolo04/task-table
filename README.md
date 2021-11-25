@@ -46,4 +46,5 @@ INFO do zrobienia listy:
 - [x] fix problem with 2 undefited offset in adding taslk to data base
 - [x] best way to adding task to database (not algorithm)
 - [ ] if client close webite or some send data to databse
+- [ ] add function adding task to database to main file
 
