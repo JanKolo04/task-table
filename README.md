@@ -38,10 +38,12 @@ INFO do zrobienia listy:
 ## TASKS
 - [ ] ban users
 - [x] create database for user 
-- [ ] create database for tasks
+- [x] create database for tasks
 - [ ] better design for profile page
 - [x] add text from tasks to database
 - [ ] find info about php to make points from the list
-- [ ] add url links
-- [ ] fix problem with 2 undefited offset in adding taslk to data base
+- [ ] add custom url links
+- [x] fix problem with 2 undefited offset in adding taslk to data base
+- [ ] best way to adding task to database (not algorithm)
+- [ ] learn something about jQuery session checking
 
