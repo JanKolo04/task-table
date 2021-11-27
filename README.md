@@ -17,15 +17,16 @@ Website with tasks
 
 Kiedy dane beda dodawane do bazy danych i aktualizowane:
 
-1.Po kliknieciu przycisku add doda sie
-  task do bazy danych do kolumny "allTasks".
-2.Po kliknieciu przycisku progress przeniesie
-  sie task z "allTasks" do "progressTasks" i usunie sie
-  z columny "allTasks".
-3.Po zakonczeniu tasks task przeniesie sie z kolumny
-  "progressTasks" do "endTasks".
-4.Gdy klikniemy przycisk remove task usunie sie 
-  z kolumny "endTasks".
+1. po zalogowaniu pokaze sie komunikat o tym, że 
+   trzeba sie wylogować zeby sesja sie zamneła i 
+   dane zostały zapisane
+  
+2. gdy uzytkownik kliknie checkbox w komunikacie 
+   nie zostanie wieej wysietlony dane o kliknieciu przyciusku
+   zostana zapisane w bazie danych
+   
+3. po zalogowaniu ponwnym sciagnie taski dla zalogowanego
+   uzytkownika
   
 
 Sprawdzenie mozliwosci wysłania tasków p zamknieciu sesji
@@ -47,4 +48,5 @@ INFO do zrobienia listy:
 - [x] best way to adding task to database (not algorithm)
 - [ ] if client close webite or some send data to databse
 - [ ] add function adding task to database to main file
+- [ ] add max lenhgt to input text
 
