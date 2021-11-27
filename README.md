@@ -48,4 +48,5 @@ INFO do zrobienia listy:
 - [x] best way to adding task to database (not algorithm)
 - [ ] if client close webite or some send data to databse
 - [ ] add function adding task to database to main file
+- [ ] add max lenhgt to input text
 
