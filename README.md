@@ -42,11 +42,7 @@ INFO do zrobienia listy:
 - [x] create database for tasks
 - [ ] better design for profile page
 - [x] add text from tasks to database
-- [ ] find info about php to make points from the list
 - [ ] add custom url links
-- [x] fix problem with 2 undefited offset in adding taslk to data base
-- [x] best way to adding task to database (not algorithm)
-- [ ] if client close webite or some send data to databse
 - [ ] add function adding task to database to main file
 - [ ] add max lenhgt to input text
 
