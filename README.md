@@ -45,5 +45,5 @@ INFO do zrobienia listy:
 - [ ] add custom url links
 - [ ] add function adding task to database to main file
 - [ ] add max lenhgt to input text
-- [ ] how to appload data form page to db
+- [ ] how to import array from js to php
 
