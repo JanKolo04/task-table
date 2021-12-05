@@ -37,7 +37,6 @@ INFO do zrobienia listy:
 
 
 ## TASKS
-- [ ] ban users
 - [x] create database for user 
 - [x] create database for tasks
 - [x] add text from tasks to database
