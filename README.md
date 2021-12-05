@@ -40,11 +40,11 @@ INFO do zrobienia listy:
 - [ ] ban users
 - [x] create database for user 
 - [x] create database for tasks
-- [ ] better design for profile page
 - [x] add text from tasks to database
 - [ ] add custom url links
 - [ ] add function adding task to database to main file
 - [ ] add max lenhgt to input text
 - [ ] how to import array from js to php
 - [ ] check if it button can start js and php function in same time
+- [ ] frontend for main page
 
