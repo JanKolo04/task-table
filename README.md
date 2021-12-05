@@ -46,4 +46,5 @@ INFO do zrobienia listy:
 - [ ] add function adding task to database to main file
 - [ ] add max lenhgt to input text
 - [ ] how to import array from js to php
+- [ ] check if it button can start js funvtion and php
 
