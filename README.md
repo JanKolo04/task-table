@@ -37,9 +37,7 @@ INFO do zrobienia listy:
 
 
 ## TASKS
-- [x] create database for user 
-- [x] create database for tasks
-- [x] add text from tasks to database
+- [x] add data from tasks to database
 - [ ] add custom url links
 - [ ] add function adding task to database to main file
 - [ ] add max lenhgt to input text
