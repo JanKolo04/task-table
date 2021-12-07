@@ -45,3 +45,7 @@ INFO do zrobienia listy:
 - [ ] check if it button can start js and php function in same time
 - [ ] frontend for main page
 
+
+
+
+
