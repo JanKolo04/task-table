@@ -44,6 +44,9 @@ INFO do zrobienia listy:
 - [ ] how to import array from js to php
 - [ ] check if it button can start js and php function in same time
 - [ ] frontend for main page
+- [ ] administrator panel
+- [ ] forgot password method
+- [ ] sending email when user try change password
 
 
 
