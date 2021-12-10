@@ -126,13 +126,13 @@ function add_task() {
 
 	  	//all data from all tasks
 	  	var allTaskNumber = tasksHolder1.children.length;
-	  	text1.innerHTML = "All tasks: " + allTaskNumber;
+	  	text1.innerHTML = "All tasks " + allTaskNumber;
 	  	//all data from div progress
 	  	var progressTaskNumber = tasksHolder2.children.length;
-	  	text2.innerHTML = "Tasks in progress: " + progressTaskNumber;
+	  	text2.innerHTML = "Tasks in progress " + progressTaskNumber;
 	  	//all data from end task
 	  	var endTaskNumber = tasksHolder3.children.length;
-	  	text3.innerHTML = "End tasks: " + endTaskNumber;
+	  	text3.innerHTML = "End tasks " + endTaskNumber;
 
 
 		//disable add button
