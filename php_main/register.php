@@ -9,12 +9,11 @@ session_start();
     $password = $_POST['passwd'];
     $rpassword = $_POST['rpasswd'];
 
-
     $sql = "INSERT INTO users (login, email, password) VALUES ('$login', '$email', '$password')";
 
     if(!empty($login) && !empty($email) && !empty($password) && !empty($rpassword)) {
         if ($password != $rpassword) {
-            session_start();
+            echo '<script type="text/javascript">alert("Passwords is difrends!");</script>';
         }
 
         else if ($con->query($sql) === TRUE) {
@@ -41,7 +40,6 @@ session_start();
     <meta charset="utf-8">
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="style-register.css">
-    <script type="text/javascript" src="script-register.js"></script>
 </head>
 <body>
 

@@ -1,5 +1,6 @@
 <?php 
 
+session_start();
 
 	include("connection.php");
 
@@ -99,6 +100,8 @@
 	}
 
 	else {
+
+
 		$html = <<<HTML
 		<form method="POST">
 			<script>
@@ -124,7 +127,7 @@
 
 				<!---add button--->
 				<div class="buttonDiv">
-					<input type="submit" class="add_button" id="add_button" name="add_button" onclick="add_task()" value="Add">
+					<button class="add_button" id="add_button" onclick="add_task()">Add</button>
 				</div>
 			</div>
 
@@ -166,33 +169,7 @@
 		HTML;
 
 		echo $html;
-
-
-		function adding() {
-			global $con;
-			global $html;
-		    $classname = "taskHolder1";
-		    $domdocument = new DOMDocument();
-		    $domdocument->loadHTML($html);
-		    $a = new DOMXPath($domdocument);
-		    $spans = $a->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
-
-		    for ($i = $spans->length - 1; $i > -1; $i--) {
-		        $result[] = $spans->item($i)->firstChild->nodeValue;  
-		    }
-
-
-		  	$len = count($result);
-
-		    for($y=$len-1; $y>=0; $y--){
-		      	echo $result[$y]."<br>";
-			    $sql = "INSERT INTO tasks (tasks, progress, endTask) VALUES ('$result[$y]', NULL, NULL)";
-				$query = mysqli_query($con, $sql);
-		    }
-		}
 	}
-
-
 	?>
 
 </body>
