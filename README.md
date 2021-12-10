@@ -15,23 +15,9 @@ Website with tasks
 # Notes 
 ```txt
 
-Kiedy dane beda dodawane do bazy danych i aktualizowane:
+Ajax HTTP request for for get variable form js to php
 
-1. po zalogowaniu pokaze sie komunikat o tym, że 
-   trzeba sie wylogować zeby sesja sie zamneła i 
-   dane zostały zapisane
-  
-2. gdy uzytkownik kliknie checkbox w komunikacie 
-   nie zostanie wieej wysietlony dane o kliknieciu przyciusku
-   zostana zapisane w bazie danych
-   
-3. po zalogowaniu ponwnym sciagnie taski dla zalogowanego
-   uzytkownika
-  
 
-Sprawdzenie mozliwosci wysłania tasków p zamknieciu sesji
-
-INFO do zrobienia listy:
 ```
 
 
