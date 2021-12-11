@@ -183,44 +183,7 @@ function disableAdd() {
 }
 
 
-//function to disable adding to progress tab
-function disableTab() {
-	setInterval(function() {
 
-		//holder1
-		var taskHolder1 = document.getElementById("tasksHolder1");
-		//count elements in holder 1
-		var countHolder1 = tasksHolder1.children.length;
-
-		//holder2
-		var taskHolder2 = document.getElementById("tasksHolder2");
-		//count elements in holder 2
-		var countHolder2 = tasksHolder2.children.length;
-
-		//holder3
-		var taskHolder3 = document.getElementById("tasksHolder3");
-		//count elements in holder 3
-		var countHolder3 = tasksHolder3.children.length;
-
-		//take button
-		var take = document.getElementsByClassName("takeButton");
-		var complete = document.getElementsByClassName("completeButton");
-
-
-		if((countHolder2 == 10) && (countHolder3 == 10)) {
-			take.disabled = true;
-			complete.disabled = true;
-		}
-
-		else if(countHolder2 == 10) 
-			take.disabled = true;
-
-		else if(countHolder3 == 10)
-			complete.disabled = true;
-
-		//refresh function always in 1 sec
-	},1)
-}
 
 
 
