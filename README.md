@@ -32,6 +32,7 @@ Ajax HTTP request for for get variable form js to php
 - [ ] administrator panel
 - [ ] forgot password method
 - [ ] sending email when user try change password
+- [ ] check why button didnt disabled after make fucntion with class fo button
 
 
 
