@@ -150,6 +150,7 @@ function add_task() {
 window.onload = function() {
 	disableAdd();
 	disableTab();
+	disableTab2();
 }
 
 //function fot disable add button
@@ -183,9 +184,79 @@ function disableAdd() {
 }
 
 
+//function to disable adding to progress tab
+function disableTab() {
+	setInterval(function() {
 
+		//holder1
+		var taskHolder1 = document.getElementById("tasksHolder1");
+		//count elements in holder 1
+		var countHolder1 = tasksHolder1.children.length;
 
+		//holder2
+		var taskHolder2 = document.getElementById("tasksHolder2");
+		//count elements in holder 2
+		var countHolder2 = tasksHolder2.children.length;
 
+		//holder3
+		var taskHolder3 = document.getElementById("tasksHolder3");
+		//count elements in holder 3
+		var countHolder3 = tasksHolder3.children.length;
+
+		//take buttons
+		var take = document.getElementsByClassName("takeButton");
+		var complete = document.getElementsByClassName("completeButton");
+
+		//number of take button
+		var buttonCount1 = take.length;
+
+		for(var i=0; i<buttonCount1; ++i) {
+			//if progress holder have 10 tasks take button will be disabled
+			if(countHolder2 == 10) {
+				//off button
+				take[i].disabled = true;
+			}
+
+			else {
+				//on button
+				take[i].disabled = false;
+			}	
+		}
+
+		//refresh function always in 1 sec
+	},1)
+}
+
+function disableTab2() {
+	setInterval(function() {
+		//complete button
+		var complete = document.getElementsByClassName("completeButton");
+		
+		//holder3
+		var taskHolder3 = document.getElementById("tasksHolder3");
+		//count elements in holder 3
+		var countHolder3 = tasksHolder3.children.length;
+
+		//number of complete button
+		var buttonCount2 = complete.length;
+		
+		for (var y=0; y<buttonCount2; ++y) {
+			//if holder have 10 tasks complete button will be disabled
+			if(countHolder3 == 10) {
+				//off button
+				complete[y].disabled = true;
+			}
+
+			//but when holder have less than 10 tasks button still be on
+			else {
+				//on button
+				complete[y].disabled = false;
+			}
+		}
+
+		//refresh function always in 1 sec
+	}, 1)
+}
 
 
 
