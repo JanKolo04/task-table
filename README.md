@@ -4,13 +4,14 @@ Website with tasks
 
 # Login page frontend
 
-<img width="1792" alt="Zrzut ekranu 2021-10-14 o 19 08 27" src="https://user-images.githubusercontent.com/76879087/137364556-9575ea6a-6755-4539-97b2-52bbb51ca2ec.png">
+![image](https://user-images.githubusercontent.com/76879087/145688365-00ae34f6-48c9-4bb4-8eb5-b9e436a6c501.png)
 
 
 
 # Actually website design
 
-<img width="1792" alt="Zrzut ekranu 2021-10-13 o 23 57 15" src="https://user-images.githubusercontent.com/76879087/137218233-2020a9ee-90af-4d9c-8753-56c0f2ec5ae0.png">
+![image](https://user-images.githubusercontent.com/76879087/145688339-83651a1a-93d9-4833-a007-7beae855e9e5.png)
+
 
 # Notes 
 ```txt
@@ -27,12 +28,11 @@ Ajax HTTP request for for get variable form js to php
 - [ ] add custom url links
 - [ ] add function adding task to database to main file
 - [ ] add max lenhgt to input text
-- [ ] how to import array from js to php
-- [ ] check if it button can start js and php function in same time
-- [ ] frontend for main page
+- [x] frontend for main page
 - [ ] administrator panel
 - [ ] forgot password method
 - [ ] sending email when user try change password
+- [ ] check why button didnt disabled after make fucntion with class fo button
 
 
 
