@@ -12,16 +12,8 @@ body {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-}
-
-#shadow {
 	background-color: white;
-	opacity: 0.6;
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 80px;
-	width: 100%;
+	box-shadow: 10px 6px 5px #d9d9d9;
 }
 
 .textBaner {
@@ -36,6 +28,7 @@ body {
 #banerText {
 	font-size: 32px;
 	color: #0066ff;
+	text-shadow: 2px 2px #d9d9d9;
 }
 
 
@@ -120,6 +113,16 @@ body {
 
 
 .add_button {
+	font-size: 40px;
+	height: 50px;
+	width: 100px;
+	background-color: #66a3ff;
+	border: none;
+	border-radius: 5px;
+	color: white;
+}
+
+.add_button:hover {
 	font-size: 40px;
 	height: 50px;
 	width: 100px;
@@ -220,12 +223,13 @@ body {
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 	background-color: white;
+	box-shadow: 0px 10px 5px -3px #d9d9d9;
 }
 
 
 #tasksHolder1 {
 	display: flex;
-	width: 77%;
+	width: 80%;
 	height: 620px;
 	margin: auto;
 	flex-direction: column;
@@ -235,7 +239,7 @@ body {
 
 
 /*task*/
-.taskClass {
+.taskBody {
 	display: flex;
 	flex-direction: column;
 	height: 100px;
@@ -273,38 +277,38 @@ body {
 }
 
 
-#progressButton {
+#takeButton {
 	display: flex;
 	margin: 4.5px;
 	border-radius: 5px;
 	border: none;
 	width: 60px;
 	height: 20px;
-	background-color: green;
+	background-color: #33cc33;
   	justify-content: center;
   	align-items: center;
 }
 
-#endButton {
+#completeButton {
 	display: flex;
 	margin: 4.5px;
 	border-radius: 5px;
 	border: none;
 	width: 60px;
 	height: 20px;
-	background-color: green;
+	background-color: #33cc33;
   	justify-content: center;
   	align-items: center;	
 }
 
-#deleteButton {
+#removeButton {
 	display: flex;
 	margin: 4.5px;
 	border-radius: 5px;
 	border: none;
 	width: 60px;
 	height: 20px;
-	background-color: red;	
+	background-color: #ff0000;	
 	justify-content: center;
   	align-items: center;
 }
@@ -319,11 +323,12 @@ body {
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 	background-color: white;
+	box-shadow: 0 10px 5px -3px #d9d9d9;
 }
 
 #tasksHolder2 {
 	display: flex;
-	width: 77%;
+	width: 80%;
 	height: 620px;
 	margin: auto;
 	flex-direction: column;
@@ -342,11 +347,12 @@ body {
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 	background-color: white;
+	box-shadow: 0 10px 5px -3px #d9d9d9;
 }
 
 #tasksHolder3 {
 	display: flex;
-	width: 77%;
+	width: 80%;
 	height: 620px;
 	margin: auto;
 	flex-direction: column;
