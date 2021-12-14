@@ -27,14 +27,22 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 
 <?php
 
-$komenda = $_POST['pole'];
-
-$query = mysqli_query($con, $komenda);
-
-foreach ($query as $row) {
-	echo "<pre>";
-	print_r($row);
+if(array_key_exists('submit', $_POST)) {
+	printTable();
 }
+
+function printTable() {
+	global $con;
+	$komenda = $_POST['pole'];
+
+	$query = mysqli_query($con, $komenda);
+
+	foreach ($query as $row) {
+		echo "<pre>";
+		print_r($row);
+	}
+}
+
 
 ?>
 
