@@ -33,7 +33,7 @@ function add_task() {
 	}
 
 	//add class to task
-	task.className = "taskClass";
+	task.className = "taskBody";
 
 	//create text div
 	var textDiv = document.createElement("DIV");
@@ -56,25 +56,29 @@ function add_task() {
 
 
 	//create delete button
-	var deleteButton = document.createElement("BUTTON");
+	var removeButton = document.createElement("BUTTON");
 	//add name into button
-	deleteButton.innerHTML = "Remove";
+	removeButton.innerHTML = "Remove";
 	//id for delete button
-	deleteButton.id = "deleteButton";
+	removeButton.id = "removeButton";
+	//class name
+	removeButton.className = "removeButton";
 
 	//append delete button to taskBelt
-	taskBelt.appendChild(deleteButton);
+	taskBelt.appendChild(removeButton);
 
 
 	//create progress button
-	var progressButton = document.createElement("BUTTON");
+	var takeButton = document.createElement("BUTTON");
 	//add name into button
-	progressButton.innerHTML = "Take";
+	takeButton.innerHTML = "Take";
 	//id for progress button
-	progressButton.id = "progressButton";
+	takeButton.id = "takeButton";
+	//class name 
+	takeButton.className = "takeButton";
 
 	//append button to taskBelt
-	taskBelt.appendChild(progressButton);
+	taskBelt.appendChild(takeButton);
 
 
   	//clear text input
@@ -82,19 +86,21 @@ function add_task() {
 
 
 	//create end task button
-	var endButton = document.createElement("BUTTON");
+	var completeButton = document.createElement("BUTTON");
 	//get id for end button
-	endButton.id = "endButton";
+	completeButton.id = "completeButton";
+	//class name
+	completeButton.className = "completeButton";
 	//append text 
-	endButton.innerHTML = "Complete";
+	completeButton.innerHTML = "Complete";
 
 
-	//Inscruction for progress button
-	progressButton.onclick = function() {
-		//add class to task
-		task.className = "taskClass"; 
-		//append end button
-		taskBelt.appendChild(endButton);
+	//Inscruction for take button
+	takeButton.onclick = function() {
+		//remove take button from task belt
+		takeButton.remove();
+		//append end button to task belt
+		taskBelt.appendChild(completeButton);
 		//append task to progress
 		tasksHolder2.appendChild(task);
 		//remove task from all
@@ -102,10 +108,10 @@ function add_task() {
 	}
 
 
-	//instruction for end button
-	endButton.onclick = function() {
-		//add class to task
-		task.className = "taskClass"; 
+	//instruction for complete button
+	completeButton.onclick = function() {
+		//remove end complete button from task belt
+		completeButton.remove();
 		//append task to end task
 		tasksHolder3.appendChild(task);
 		//remove task from progress
@@ -115,7 +121,7 @@ function add_task() {
 
 
 	//inscruction for delete button
-	deleteButton.onclick = function() {
+	removeButton.onclick = function() {
 		//delete task
 		task.remove();
 	}
@@ -127,34 +133,13 @@ function add_task() {
 
 	  	//all data from all tasks
 	  	var allTaskNumber = tasksHolder1.children.length;
-	  	text1.innerHTML = "All tasks: " + allTaskNumber;
+	  	text1.innerHTML = "All tasks " + allTaskNumber;
 	  	//all data from div progress
 	  	var progressTaskNumber = tasksHolder2.children.length;
-	  	text2.innerHTML = "Tasks in progress: " + progressTaskNumber;
+	  	text2.innerHTML = "Tasks in progress " + progressTaskNumber;
 	  	//all data from end task
 	  	var endTaskNumber = tasksHolder3.children.length;
-	  	text3.innerHTML = "End tasks: " + endTaskNumber;
-
-
-		//disable add button
-		var addButton = document.getElementById("add_button");
-		//if task count is == 10 button has been disable
-		if (allTaskNumber == 10) {
-			//disable
-			addButton.disabled = true;
-		}
-
-		//chech if task is in progress div
-		if (tasksHolder2.contains(task)) {
-			//remove progress button
-			progressButton.remove();
-		} 
-
-		//check if task is in end div
-		if (tasksHolder3.contains(task)) {
-			//remove end button
-			endButton.remove();
-		}
+	  	text3.innerHTML = "End tasks " + endTaskNumber;
 
 	}, 1);
 }
@@ -162,7 +147,11 @@ function add_task() {
 
 
 //load function when page has loaded
-
+window.onload = function() {
+	disableAdd();
+	disableTab();
+	disableTab2();
+}
 
 //function fot disable add button
 function disableAdd() {
@@ -172,8 +161,15 @@ function disableAdd() {
 		var addButton = document.getElementById("add_button");
 		//input text value
 	  	var inputLenght = document.getElementById('myText').value.length;
+
+	  	var taskHolder1 = document.getElementById("tasksHolder1");
+	  	var countTask = tasksHolder1.children.length;
+
+	  	if ((inputLenght > 0) && (countTask == 10)) {
+	  		addButton.disabled = true;
+	  	}
 	  	
-	  	if (inputLenght == 0) {
+	  	else if (inputLenght == 0) {
 	  		//disable Add button
 	  		addButton.disabled = true;
 	  	}
@@ -183,8 +179,91 @@ function disableAdd() {
 	  		addButton.disabled = false;
 	  	}
 
+		//refresh function always in 1 sec
 	}, 1);
 }
+
+
+//function to disable adding to progress tab
+function disableTab() {
+	setInterval(function() {
+
+		//holder1
+		var taskHolder1 = document.getElementById("tasksHolder1");
+		//count elements in holder 1
+		var countHolder1 = tasksHolder1.children.length;
+
+		//holder2
+		var taskHolder2 = document.getElementById("tasksHolder2");
+		//count elements in holder 2
+		var countHolder2 = tasksHolder2.children.length;
+
+		//holder3
+		var taskHolder3 = document.getElementById("tasksHolder3");
+		//count elements in holder 3
+		var countHolder3 = tasksHolder3.children.length;
+
+		//take buttons
+		var take = document.getElementsByClassName("takeButton");
+		var complete = document.getElementsByClassName("completeButton");
+
+		//number of take button
+		var buttonCount1 = take.length;
+
+		for(var i=0; i<buttonCount1; ++i) {
+			//if progress holder have 10 tasks take button will be disabled
+			if(countHolder2 == 10) {
+				//off button
+				take[i].disabled = true;
+			}
+
+			else {
+				//on button
+				take[i].disabled = false;
+			}	
+		}
+
+		//refresh function always in 1 sec
+	},1)
+}
+
+function disableTab2() {
+	setInterval(function() {
+		//complete button
+		var complete = document.getElementsByClassName("completeButton");
+		
+		//holder3
+		var taskHolder3 = document.getElementById("tasksHolder3");
+		//count elements in holder 3
+		var countHolder3 = tasksHolder3.children.length;
+
+		//number of complete button
+		var buttonCount2 = complete.length;
+		
+		for (var y=0; y<buttonCount2; ++y) {
+			//if holder have 10 tasks complete button will be disabled
+			if(countHolder3 == 10) {
+				//off button
+				complete[y].disabled = true;
+			}
+
+			//but when holder have less than 10 tasks button still be on
+			else {
+				//on button
+				complete[y].disabled = false;
+			}
+		}
+
+		//refresh function always in 1 sec
+	}, 1)
+}
+
+
+
+
+
+
+
 
 
 

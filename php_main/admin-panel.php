@@ -76,5 +76,3 @@ function printTable() {
 
 
 
-
-

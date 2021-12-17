@@ -1,5 +1,5 @@
 body {
-	background-image: url("images/background.jpeg");
+	background-color: #f2f2f2;
 	overflow: auto;
 	font-family: 'Trebuchet MS', sans-serif;
 }
@@ -10,11 +10,11 @@ body {
 	left: 0;
 	height: 80px;
 	width: 100%;
-	background-color: grey;
 	display: flex;
 	flex-direction: row;
+	background-color: white;
+	box-shadow: 10px 6px 5px #d9d9d9;
 }
-
 
 .textBaner {
 	display: flex;
@@ -27,24 +27,44 @@ body {
 
 #banerText {
 	font-size: 32px;
-	color: white;
+	color: #0066ff;
+	text-shadow: 2px 2px #d9d9d9;
 }
 
 
-.linkBaner {
+#savebDiv {
+	width: calc(100% - 220px - 200px);
 	height: 80px;
-	width: calc(100% - 220px);
 	display: flex;
 	align-items: center;
 	justify-content: right;
 }
 
+#savebutton {
+	width: 100px;
+	height: 40px;
+    border: none;
+    margin-right: 30px;
+    border-radius: 6px;
+    font-size: 25px;
+    color: white;
+    background-color: #0066ff;
+}
+
+
+.linkBaner {
+	height: 80px;
+	width: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 
 #logoutLink {
 	font-size: 32px;
-	margin-right: 10px;
 	text-decoration: none;
-	color: white;
+	color: black;
 }
 
 
@@ -96,12 +116,23 @@ body {
 	font-size: 40px;
 	height: 50px;
 	width: 100px;
-	background-color: #11E58C;
+	background-color: #66a3ff;
 	border: none;
 	border-radius: 5px;
+	color: white;
 }
 
-.mainProfile {
+.add_button:hover {
+	font-size: 40px;
+	height: 50px;
+	width: 100px;
+	background-color: #0066ff;
+	border: none;
+	border-radius: 5px;
+	color: white;
+}
+
+.main {
 	position: absolute;
 	top: 160px;
 	left: 0;
@@ -109,6 +140,12 @@ body {
 	height: calc(100% - 160px);
 }
 
+#pos {
+	position: absolute;
+	margin-top: 10px;
+	height: 760px;
+	width: 100%;
+}
 
 .texts {
 	position: absolute;
@@ -120,31 +157,48 @@ body {
   	flex-direction: row;
 }
 
+.texts h1 {
+	color: #0066ff;
+}
+
 .text1 {
 	min-width: 180px;
-	width: 700px;
+	width: 656px;
+	margin-right: 20px;
+	margin-left: 20px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 	display: flex;
 	justify-content: center;
   	align-items: center;
+  	background-color: white;
 }
 
 
 
 .text2 {
 	min-width: 180px;
-	width: 700px;
+	width: 656px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 	display: flex;
 	justify-content: center;
   	align-items: center;
+  	background-color: white;
 }
 
 
 .text3 {
 	min-width: 180px;
-	width: 700px;
+	width: 656px;
+	margin-right: 20px;
+	margin-left: 20px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 	display: flex;
 	justify-content: center;
   	align-items: center;
+  	background-color: white;
 }
 
 
@@ -161,15 +215,21 @@ body {
 
 #tasks_all {
 	min-width: 180px;
-	width: 700px;
+	width: 660px;
+	margin-left: 20px;
+	margin-right: 20px;
 	height: 100%;
 	display: flex;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	background-color: white;
+	box-shadow: 0px 10px 10px -3px #cccccc;
 }
 
 
 #tasksHolder1 {
 	display: flex;
-	width: 77%;
+	width: 80%;
 	height: 620px;
 	margin: auto;
 	flex-direction: column;
@@ -179,14 +239,14 @@ body {
 
 
 /*task*/
-.taskClass {
+.taskBody {
 	display: flex;
 	flex-direction: column;
 	height: 100px;
 	margin: 10px;
 	width: 200px;
 	border-radius: 5px;
-	background-color: #ea069e;
+	background-color: #e6e6e6;
 }
 
 
@@ -217,40 +277,38 @@ body {
 }
 
 
-
-
-#progressButton {
+#takeButton {
 	display: flex;
 	margin: 4.5px;
 	border-radius: 5px;
 	border: none;
 	width: 60px;
 	height: 20px;
-	background-color: green;
+	background-color: #33cc33;
   	justify-content: center;
   	align-items: center;
 }
 
-#endButton {
+#completeButton {
 	display: flex;
 	margin: 4.5px;
 	border-radius: 5px;
 	border: none;
 	width: 60px;
 	height: 20px;
-	background-color: green;
+	background-color: #33cc33;
   	justify-content: center;
   	align-items: center;	
 }
 
-#deleteButton {
+#removeButton {
 	display: flex;
 	margin: 4.5px;
 	border-radius: 5px;
 	border: none;
 	width: 60px;
 	height: 20px;
-	background-color: red;	
+	background-color: #ff0000;	
 	justify-content: center;
   	align-items: center;
 }
@@ -259,16 +317,18 @@ body {
 
 #progress_task {
 	min-width: 180px;
-	width: 700px;
+	width: 660px;
 	height: 100%;
-	border-left: 3px solid black;
-	border-right: 3px solid black;
 	display: flex;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	background-color: white;
+	box-shadow: 0 10px 10px -3px #cccccc;
 }
 
 #tasksHolder2 {
 	display: flex;
-	width: 77%;
+	width: 80%;
 	height: 620px;
 	margin: auto;
 	flex-direction: column;
@@ -279,14 +339,20 @@ body {
 
 #task_end {
 	min-width: 180px;
-	width: 700px;
+	width: 660px;
+	margin-left: 20px;
+	margin-right: 20px;
 	height: 100%;
 	display: flex;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	background-color: white;
+	box-shadow: 0 10px 10px -3px #cccccc;
 }
 
 #tasksHolder3 {
 	display: flex;
-	width: 77%;
+	width: 80%;
 	height: 620px;
 	margin: auto;
 	flex-direction: column;
