@@ -62,6 +62,7 @@ session_start();
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="style-login.css">
 	<link rel="stylesheet" type="text/css" href="style-profile.css">
+	<link rel="shortcut icon" href="images/t.png">
 	<script type="text/javascript" src="script-profile.js"></script>
 </head>
 <body>
