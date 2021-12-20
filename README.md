@@ -39,8 +39,7 @@ Ajax HTTP request for for get variable form js to php
 - [ ] add max lenhgt to input text
 - [x] frontend for main page
 - [ ] administrator panel
-- [ ] forgot password method
-- [ ] sending email when user try change password
+- [x] forgot password method
 - [ ] check why button didnt disabled after make fucntion with class fo button
 - [ ] send email in forgot password after write email
 
