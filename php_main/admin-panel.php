@@ -17,7 +17,6 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin Panel</title>
 	<link rel="shortcut icon" href="images/t.png">
-	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -26,6 +25,12 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 		<button type="submit" name="submit">Click</button>
 	</form>
 
+	<style type="text/css">
+		.record {
+			min-width: 30px;
+			text-align: center;
+		}
+	</style>
 
 <?php
 
@@ -61,7 +66,7 @@ function printTable() {
 
 		echo '<tr>';
 		foreach($row as $key => $field) {
-			echo '<td class="id">' . htmlspecialchars($field) . '</td>';
+			echo '<td class="record">' . htmlspecialchars($field) . '</td>';
 		}
 
 		echo '</tr>';
