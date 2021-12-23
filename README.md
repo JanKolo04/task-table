@@ -42,6 +42,12 @@ Ajax HTTP request for for get variable form js to php
 - [x] forgot password method
 - [ ] check why button didnt disabled after make fucntion with class fo button
 - [ ] send email in forgot password after write email
+- [ ] add tasks to cookies or to txt files
+
+
+
+
+
 
 
 
