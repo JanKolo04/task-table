@@ -46,10 +46,3 @@ Ajax HTTP request for for get variable form js to php
 
 
 
-
-
-
-
-
-
-
