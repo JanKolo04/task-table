@@ -259,7 +259,7 @@ function disableTab2() {
 }
 
 
-var cos = "<?php ?>"
+
 
 
 
