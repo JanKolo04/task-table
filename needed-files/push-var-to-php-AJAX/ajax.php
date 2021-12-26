@@ -22,8 +22,8 @@
 			url: "index.php",
 			method: "post",
 			data: {text: text},
-			success: function(res) {
-				console.log(res);
+			success: function() {
+				return true;
 			}
 		})
 	</script>
