@@ -19,7 +19,7 @@
 		console.log(text);
 
 		$.ajax({
-			url: "index.php",
+			url: "sql.php",
 			method: "post",
 			data: {text: text},
 			success: function() {
