@@ -1,0 +1,24 @@
+schemat dodawania do task table 
+
+1. Po dodaniu taska task dodaje sie do 
+   bazy danych do odpowiedniej kolumny 
+
+2. Dodaje również login uzytkownia który jest  
+   zalogowany
+
+3. Pobiermay login usera który sie zalogował z 
+   bazy danych 
+
+4. Wstawaimy login usera i taska w odpowiedna rubrykę
+
+
+5. Wygląd
+
+ID | login |  All  |  Progress | End
+-------------------------------------
+1  | admin |  Play |   coffe   |  -
+
+
+6. Jeśli sesja sie zakończy wstawia dane do tabeli
+
+7. Jeśli jest duplikat loginu w rejstracji ponawia sesje

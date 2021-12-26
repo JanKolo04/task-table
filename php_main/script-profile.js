@@ -102,7 +102,7 @@ function add_task() {
 	//Inscruction for take button
 	takeButton.onclick = function() {
 		var text = p.textContent;
-		console.log("Task name: ", text);
+		console.log("Task name:", text);
 		//remove take button from task belt
 		takeButton.remove();
 		//append end button to task belt
@@ -263,8 +263,6 @@ function disableTab2() {
 		//refresh function always in 1 sec
 	}, 1)
 }
-
-
 
 
 

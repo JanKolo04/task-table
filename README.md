@@ -4,23 +4,45 @@ Website with tasks
 
 # Login page frontend
 
-<img width="1792" alt="Zrzut ekranu 2021-10-14 o 19 08 27" src="https://user-images.githubusercontent.com/76879087/137364556-9575ea6a-6755-4539-97b2-52bbb51ca2ec.png">
+<img width="1852" alt="Zrzut ekranu 2021-12-11 o 19 58 43" src="https://user-images.githubusercontent.com/76879087/145732775-a503dde3-84bc-4374-a4d2-ef7d6709e209.png">
+
 
 
 
 # Actually website design
 
-<img width="1792" alt="Zrzut ekranu 2021-10-13 o 23 57 15" src="https://user-images.githubusercontent.com/76879087/137218233-2020a9ee-90af-4d9c-8753-56c0f2ec5ae0.png">
+<img width="1852" alt="Zrzut ekranu 2021-12-11 o 19 57 52" src="https://user-images.githubusercontent.com/76879087/145732765-ae4b9a39-4753-4c2e-82df-6627573ffb9e.png">
 
 
+
+# Forgot password tab
+
+<img width="1851" alt="Zrzut ekranu 2021-12-12 o 23 49 45" src="https://user-images.githubusercontent.com/76879087/145732756-b6562d6c-a525-4130-b7c6-4f2e57e0ebf7.png">
+
+
+
+
+# Notes 
+```txt
+
+Ajax HTTP request for for get variable form js to php
+
+
+```
 
 
 
 ## TASKS
-- [ ] create new login system
-- [x] make register page 
-- [ ] ban users
-- [x] create diagram for databases
-- [x] create database for user 
-- [ ] create database for tasks
-- [ ] add scroll for main pager and relative baner
+- [x] add data from tasks to database
+- [ ] add custom url links
+- [ ] add function adding task to database to main file
+- [ ] add max lenhgt to input text
+- [x] frontend for main page
+- [ ] administrator panel
+- [x] forgot password method
+- [ ] check why button didnt disabled after make fucntion with class fo button
+- [ ] send email in forgot password after write email
+- [ ] add tasks to cookies or to txt files
+
+
+
