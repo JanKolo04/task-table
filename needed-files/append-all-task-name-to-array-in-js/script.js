@@ -27,7 +27,6 @@ function checking() {
     var array = [];
     for (i = 0; i < elements.length; i++) {
         var text = elements[i].textContent;
-        var array;
         array[i] = text;
     }
     console.log(array);
