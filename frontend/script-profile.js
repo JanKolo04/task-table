@@ -42,8 +42,12 @@ function add_task() {
 	textDiv.className = "textDiv";
 	textDiv.id = "textDiv";
 
+	var p = document.createElement("p");
+	p.className = "text";
+	textDiv.appendChild(p);
+
 	//append text from text input to task
-	textDiv.innerHTML = document.querySelector('#myText').value;
+	p.innerHTML = document.querySelector('#myText').value;
 
 	
   	//cerate task belt
@@ -97,6 +101,8 @@ function add_task() {
 
 	//Inscruction for take button
 	takeButton.onclick = function() {
+		var text = p.textContent;
+		console.log("Task name: ", text);
 		//remove take button from task belt
 		takeButton.remove();
 		//append end button to task belt
