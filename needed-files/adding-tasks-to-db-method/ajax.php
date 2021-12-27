@@ -94,6 +94,23 @@
 				})
 			}
 
+			comButton.onclick = function() {
+				comButton.remove();
+
+				var end = document.getElementById("end");
+				end.appendChild(task);
+
+				$.ajax ({
+					url: "index.php",
+					method: "post",
+					data: {end: text},
+					success: function(res) {
+						console.log(res);
+					}
+				})
+			}
+
+
 
 		}
 

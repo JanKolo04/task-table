@@ -27,6 +27,20 @@
 		$deleteQuery = mysqli_query($con, $deleteSql);
 	}
 
+	function endd() {
+		global $con;
+
+		$end = $_POST['end'];
+		echo $end;
+
+		$sql = "UPDATE taskowo SET endTask='$end' WHERE proTask='$end'";
+		$query = mysqli_query($con, $sql);
+
+		$deleteSql = "UPDATE taskowo SET proTask='' WHERE proTask='$end'";
+		$deleteQuery = mysqli_query($con, $deleteSql);
+	}
+
+
 
 
 
@@ -38,6 +52,10 @@
 
 	if(isset($_POST['pro'])) {
 		pro();
+	}
+
+	if(isset($_POST['end'])) {
+		endd();
 	}
 
 ?>
