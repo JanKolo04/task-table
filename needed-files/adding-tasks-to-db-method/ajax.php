@@ -110,7 +110,19 @@
 				})
 			}
 
+			removeButton.onclick = function() {
+				task.remove();
 
+				$.ajax ({
+					url: "index.php",
+					method: "post",
+					data: {remove: text},
+					success: function(res) {
+						console.log(res);
+					}
+
+				})
+			}	
 
 		}
 
@@ -123,8 +135,6 @@
 	<div id="all"></div>
 	<div id="progress"></div>
 	<div id="end"></div>
-
-
 
 
 	<style type="text/css">

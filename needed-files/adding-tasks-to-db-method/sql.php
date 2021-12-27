@@ -41,7 +41,16 @@
 	}
 
 
+	function remove() {
+		global $con;
 
+		$remove = $_POST['remove'];
+		echo $remove;
+
+		$sql = "DELETE FROM taskowo WHERE (allTask='$remove' OR proTask='$remove' OR endTask='$remove')";
+
+		$query = mysqli_query($con, $sql);
+	}
 
 
 
@@ -58,6 +67,9 @@
 		endd();
 	}
 
+	if(isset($_POST['remove'])) {
+		remove();
+	}
 ?>
 
 
