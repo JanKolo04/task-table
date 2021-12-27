@@ -43,6 +43,15 @@ include("connection.php");
 	}
 
 
+	$sqlPro = "SELECT proTask FROM test WHERE login='admin'";
+	$queryPro = mysqli_query($con, $sqlPro);
+
+	$arrayPro;
+	while ($row = mysqli_fetch_row($queryPro)) {
+		$convert = implode($row);
+		$arrayPro[] = $convert;
+	}
+
 
 ?>
 
@@ -83,9 +92,43 @@ include("connection.php");
 	}
 
 
+	function pro() {
+		//get array from php to js
+	    var arrayPro = <?php echo json_encode($arrayPro); ?>;
+	    //get array length 
+	    var length = arrayPro.length;
+
+	    var pro = document.getElementById("pro");
+		for (var i=0; i<length; ++i) {
+			if (arrayPro[i] != '') {
+
+			    //create div in for beacouse he create
+			    //as meany times as the for loop ca execute
+			    var task = document.createElement("DIV");
+			    task.className = "task";
+
+			    var p = document.createElement("p");
+			    p.className = "textP";
+
+			    //variable x is a element from array
+			    var x = arrayPro[i];
+			    //append element to p
+			    p.innerHTML = x;
+
+			    //append task to pro
+			    pro.appendChild(task);
+			    //append p to task
+			    task.appendChild(p);
+
+			}
+		}
+	}
+
+
 	//run functions
 	window.onload = function() {
 		all();
+		pro();
 	}
 
 
