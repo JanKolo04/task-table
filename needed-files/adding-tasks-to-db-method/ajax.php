@@ -64,7 +64,7 @@
 				method: "post",
 				data: {all: text},
 				success: function(res) {
-					console.log(res);
+					console.log("Add: ",res);
 				}
 			})
 
@@ -89,7 +89,7 @@
 					//znalezienia przez POST
 					data: {pro: text},
 					success: function(res) {
-						console.log(res);
+						console.log("Progress: ",res);
 					}
 				})
 			}
@@ -105,7 +105,7 @@
 					method: "post",
 					data: {end: text},
 					success: function(res) {
-						console.log(res);
+						console.log("End: ",res);
 					}
 				})
 			}
@@ -118,7 +118,7 @@
 					method: "post",
 					data: {remove: text},
 					success: function(res) {
-						console.log(res);
+						console.log("Remove: ",res);
 					}
 
 				})
