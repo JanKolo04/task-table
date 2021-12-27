@@ -69,7 +69,30 @@
 			})
 
 
+			var comButton = document.createElement("BUTTON");
+			comButton.className = "completeButton";
+			comButton.innerHTML = "Complete";
 
+
+			input.value = "";
+			takeButton.onclick = function() {
+				takeButton.remove();
+				task.appendChild(comButton);
+
+				var pro = document.getElementById("progress");
+				pro.appendChild(task);
+
+				$.ajax({
+					url: "index.php",
+					method: "post",
+					//pro mozemy nazwac inaczej bo to nazwa do
+					//znalezienia przez POST
+					data: {pro: text},
+					success: function(res) {
+						console.log(res);
+					}
+				})
+			}
 
 
 		}

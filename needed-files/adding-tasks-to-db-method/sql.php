@@ -14,6 +14,20 @@
 	}
 
 
+	function pro() {
+		global $con;
+
+		$pro = ($_POST['pro']);
+		echo $pro;
+
+		$sql = "UPDATE taskowo SET proTask='$pro' WHERE allTask='$pro'";
+		$query = mysqli_query($con, $sql);
+
+		$deleteSql = "UPDATE taskowo SET allTask='' WHERE allTask='$pro'";
+		$deleteQuery = mysqli_query($con, $deleteSql);
+	}
+
+
 
 
 
@@ -22,6 +36,9 @@
 		all();
 	}
 
+	if(isset($_POST['pro'])) {
+		pro();
+	}
 
 ?>
 
