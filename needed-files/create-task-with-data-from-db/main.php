@@ -15,82 +15,118 @@ include("connection.php");
 	<title>Pobieranie z db</title>
 </head>
 <body>
+
+	<div id="all">
+		<h1 style="color: white">All</h1>
+	</div>
+	<div id="pro">
+		<h1 style="color: white">Pro</h1>
+	</div>
+	<div id="end">
+		<h1 style="color: white">End</h1>
+	</div>
+
 <?php
 
-	$html = <<<HTML
-		<div id="holder">
-			
-		</div>
+	//get all elements from allTask column where login is LOGIN USER
+	$sqlAll = "SELECT allTask FROM test WHERE login='admin'";
+	$queryAll = mysqli_query($con, $sqlAll);
 
-
-	HTML;
-
-	echo $html;
-
-	
-	$sql = "SELECT tasks FROM tasks";
-	$query = mysqli_query($con, $sql);
-
-
-	$array;
-	while ($row = mysqli_fetch_row($query)) {
+	//array
+	$arrayAll;
+	//append to array $row elements from query
+	while ($row = mysqli_fetch_row($queryAll)) {
+		//get elements from array
 		$convert = implode($row);
-		$array[] = $convert;
+		//and append to arrayAll
+		$arrayAll[] = $convert;
 	}
 
-	print_r($array);
 
-
-
-	/*
-	//download data if session start
-	if (session_status() == PHP_SESSION_ACTIVE) {
-		echo "Session start";
-		adding();
-	}
-	*/
 
 ?>
 
 <script type="text/javascript">	
-	function funkcja() {
+	function all() {
 		//get array from php to js
-	    var tablica = <?php echo json_encode($array); ?>;
+	    var arrayAll = <?php echo json_encode($arrayAll); ?>;
 	    //get array length 
-	    var length = tablica.length;
-	    console.log(length);
+	    var length = arrayAll.length;
 
-	    var holder = document.getElementById("holder");
+	    //div all
+	    var all = document.getElementById("all");
+	  	//for loop to get all elemetns from array
+		for (var i=0; i<length; ++i) {
+			//create task when have some text
+			if (arrayAll[i] != '') {
 
+			    //create div in for beacouse he create
+			    //as meany times as the for loop ca execute
+			    var task = document.createElement("DIV");
+			    task.className = "task";
 
-	    for (var i=0; i<length; ++i) {
-	    	//create div in for beacouse he create
-	    	//as meany times as the for loop ca execute
-	    	var div = document.createElement("DIV");
-	    	div.className = "div";
+			   	var p = document.createElement("p");
+			    p.className = "textP";
 
-	    	var p = document.createElement("p");
-	    	p.className = "textP";
+			    //variable x is a element from array
+			    var x = arrayAll[i];
+			    //append element to p
+			    p.innerHTML = x;
 
-	    	//variable x is a element from array
-	    	var x = tablica[i];
-	    	//append element to p
-	    	p.innerHTML = x;
+			    //append task to all
+			    all.appendChild(task);
+			    //append p to task
+			    task.appendChild(p);
 
-	    	//append div(task) to holder
-	    	holder.appendChild(div);
-	    	//append p to div(task)
-	    	div.appendChild(p);
-
-	    }
-
+			}
+		}
 	}
 
-	funkcja();
+
+	//run functions
+	window.onload = function() {
+		all();
+	}
+
+
 </script>
 
 <style type="text/css">
-	.div {
+	#all {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 150px;
+		background-color: blue;
+	}
+
+	#pro {
+		position: absolute;
+		left: 180px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 150px;
+		background-color: green;
+	}
+
+	#end {
+		position: absolute;
+		left: 360px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 150px;
+		background-color: hotpink;
+	}
+
+
+	.task {
+		margin: 10px;
 		width: 100px; 
 		height: 80px; 
 		background-color: red; 
