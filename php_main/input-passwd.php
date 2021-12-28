@@ -44,9 +44,12 @@
 
 	<script type="text/javascript">
 		function checking() {
+			//fisrt password
 			var first = document.getElementById("first").value;
+			//repeat passwd
 			var second = document.getElementById("second").value;
 
+			//if passwords is differents show error
 			if(first != second) {
 				alert("password is diffrents!");
 			}
