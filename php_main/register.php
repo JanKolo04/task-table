@@ -3,30 +3,31 @@ session_start();
 
     include("connection.php");
 
-    //posted items
-    $login = $_POST['login'];
-    $email = $_POST['email'];
-    $password = $_POST['passwd'];
-    $rpassword = $_POST['rpasswd'];
-
-    $sql = "INSERT INTO users (login, email, password) VALUES ('$login', '$email', '$password')";
-
-    if(!empty($login) && !empty($email) && !empty($password) && !empty($rpassword)) {
-        if ($password != $rpassword) {
-            echo '<script type="text/javascript">alert("Passwords is difrends!");</script>';
-        }
-
-        else if ($con->query($sql) === TRUE) {
-            header("Location: login.php");
-        } 
-
-        else {
-            echo "Error: " . $sql . "<br>" . $con->error;
-        }
+    if (array_key_exists("submit", $_POST)) {
+        add();
     }
 
-    else {
-        $con->close();
+    function add() {
+        global $con;
+
+        //get login email passwd rpasswd
+        $login = $_POST['login'];
+        $email = $_POST['email'];
+        $password = $_POST['passwd'];
+        $rpassword = $_POST['rpasswd'];
+
+        //insert into databse
+        $sql = "INSERT INTO users (login, email, password) VALUES ('$login', '$email', '$password')";
+
+
+        if ($password != $rpassword) {
+            echo '<script type="text/javascript">alert("Passwords is differends!");</script>';
+        }
+
+        else {
+            $query = mysqli_query($con, $sql);
+            header("Location: login.php");
+        }
     }
 
 
@@ -80,7 +81,7 @@ session_start();
 
                     <div class="submit-login">
                         <div id="submit-div">
-                            <input type="submit" value="Submit" class="submit" id="submit" onclick="correctPasswd()">
+                            <input type="submit" name="submit" value="Submit" class="submit" id="submit">
                         </div>
 
                         <div id="login-div">
