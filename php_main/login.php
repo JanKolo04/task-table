@@ -1,56 +1,51 @@
-<?php 
+<?php
 
-session_start();
+	session_start();
 
 	include("connection.php");
 
+?>
+
+
+
+<?php 
+
 	$logged = 0;
 
-	if($_SERVER['REQUEST_METHOD'] == "POST") {
-		//something was posted
+	if(array_key_exists("submit", $_POST)) {
+		login();
+	}
+
+	function login() {
+		global $con, $logged;
+
 		$login = $_POST['login'];
-		$password = $_POST['passwd'];
+		$passwd = $_POST['passwd'];
 
+		$sql = "SELECT login, password FROM users WHERE login='$login'";
 
-		if(!empty($login) && !empty($password)) {
+		$query = mysqli_query($con, $sql);
 
-			//read from database
-			$query = "SELECT * FROM users WHERE login = '$login' LIMIT 1";
-			$result = mysqli_query($con, $query);
+		$array = mysqli_fetch_row($query);
+		print_r($array);
 
-			if($result) {
-				if($result && mysqli_num_rows($result) > 0) {
+		if(!empty($array)) {
+			$loginDB = $array[0];
+			$passwdDB = $array[1];
 
-					$user_data = mysqli_fetch_assoc($result);
-					
-					if($user_data['password'] == $password) {
-						echo "<script>console.log('how has login: " . $login . "' );</script>";
-						$logged = 1;
-
-						//whoes has been loged
-						//append login to table 
-						$append = "INSERT INTO tasks (login) VALUES ('$login')";
-						$resultt = mysqli_query($con, $append);
-						
 				
-					}
+			if(($login == $loginDB) & ($passwd == $passwdDB)) {
+				$logged = 1;
+			}
 
-					else {
-						echo '<script type ="text/JavaScript">';  
-						echo 'alert("Password is wrong")';  
-						echo '</script>';
-					}
-				}
-
-				else if ($user_data["login"] != $login) {
-					echo '<script type ="text/JavaScript">';  
-					echo 'alert("Wrong login")';  
-					echo '</script>'; 	
-				}
-			}			
-
+			else {
+				echo "<script> alert('Password is uncorrect'); </script>";
+			}
 		}
 
+		else {
+			echo "<script> alert('Login is wrong'); </script>";
+		}
 	}
 
 ?>
@@ -88,7 +83,7 @@ session_start();
 
 
 						<div id='submit-div'>
-							<input type='submit' value='Submit' class='submit' id='submit'>
+							<input type='submit' name='submit' value='Submit' class='submit' id='submit'>
 						</div>
 
 						<div id='register-div'>
@@ -102,80 +97,78 @@ session_start();
 
 	else {
 
-
-		$html = <<<HTML
-		<form method="POST">
+		echo "
+		<form method='POST'>
 			<script>
 				disableAdd();
+				disableTab();
+				disableTab2();
 			</script>
 
-			<div class="baner">
-				<div class="textBaner">
-					<h1 id="banerText">TASK BOARD</h1>
+			<div class='baner'>
+				<div class='textBaner'>
+					<h1 id='banerText'>TASK BOARD</h1>
 				</div>
 
-				<div id="savebDiv">
-					<button id="savebutton">Save</button>
+				<div id='savebDiv'>
+					<button id='savebutton'>Save</button>
 				</div>
 
-				<div class="linkBaner">
-					<a href="logout.php" id="logoutLink">Logout</a>
+				<div class='linkBaner'>
+					<a href='logout.php' id='logoutLink'>Logout</a>
 				</div>
 			</div>
 
 
-			<div class="header">		
+			<div class='header'>		
 				<!---input text---->
-				<div class="inputDiv">
-					<input type="text" id="myText" required size="1" placeholder="Task...">
+				<div class='inputDiv'>
+					<input type='text' id='myText' required size='1' placeholder='Task...'>
 				</div>
 
 				<!---add button--->
-				<div class="buttonDiv">
-					<button class="add_button" id="add_button" onclick="add_task()">Add</button>
+				<div class='buttonDiv'>
+					<button class='add_button' id='add_button' onclick='add_task()'>Add</button>
 				</div>
 			</div>
 
-			<div class="main">
+			<div class='main'>
 
-				<div id="pos">
-					<div class="texts">
+				<div id='pos'>
+					<div class='texts'>
 					<!---text--->
-						<div class="text1">
-							<h1 id="all_task_text">All tasks 0</h1>
+						<div class='text1'>
+							<h1 id='all_task_text'>All tasks 0</h1>
 						</div>
 
-						<div class="text2">
-							<h1 id="tasks_in_progress">Tasks in progress 0</h1>
+						<div class='text2'>
+							<h1 id='tasks_in_progress'>Tasks in progress 0</h1>
 						</div>
 
-						<div class="text3">
-							<h1 id="end_tasks">End tasks 0</h1>
+						<div class='text3'>
+							<h1 id='end_tasks'>End tasks 0</h1>
 						</div>
 						
 					</div>
 
 
 					<!---taskt div--->
-					<div class="tasks">
-						<div id="tasks_all">
-							<div id="tasksHolder1"></div>
+					<div class='tasks'>
+						<div id='tasks_all'>
+							<div id='tasksHolder1'></div>
 						</div>
 
-						<div id="progress_task">
-							<div id="tasksHolder2"></div>
+						<div id='progress_task'>
+							<div id='tasksHolder2'></div>
 						</div>
 
-						<div id="task_end">
-							<div id="tasksHolder3"></div>
+						<div id='task_end'>
+							<div id='tasksHolder3'></div>
 						</div>
 					</div>
 
 			</div>
-		</form>
-		HTML;
-
-		echo $html;
+		</form>";
 	}
 	?>
 
