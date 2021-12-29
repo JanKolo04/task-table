@@ -9,6 +9,10 @@
 	
 	//set global var on 0
 	$logged = 0;
+	
+	setcookie("login", "", time() - 3600);
+	setcookie("password", "", time() - 3600);
+
 	//move to login page after logout
 	header("Location: login.php");
 
