@@ -27,7 +27,6 @@
 		$query = mysqli_query($con, $sql);
 
 		$array = mysqli_fetch_row($query);
-		print_r($array);
 
 		if(!empty($array)) {
 			$loginDB = $array[0];
@@ -47,6 +46,43 @@
 			echo "<script> alert('Login is wrong'); </script>";
 		}
 	}
+
+
+	function set() {
+		global $cookie_name;
+
+		$login = $_POST['login'];
+		$passwd = $_POST['passwd'];
+
+		if(isset($_POST['checkbox'])) {
+			//set login cookie
+			setcookie("login", "$login", time() + (86400 * 30), "/"); // 86400 = 1 day
+
+			//set password cookie
+			setcookie("password", "$passwd", time() + (86400 * 30), "/"); // 86400 = 1 day
+
+			//after create cokkies main page has been loaded
+			header("Location: profile.html");
+		}
+	}
+
+
+	function check() {
+		//if cookies dosent exist 
+		if(!isset($_COOKIE["login"]) & !isset($_COOKIE["password"])) {
+			//run functinon on click
+			if(array_key_exists("submit", $_POST)) {
+				set();
+			}
+		} 
+
+		//if coockies exist main page has been auto loaded
+		else {
+		     header("Location: profile.html");
+		}
+	}
+
+	check();
 
 ?>
 
@@ -89,6 +125,8 @@
 						<div id='register-div'>
 							<p id='register'>Don't have an account? <a id='registerLink' href='register.php'>Sing up here</a></p>
 						</div>
+
+						<input type='checkbox' name='checkbox'>
 					</form>
 				</div>
 			</div>
