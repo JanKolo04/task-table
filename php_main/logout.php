@@ -13,12 +13,12 @@
 	if(isset($_COOKIE["login"]) & isset($_COOKIE["password"])) {
 		//unset cookie
 		unset($_COOKIE['login']);
-		//delete cookies
+		//set null variable for cookies login
 		setcookie('login', null, -1, '/');
 
 		//unset cookies
 		unset($_COOKIE['password']);
-		//delete cookies
+		//set null variable for cookies password
 		setcookie('password', null, -1, '/'); 
 	}
 

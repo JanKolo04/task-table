@@ -84,10 +84,17 @@ body {
 	outline: none;
 }
 
-
-#forgot {
+#forgotAndCkeckDiv {
 	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	height: 50px;
 	width: 100%;
+}
+
+
+#forgotDiv {
+	width: 50%;
 	height: 50px;
 	display: flex;
 	justify-content: left;
@@ -105,7 +112,23 @@ body {
 	text-decoration: underline;
 }
 
+#checkDiv {
+	width: 50%;
+	height: 50px;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+}
 
+label {
+	margin-right: 10px;
+	font-size: 15px;
+	color: #bfbfbf;
+}
+
+#checkbox {
+	font-size: 5px;
+}
 
 #submit-div {
 	margin-top: 20px;

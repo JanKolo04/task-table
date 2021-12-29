@@ -113,8 +113,15 @@
 						<center><input type='text' name='login' class='login' required placeholder='Login' maxlength='20'></center>
 						<center><input type='password' name='passwd' class='passwd' required placeholder='Password' maxlength='30'></center>
 
-						<div id='forgot'>
-							<a id='forgot-text' href='signup.php'>Forgot password</a>
+						<div id='forgotAndCkeckDiv'>
+							<div id='forgotDiv'>
+								<a id='forgot-text' href='main.html'>Forgot password</a>
+							</div>
+
+							<div id='checkDiv'>
+								<input type='checkbox' name='checkbox' id='checkbox'>
+								<label for='checkbox'>Remember Me</label>
+							</div>
 						</div>
 
 
