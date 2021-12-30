@@ -153,10 +153,6 @@
 					<h1 id='banerText'>TASK BOARD</h1>
 				</div>
 
-				<div id='savebDiv'>
-					<button id='savebutton'>Save</button>
-				</div>
-
 				<div class='linkBaner'>
 					<a href='logout.php' id='logoutLink'>Logout</a>
 				</div>
@@ -175,41 +171,39 @@
 				</div>
 			</div>
 
-			<div class='main'>
+			<div id='divHolder'>
 
-				<div id='pos'>
-					<div class='texts'>
-					<!---text--->
-						<div class='text1'>
-							<h1 id='all_task_text'>All tasks 0</h1>
-						</div>
-
-						<div class='text2'>
-							<h1 id='tasks_in_progress'>Tasks in progress 0</h1>
-						</div>
-
-						<div class='text3'>
-							<h1 id='end_tasks'>End tasks 0</h1>
-						</div>
-						
+				<div class='texts'>
+				<!---text--->
+					<div class='text1'>
+						<h1 class='all_task_text' id='all_task_text'>All tasks: 0</h1>
 					</div>
 
-
-					<!---taskt div--->
-					<div class='tasks'>
-						<div id='tasks_all'>
-							<div id='tasksHolder1'></div>
-						</div>
-
-						<div id='progress_task'>
-							<div id='tasksHolder2'></div>
-						</div>
-
-						<div id='task_end'>
-							<div id='tasksHolder3'></div>
-						</div>
+					<div class='text2'>
+						<h1 class='tasks_in_progress' id='tasks_in_progress'>Tasks in progress: 0</h1>
 					</div>
 
+					<div class='text3'>
+						<h1 class='end_tasks' id='end_tasks'>End tasks: 0</h1>
+					</div>
+					
+				</div>
+
+
+				<!---taskt div--->
+				<div class='tasks'>
+					<div id='tasks_all'>
+						<div id='tasksHolder1'></div>
+					</div>
+
+					<div id='progress_task'>
+						<div id='tasksHolder2'></div>
+					</div>
+
+					<div id='task_end'>
+						<div id='tasksHolder3'></div>
+					</div>
+				</div>
 			</div>
 		</form>";
 	}
