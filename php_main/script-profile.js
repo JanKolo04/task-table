@@ -152,13 +152,6 @@ function add_task() {
 
 
 
-//load function when page has loaded
-window.onload = function() {
-	disableAdd();
-	disableTab();
-	disableTab2();
-}
-
 //function fot disable add button
 function disableAdd() {
 

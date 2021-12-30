@@ -101,7 +101,7 @@
 
 	if ($logged == 0) {
 		echo "
-		<div class='mainLogin'>
+		<div id='main'>
 			<div class='white-background'>
 			
 				<h1 id='text1'>Login</h1>
@@ -132,8 +132,6 @@
 						<div id='register-div'>
 							<p id='register'>Don't have an account? <a id='registerLink' href='register.php'>Sing up here</a></p>
 						</div>
-
-						<input type='checkbox' name='checkbox'>
 					</form>
 				</div>
 			</div>
