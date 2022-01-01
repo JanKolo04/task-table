@@ -35,13 +35,13 @@ Ajax HTTP request for for get variable form js to php
 ## TASKS
 - [x] add data from tasks to database
 - [ ] add custom url links
-- [ ] add max lenhgt to input text
+- [x] add max lenhgt to input text
 - [x] frontend for main page
 - [ ] administrator panel
 - [x] forgot password method
 - [ ] send email in forgot password after write email
 - [ ] create block system about create task with white space
-- [ ] create show password
+- [x] create show password
 
 
 
