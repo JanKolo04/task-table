@@ -66,14 +66,13 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 }
 
 .input {
     font-size: 18px;
     line-height: 48px;
     margin: 10px;
-    width: 99%;
+    width: 90%;
   	border: none;
   	border-bottom: 1px solid #bfbfbf;
   	white-space: nowrap;
@@ -85,6 +84,11 @@ body {
 .input:focus {
 	border-bottom: 1px solid #00ffff;
 	outline: none;
+}
+
+i {
+	margin-left: -40px;
+	cursor: pointer;
 }
 
 #submitDiv {

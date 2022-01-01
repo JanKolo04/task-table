@@ -93,6 +93,7 @@
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="style-login.css">
 	<link rel="stylesheet" type="text/css" href="style-profile.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
 	<link rel="shortcut icon" href="images/t.png">
 	<script type="text/javascript" src="script-profile.js"></script>
 </head>
@@ -111,7 +112,32 @@
 					
 					<form method='post'>
 						<center><input type='text' name='login' class='login' required placeholder='Login' maxlength='20'></center>
-						<center><input type='password' name='passwd' class='passwd' required placeholder='Password' maxlength='30'></center>
+						
+						<center><input type='password' name='passwd' class='passwd' id='password' required placeholder='Password' maxlength='30'>
+
+						<i class='bi bi-eye-slash' id='togglePassword'></i></center>
+
+						<script>
+							var button = document.getElementById('togglePassword');
+							var input = document.getElementById('password');
+
+
+							button.onclick = function() {
+
+								if(input.type == 'password') {
+									input.setAttribute('type', 'text');
+									button.className = 'bi bi-eye';
+								}
+
+								else {
+									input.setAttribute('type', 'password');
+									button.className = 'bi bi-eye-slash';
+
+								}
+
+							}
+						</script>
+
 
 						<div id='forgotAndCkeckDiv'>
 							<div id='forgotDiv'>

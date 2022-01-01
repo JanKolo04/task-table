@@ -42,6 +42,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/t.png">
     <link rel="stylesheet" type="text/css" href="style-register.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
     <title>Register</title>
 </head>
 <body>
@@ -70,11 +71,17 @@ session_start();
 
                     <div class="passwords">
                         <div class="passwd1">
-                            <center><input type="password" id="passwd" name="passwd" required placeholder="Password"></center>
+                            <center>
+                                <input type="password" id="passwd" name="passwd" required placeholder="Password">
+                                <i class="bi bi-eye-slash" id="togglePassword1"></i>
+                            </center>
                         </div>
 
                         <div class="passwd2">
-                            <center><input type="password" id="rPasswd" name="rpasswd" required placeholder="Repeat Password"></center>
+                            <center>
+                                <input type="password" id="rPasswd" name="rpasswd" required placeholder="Repeat Password">
+                                <i class="bi bi-eye-slash" id="togglePassword2"></i>
+                            </center>
                         </div>
                     </div>
 
@@ -92,6 +99,47 @@ session_start();
             </div>
         </div>
     </div>
+
+
+    <script type="text/javascript">
+        var button1 = document.getElementById("togglePassword1");
+        var button2 = document.getElementById("togglePassword2");
+
+        var input1 = document.getElementById("passwd");
+        var input2 = document.getElementById("rPasswd");
+
+        button1.onclick = function() {
+
+            if(input1.type == "password") {
+                input1.setAttribute("type", "text");
+                button1.className = "bi bi-eye";
+            }
+
+            else {
+                input1.setAttribute("type", "password");
+                button1.className = "bi bi-eye-slash";
+
+            }
+
+        }
+
+
+        button2.onclick = function() {
+
+            if(input2.type == "password") {
+                input2.setAttribute("type", "text");
+                button2.className = "bi bi-eye";
+            }
+
+            else {
+                input2.setAttribute("type", "password");
+                button2.className = "bi bi-eye-slash";
+
+            }
+
+        }
+    </script>
+
 
 </body>
 </html>

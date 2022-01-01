@@ -12,7 +12,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="images/t.png">
-	<link rel="stylesheet" type="text/css" href="style-password.css">
+	<link rel="stylesheet" type="text/css" href="style-email.css">
 	<title>Regenerate password</title>
 </head>
 <body>
