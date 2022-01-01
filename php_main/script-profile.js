@@ -257,6 +257,27 @@ function disableTab2() {
 	}, 1)
 }
 
+function checkWhiteSpace() {
+	var input = document.getElementById("myText").value;
+	var lenString = input.length;
+
+	var array = [];
+	for(var i=0; i<lenString; ++i) {
+		x = input[i];
+		array[i] = x;
+	}
+
+	if(array.at(0) == ' ') {
+		console.log("Spacja na początku");
+	}
+
+	if(array.at(-1) == ' ') {
+		console.log("Spacja na koncu");
+	}
+}
+
+
+
 
 
 
