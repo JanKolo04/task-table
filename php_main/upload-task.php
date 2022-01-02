@@ -9,7 +9,8 @@
 		$all = $_POST['all'];
 		echo $all;
 
-		$sql = "INSERT INTO taskowo(allTask, proTask, endTask) VALUES ('$all', '', '')";
+		$sql = "INSERT INTO taskowo(login, allTask, progressTask, endTask) VALUES
+			('admin', '$all', NULL, NULL)";
 		$query = mysqli_query($con, $sql);
 	}
 
@@ -20,10 +21,10 @@
 		$pro = ($_POST['pro']);
 		echo $pro;
 
-		$sql = "UPDATE taskowo SET proTask='$pro' WHERE allTask='$pro'";
+		$sql = "UPDATE taskowo SET progressTask='$pro' WHERE allTask='$pro'";
 		$query = mysqli_query($con, $sql);
 
-		$deleteSql = "UPDATE taskowo SET allTask='' WHERE allTask='$pro'";
+		$deleteSql = "UPDATE taskowo SET allTask=NULL WHERE allTask='$pro'";
 		$deleteQuery = mysqli_query($con, $deleteSql);
 	}
 
@@ -33,10 +34,10 @@
 		$end = $_POST['end'];
 		echo $end;
 
-		$sql = "UPDATE taskowo SET endTask='$end' WHERE proTask='$end'";
+		$sql = "UPDATE taskowo SET endTask='$end' WHERE progressTask='$end'";
 		$query = mysqli_query($con, $sql);
 
-		$deleteSql = "UPDATE taskowo SET proTask='' WHERE proTask='$end'";
+		$deleteSql = "UPDATE taskowo SET progressTask=NULL WHERE progressTask='$end'";
 		$deleteQuery = mysqli_query($con, $deleteSql);
 	}
 
@@ -47,7 +48,7 @@
 		$remove = $_POST['remove'];
 		echo $remove;
 
-		$sql = "DELETE FROM taskowo WHERE (allTask='$remove' OR proTask='$remove' OR endTask='$remove')";
+		$sql = "DELETE FROM taskowo WHERE (allTask='$remove' OR progressTask='$remove' OR endTask='$remove')";
 
 		$query = mysqli_query($con, $sql);
 	}

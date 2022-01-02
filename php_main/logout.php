@@ -2,10 +2,6 @@
 
 	include("login.php");
 
-
-	if(isset($_SESSION['login'])) {
-		unset($_SESSION['login']);
-	}
 	
 	//set global var on 0
 	$logged = 0;
@@ -14,12 +10,12 @@
 		//unset cookie
 		unset($_COOKIE['login']);
 		//set null variable for cookies login
-		setcookie('login', null, -1, '/');
+		setcookie('login', '', time() - 3600, '/');
 
 		//unset cookies
 		unset($_COOKIE['password']);
 		//set null variable for cookies password
-		setcookie('password', null, -1, '/'); 
+		setcookie('password', '', time() - 3600, '/');
 	}
 
 	//move to login page after logout
