@@ -58,6 +58,16 @@ function add_task() {
 	//append to task
 	task.appendChild(taskBelt);
 
+	var text = p.textContent;
+	$.ajax({
+		url: "upload-task.php",
+		method: "post",
+		data: {all: text},
+		success: function() {
+			return true;
+		}
+	})
+
 
 	//create delete button
 	var removeButton = document.createElement("BUTTON");
@@ -101,16 +111,25 @@ function add_task() {
 
 	//Inscruction for take button
 	takeButton.onclick = function() {
-		var text = p.textContent;
-		console.log("Task name:", text);
 		//remove take button from task belt
 		takeButton.remove();
 		//append end button to task belt
 		taskBelt.appendChild(completeButton);
-		//append task to progress
-		tasksHolder2.appendChild(task);
 		//remove task from all
 		tasksHolder1.removeChild(task);
+		//append task to progress
+		tasksHolder2.appendChild(task);
+
+		$.ajax({
+			url: "upload-task.php",
+			method: "post",
+			//pro mozemy nazwac inaczej bo to nazwa do
+			//znalezienia przez POST
+			data: {pro: text},
+			success: function() {
+				return true;
+			}
+		})
 	}
 
 
@@ -118,10 +137,19 @@ function add_task() {
 	completeButton.onclick = function() {
 		//remove end complete button from task belt
 		completeButton.remove();
-		//append task to end task
-		tasksHolder3.appendChild(task);
 		//remove task from progress
 		tasksHolder2.removeChild(task);
+		//append task to end task
+		tasksHolder3.appendChild(task);
+
+		$.ajax ({
+			url: "upload-task.php",
+			method: "post",
+			data: {end: text},
+			success: function() {
+				return true;
+			}
+		})
 	}
 
 
@@ -130,8 +158,17 @@ function add_task() {
 	removeButton.onclick = function() {
 		//delete task
 		task.remove();
-	}
 
+		$.ajax ({
+			url: "upload-task.php",
+			method: "post",
+			data: {remove: text},
+			success: function() {
+				return true;
+			}
+
+		})
+	}
 
 
 	//this code runs every second 
@@ -166,16 +203,19 @@ function disableAdd() {
 
 	  	if ((inputLenght > 0) && (countTask == 10)) {
 	  		addButton.disabled = true;
+	  		addButton.style = "background-color: #66a3ff";
 	  	}
 	  	
 	  	else if (inputLenght == 0) {
 	  		//disable Add button
 	  		addButton.disabled = true;
+	  		addButton.style = "background-color: #66a3ff";
 	  	}
 
 	  	else if (inputLenght > 0) {
 	  		//activae button
 	  		addButton.disabled = false;
+	  		addButton.style = "background-color: #0066ff";
 	  	}
 
 		//refresh function always in 1 sec
@@ -275,8 +315,6 @@ function checkWhiteSpace() {
 		console.log("Spacja na koncu");
 	}
 }
-
-
 
 
 

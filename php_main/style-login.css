@@ -11,7 +11,7 @@ body {
 	width: 100%;
 	justify-content: center;
   	align-items: center;
-  	background-image: linear-gradient(to right, #00ffff, #cc33ff);
+	background-image: linear-gradient(to right, #00ffff, #cc33ff);
 }
 
 .white-background {
@@ -82,6 +82,11 @@ body {
 .passwd:focus {
 	border-bottom: 1px solid #00ffff;
 	outline: none;
+}
+
+i {
+	margin-left: -30px;
+	cursor: pointer;
 }
 
 #forgotAndCkeckDiv {
