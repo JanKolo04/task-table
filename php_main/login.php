@@ -130,11 +130,11 @@
 						<div class='allStuff'>
 							
 							<form method='post'>
-								<center><input type='text' name='login' class='login' required placeholder='Login' maxlength='20'></center>
+								<input type='text' name='login' class='login' required placeholder='Login' maxlength='20'>
 								
-								<center><input type='password' name='passwd' class='passwd' id='password' required placeholder='Password' maxlength='30'>
+								<input type='password' name='passwd' class='passwd' id='password' required placeholder='Password' maxlength='30'>
 
-								<i class='bi bi-eye-slash' id='togglePassword'></i></center>
+								<i class='bi bi-eye-slash' id='togglePassword'></i>
 
 								<script>
 									var button = document.getElementById('togglePassword');
@@ -479,11 +479,11 @@
 							<h1 id='banerText'>TASK BOARD</h1>
 						</div>
 
-						<form action="login.php" method="POST">
-							<div class='linkBaner'>
+						<div class='linkBaner'>
+							<form action="login.php" method="POST">
 								<input type="submit" name="logout" id="logoutLink" value="Logout">
-							</div>
-						</form>
+							</form>
+						</div>
 					</div>
 
 
