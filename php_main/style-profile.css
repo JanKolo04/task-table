@@ -42,10 +42,12 @@ body {
 
 
 #logoutLink {
-	margin-right: 30px;
+	margin-right: 40px;
 	font-size: 32px;
 	text-decoration: none;
 	color: black;
+	background-color: white;
+	border: none;
 }
 
 
@@ -74,14 +76,12 @@ body {
 
 #myText {
 	width: 98%;
-	margin-left: ;
 	height: 50px;
 	border: none;
 	border-radius: 5px;
 	font-size: 22px;
 	display: flex;
-	margin-left: 11px;
-	margin-right: 11px;
+	margin-left: 20px;
 }
 
 .buttonDiv {
@@ -93,7 +93,17 @@ body {
 }
 
 
-#add_button {
+.add_button {
+	font-size: 40px;
+	height: 50px;
+	width: 100px;
+	background-color: #66a3ff;
+	border: none;
+	border-radius: 5px;
+	color: white;
+}
+
+.add_button:hover {
 	font-size: 40px;
 	height: 50px;
 	width: 100px;
@@ -102,7 +112,6 @@ body {
 	border-radius: 5px;
 	color: white;
 }
-
 
 #divHolder {
 	position: absolute;

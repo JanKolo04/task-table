@@ -63,8 +63,8 @@ function add_task() {
 		url: "upload-task.php",
 		method: "post",
 		data: {all: text},
-		success: function() {
-			return true;
+		success: function(res) {
+			console.log("Add: ",res);
 		}
 	})
 
@@ -126,8 +126,8 @@ function add_task() {
 			//pro mozemy nazwac inaczej bo to nazwa do
 			//znalezienia przez POST
 			data: {pro: text},
-			success: function() {
-				return true;
+			success: function(res) {
+				console.log("Pro: ",res);
 			}
 		})
 	}
