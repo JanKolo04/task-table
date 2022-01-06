@@ -2,15 +2,16 @@
 
 	include("connection.php");
 
+	$login = $_COOKIE['loginTask'];
 
 	function all() {
-		global $con;
+		global $con, $login;
 
 		$all = $_POST['all'];
 		echo $all;
 
 		$sql = "INSERT INTO taskowo(login, allTask, progressTask, endTask) VALUES
-			('admin', '$all', NULL, NULL)";
+			('$login', '$all', NULL, NULL)";
 		$query = mysqli_query($con, $sql);
 	}
 

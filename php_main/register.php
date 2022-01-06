@@ -56,39 +56,33 @@ session_start();
             <p id="text2">Enter login e-mail and password to create account</p>
 
             <div class="allStuff">
-                <form method="post">
+                <form method="POST">
+                    <table id="table">
+                        <tr class="record">
+                            <td>
+                                <input type="text" id="login" name="login" required placeholder="Login">
+                            </td>
+                            <td>
+                                <input type="text" id="email" name="email" required placeholder="E-mail">
+                            </td>
+                        </tr>
 
-                    <div class="login-email">
-                        <div class="Login">
-                            <center><input type="text" id="login" name="login" required placeholder="Login"></center>
-                        </div>
-
-                        <div class="Email">
-                            <center><input type="text" id="email" name="email" required placeholder="E-mail"></center>
-                        </div>
-                    </div>
-
-
-                    <div class="passwords">
-                        <div class="passwd1">
-                            <center>
+                        <tr class="record">
+                            <td>
                                 <input type="password" id="passwd" name="passwd" required placeholder="Password">
                                 <i class="bi bi-eye-slash" id="togglePassword1"></i>
-                            </center>
-                        </div>
-
-                        <div class="passwd2">
-                            <center>
+                            </td>
+                            <td>
                                 <input type="password" id="rPasswd" name="rpasswd" required placeholder="Repeat Password">
                                 <i class="bi bi-eye-slash" id="togglePassword2"></i>
-                            </center>
-                        </div>
-                    </div>
+                            </td>
+                        </tr>
+                    </table>
 
 
                     <div class="submit-login">
                         <div id="submit-div">
-                            <input type="submit" name="submit" value="Submit" class="submit" id="submit">
+                            <button type="submit" name="submit" class="submit" id="submit">Submit</button>
                         </div>
 
                         <div id="login-div">
