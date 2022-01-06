@@ -1,60 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Register</title>
-	<link rel="shortcut icon" href="../images/t.png">
-	<link rel="stylesheet" type="text/css" href="style-register.css">
-	<script type="text/javascript" src="login-script.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/t.png">
+    <link rel="stylesheet" type="text/css" href="style-register.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
+    <title>Register</title>
 </head>
 <body>
 
-	<div class="main">
-		<div class="white-background">
+    <div class="main">
+        <div class="white-background">
 
 
-		
-			<h1 id="text1">Register</h1>
-			<p id="text2">Enter login e-mail and password to create account</p>
+        
+            <h1 id="text1">Register</h1>
+            <p id="text2">Enter login e-mail and password to create account</p>
 
-			<div class="allStuff">
-				<form method="post">
+            <div class="allStuff">
+            	<form method="POST">
+            		<table id="table">
+            			<tr class="record">
+            				<td>
+            					<input type="text" id="login" name="login" required placeholder="Login">
+            				</td>
+            				<td>
+            					<input type="text" id="email" name="email" required placeholder="E-mail">
+            				</td>
+            			</tr>
 
-					<div class="login-email">
-						<div class="Login">
-							<center><input type="text" id="login" required placeholder="Login"></center>
-						</div>
-
-						<div class="Email">
-							<center><input type="text" id="email" required placeholder="E-mail"></center>
-						</div>
-					</div>
-
-
-					<div class="passwords">
-						<div class="passwd1">
-							<center><input type="password" id="passwd" required placeholder="Password"></center>
-						</div>
-
-						<div class="passwd2">
-							<center><input type="password" id="rPasswd" required placeholder="Repeat Password"></center>
-						</div>
-					</div>
+            			<tr class="record">
+            				<td>
+            					<input type="password" id="passwd" name="passwd" required placeholder="Password">
+            					<i class="bi bi-eye-slash" id="togglePassword1"></i>
+            				</td>
+            				<td>
+            					<input type="password" id="rPasswd" name="rpasswd" required placeholder="Repeat Password">
+            					<i class="bi bi-eye-slash" id="togglePassword2"></i>
+            				</td>
+            			</tr>
+            		</table>
 
 
-					<div class="submit-login">
-						<div id="submit-div">
-							<input type="submit" value="Submit" class="submit" id="submit">
-						</div>
+                    <div class="submit-login">
+                        <div id="submit-div">
+                            <button type="submit" name="submit" class="submit" id="submit">Submit</button>
+                        </div>
 
-						<div id="login-div">
-							<p id="loginText">If you have an account? <a id="loginLink" href="login.php">Login</a></p>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+                        <div id="login-div">
+                            <p id="loginText">If you have an account? <a id="loginLink" href="login.php">Login</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var button1 = document.getElementById("togglePassword1");
+        var button2 = document.getElementById("togglePassword2");
+
+        var input1 = document.getElementById("passwd");
+        var input2 = document.getElementById("rPasswd");
+
+        button1.onclick = function() {
+
+            if(input1.type == "password") {
+                input1.setAttribute("type", "text");
+                button1.className = "bi bi-eye";
+            }
+
+            else {
+                input1.setAttribute("type", "password");
+                button1.className = "bi bi-eye-slash";
+
+            }
+
+        }
+
+
+        button2.onclick = function() {
+
+            if(input2.type == "password") {
+                input2.setAttribute("type", "text");
+                button2.className = "bi bi-eye";
+            }
+
+            else {
+                input2.setAttribute("type", "password");
+                button2.className = "bi bi-eye-slash";
+
+            }
+
+        }
+    </script>
+
 
 </body>
 </html>
