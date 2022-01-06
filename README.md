@@ -42,6 +42,5 @@ Ajax HTTP request for for get variable form js to php
 - [ ] send email in forgot password after write email
 - [ ] create block system about create task with white space
 - [x] create show password
-
-
+- [ ] tidy up code
 
