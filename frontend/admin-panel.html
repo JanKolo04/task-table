@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style-admin-panel.css">
+	<title>AdminPanel</title>
+</head>
+<body>
+
+	<div id="databases">
+		<h1 id="mainText">AdminPanel</h1>
+		<div id="dbList">
+
+			<div id="list">
+				<p id="listTitle">databases: </p>
+				<details class="eList" id="first">
+					<summary>
+						<img id="icon" src="../images/database.png">
+						taskowo
+					</summary>
+					<p class="table">
+						<img src="../images/cells.png">
+						task table
+					</p>
+				</details>
+
+				<details class="eList">
+					<summary>
+						<img id="icon" src="../images/database.png">pan_nowacki_dostaje_jedn
+					</summary>
+					<p class="table">
+						<img src="../images/cells.png">
+						testy
+					</p>
+				</details>
+			</div>
+		</div>
+	</div>
+
+	<div id="header">
+		<a class="pageButton" id="first_a" href="sql">
+			<img src="../images/show.png">
+			<p>View</p>
+		</a>
+
+		<a class="pageButton" href="sql">
+			<img src="../images/sql-server.png">
+			<p>SQL</p>
+		</a>		
+	</div>
+
+	<div id="mainPlace">
+		<div id="tableDiv">
+			<div id="textTable">
+				<p>tasktable > </p><h1>Tasks</h1>
+			</div>
+			<table id="table" border="1">
+				<thead>
+					<th>id</th>
+					<th>login</th>
+					<th>allTasks</th>
+					<th>proTasks</th>
+					<th>endTasks</th>
+				</thead>
+				<tbody>
+					<tr class="record">
+						<td>1</td>
+						<td>admin</td>
+						<td>make coffee</td>
+						<td>NULL</td>
+						<td>NULL</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+</body>
+</html>

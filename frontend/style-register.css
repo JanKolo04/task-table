@@ -63,6 +63,7 @@ i {
 }
 
 input {
+    -webkit-transition: 0.5s;
     font-size: 18px;
     height: 50px;
     width: 90%;

@@ -58,6 +58,7 @@ body {
   	overflow: hidden;
     background-color: white;
   	color: black;
+  	-webkit-transition: 0.5s;
 }
 
 .login:focus {
@@ -77,6 +78,7 @@ body {
   	overflow: hidden;
     background-color: white;
   	color: black;
+  	-webkit-transition: 0.5s;
 }
 
 .passwd:focus {
