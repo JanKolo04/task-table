@@ -43,4 +43,5 @@ Ajax HTTP request for for get variable form js to php
 - [ ] create block system about create task with white space
 - [x] create show password
 - [ ] tidy up code
+- [ ] frontend for admin panel
 
