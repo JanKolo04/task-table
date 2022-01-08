@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SQL</title>
+  <script type="text/javascript" src="https://unpkg.com/gethue/lib/components/SqlScratchpadWebComponent.js"></script>
+  <link rel="stylesheet" type="text/css" href="style-sql.css">
+  <link rel="stylesheet" type="text/css" href="style-data-base.css">
+ </head>
+<body>
+
+  <div id="databases">
+    <h1 id="mainText">AdminPanel</h1>
+    <div id="dbList">
+
+      <div id="list">
+        <p id="listTitle">databases: </p>
+        <details class="eList" id="first">
+          <summary>
+            <img id="icon" src="../../images/database.png">
+            taskowo
+          </summary>
+          <p class="table">
+            <img src="../../images/cells.png">
+            task table
+          </p>
+        </details>
+
+        <details class="eList">
+          <summary>
+            <img id="icon" src="../../images/database.png">pan_nowacki_dostaje_jedn
+          </summary>
+          <p class="table">
+            <img src="../../images/cells.png">
+            testy
+          </p>
+
+          <p class="table">
+            <img src="../../images/cells.png">
+            main
+          </p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div id="header">
+    <a class="pageButton" id="first_a" href="data-base.html">
+      <img src="../../images/show.png">
+      <p>View</p>
+    </a>
+
+    <a class="pageButton" href="sql.html">
+      <img src="../../images/sql-server.png">
+      <p>SQL</p>
+    </a>    
+  </div>
+
+
+  <div id="mainPlace">
+    <div id="sqlDiv">
+      <sql-scratchpad api-url="https://demo.gethue.com" username="demo" password="demo" dialect="hive"/>
+
+      <div id="history">
+        <details id="hElement">
+          <summary>
+            <img src="../../images/terminal-window.png">
+            <h3>History</h3>
+          </summary>
+
+          <div id="elements">
+            <div class="element">
+              <p>SELECT * FROM tasks;</p>
+            </div>
+
+            <div class="element">
+              <p>INSERT INTO users(login, password) VALUES ("admin", "root123");</p>
+            </div>
+
+            <div class="element">
+              <p>INSERT INTO users(login, password) VALUES ("admin", "root123");</p>
+            </div>
+
+            <div class="element">
+              <p>INSERT INTO users(login, password) VALUES ("admin", "root123");</p>
+            </div>
+
+
+            <div class="element">
+              <p>INSERT INTO users(login, password) VALUES ("admin", "root123");</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+   </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
