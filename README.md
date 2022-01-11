@@ -24,10 +24,8 @@ Website with tasks
 
 # Notes 
 ```txt
-
-Ajax HTTP request for for get variable form js to php
-
-
+1. Dodać metode do tworzenia historii do głownego kodu
+2. Sprawdzić działanie SQL editor
 ```
 
 
