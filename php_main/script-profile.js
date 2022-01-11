@@ -196,26 +196,55 @@ function disableAdd() {
 		//add button
 		var addButton = document.getElementById("add_button");
 		//input text value
-	  	var inputLenght = document.getElementById('myText').value.length;
+	  	var input = document.getElementById('myText').value
+	  	var len = input.length;
 
 	  	var taskHolder1 = document.getElementById("tasksHolder1");
 	  	var countTask = tasksHolder1.children.length;
 
-	  	if ((inputLenght > 0) && (countTask == 10)) {
+		var array = [];
+		for(var i=0; i<len; ++i) {
+			x = input[i];
+			array[i] = x;
+		}
+
+	  	if ((len > 0) && (countTask == 10)) {
 	  		addButton.disabled = true;
 	  		addButton.style = "background-color: #66a3ff";
 	  	}
 	  	
-	  	else if (inputLenght == 0) {
+	  	else if (len == 0) {
 	  		//disable Add button
 	  		addButton.disabled = true;
 	  		addButton.style = "background-color: #66a3ff";
 	  	}
 
-	  	else if (inputLenght > 0) {
+	  	else if (len > 0) {
 	  		//activae button
-	  		addButton.disabled = false;
-	  		addButton.style = "background-color: #0066ff";
+			if(array.at(0) == ' ' & array.at(-1) == ' ') {
+				console.log("Spacja z przodu i z tyłu");
+				addButton.style = "background-color: #66a3ff";
+				addButton.disabled = true;
+			}
+
+			else if (array.at(0) == ' ') {
+				console.log("Spacja na początku");
+				addButton.style = "background-color: #66a3ff";
+				addButton.disabled = true;
+			}
+
+			else if (array.at(-1) == ' ') {
+				console.log("Spacja na koncu");
+				addButton.style = "background-color: #66a3ff";
+				addButton.disabled = true;
+			}
+
+			else {
+				addButton.disabled = false;
+				addButton.style = "background-color: #0066ff"
+			}
+
+	  		
 	  	}
 
 		//refresh function always in 1 sec
@@ -224,7 +253,7 @@ function disableAdd() {
 
 
 //function to disable adding to progress tab
-function disableTab() {
+function disableProgressTask() {
 	setInterval(function() {
 
 		//holder1
@@ -266,7 +295,7 @@ function disableTab() {
 	},1)
 }
 
-function disableTab2() {
+function disableCompleteTask() {
 	setInterval(function() {
 		//complete button
 		var complete = document.getElementsByClassName("completeButton");
@@ -297,24 +326,6 @@ function disableTab2() {
 	}, 1)
 }
 
-function checkWhiteSpace() {
-	var input = document.getElementById("myText").value;
-	var lenString = input.length;
-
-	var array = [];
-	for(var i=0; i<lenString; ++i) {
-		x = input[i];
-		array[i] = x;
-	}
-
-	if(array.at(0) == ' ') {
-		console.log("Spacja na początku");
-	}
-
-	if(array.at(-1) == ' ') {
-		console.log("Spacja na koncu");
-	}
-}
 
 
 

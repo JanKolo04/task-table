@@ -1,10 +1,3 @@
-<?php
-
-	include("connection.php");
-
-?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -13,11 +6,8 @@
 	<?php
 		include("connection.php");
 
-
 		function profileFunction() {
-			global $con;
-
-			$login = $_COOKIE['loginTask'];
+			global $con, $login;
 
 			//get all elements from allTask column where login is LOGIN USER
 			$sqlAll = "SELECT allTask FROM taskowo WHERE login='$login'";
@@ -50,7 +40,7 @@
 				$convert = implode($row);
 				$arrayEnd[] = $convert;
 			}
-
+		
 			ob_start();
 	
 	?>
@@ -246,9 +236,9 @@
 						    var all = document.getElementById("tasksHolder1");
 							for (var i=0; i<length; ++i) {
 								if (arrayAll[i] != '') {
-								    //variable x is a element from array
-								    var x = arrayAll[i];
-								    createTask(x, all);
+								    //variable text is a element from array (text)
+								    var text = arrayAll[i];
+								    createTask(text, all);
 								}
 							}
 						}
@@ -263,9 +253,9 @@
 						    var pro = document.getElementById("tasksHolder2");
 							for (var i=0; i<length; ++i) {
 								if (arrayPro[i] != '') {
-								    //variable x is a element from array
-								    var x = arrayPro[i];
-								    createTask(x, pro);
+								    //variable text is a element from array (text)
+								    var text = arrayPro[i];
+								    createTask(text, pro);
 
 								}
 							}
@@ -281,9 +271,9 @@
 						    var end = document.getElementById("tasksHolder3");
 							for (var i=0; i<length; ++i) {
 								if (arrayEnd[i] != '') {
-								    //variable x is a element from array
-								    var x = arrayEnd[i];
-								    createTask(x, end);
+								    //variable text is a element from array (text)
+								    var text = arrayEnd[i];
+								    createTask(text, end);
 
 								}
 							}
@@ -305,8 +295,8 @@
 		echo  <<<HTML
 			<script>
 				disableAdd();
-				disableTab();
-				disableTab2();
+				disableProgressTask();
+				disableCompleteTask();
 			</script>
 
 			<div class='baner'>
