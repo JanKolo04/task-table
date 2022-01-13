@@ -41,7 +41,7 @@
 				$arrayEnd[] = $convert;
 			}
 		
-			ob_start();
+			
 	
 	?>
 
@@ -290,9 +290,9 @@
 
 
 	<?php
-		ob_end_flush();
+		
 
-		echo "
+		echo  "
 			<script>
 				disableAdd();
 				disableProgressTask();
@@ -305,8 +305,8 @@
 				</div>
 
 				<div class='linkBaner'>
-					<form action='login.php' method='POST'>
-						<input type='submit' name='logout' id='logoutLink' value='Logout'>
+					<form action="login.php" method="POST">
+						<input type="submit" name="logout" id="logoutLink" value="Logout">
 					</form>
 				</div>
 			</div>
@@ -357,7 +357,8 @@
 						<div id='tasksHolder3'></div>
 					</div>
 				</div>
-			</div>";
+			</div>
+			";
 		
 		}
 	?>
