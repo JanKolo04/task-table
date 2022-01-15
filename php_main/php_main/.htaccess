@@ -1,6 +1,0 @@
-
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^mytasks\.pl$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.mytasks\.pl$
-RewriteRule ^/?$ "http\:\/\/mytasks\.pl\/login\.php" [R=301,L]
-
