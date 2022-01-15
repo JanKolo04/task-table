@@ -305,7 +305,7 @@
 				</div>
 
 				<div class='linkBaner'>
-					<form action='login.php' method='POST'>
+					<form action='login' method='POST'>
 						<input type='submit' name='logout' id='logoutLink' value='Logout'>
 					</form>
 				</div>

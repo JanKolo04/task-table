@@ -86,7 +86,7 @@ session_start();
                         </div>
 
                         <div id="login-div">
-                            <p id="loginText">If you have an account? <a id="loginLink" href="login.php">Login</a></p>
+                            <p id="loginText">If you have an account? <a id="loginLink" href="login">Login</a></p>
                         </div>
                     </div>
                 </form>
