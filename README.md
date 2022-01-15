@@ -33,8 +33,9 @@ Website with tasks
 ## TASKS
 - [ ] administrator panel
 - [x] forgot password method
-- [ ] send email in forgot password after write email
+- [x] send email in forgot password after write email
 - [ ] frontend for admin panel
 - [ ] add custom url links
 - [ ] create ssl for page
+- [ ] edits mail body and create <b><i>noreply</i></b> mail
 
