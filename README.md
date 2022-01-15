@@ -31,15 +31,11 @@ Website with tasks
 
 
 ## TASKS
-- [x] add data from tasks to database
-- [ ] add custom url links
-- [x] add max lenhgt to input text
-- [x] frontend for main page
 - [ ] administrator panel
 - [x] forgot password method
-- [ ] send email in forgot password after write email
-- [ ] create block system about create task with white space
-- [x] create show password
-- [ ] tidy up code
+- [x] send email in forgot password after write email
 - [ ] frontend for admin panel
+- [ ] add custom url links
+- [ ] create ssl for page
+- [ ] edits mail body and create <b><i>noreply</i></b> mail
 
