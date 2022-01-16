@@ -14,7 +14,7 @@
 			$queryAll = mysqli_query($con, $sqlAll);
 
 			//array
-			$arrayAll;
+			$arrayAll = [""];
 			//append to array $row elements from query
 			while ($row = mysqli_fetch_row($queryAll)) {
 				//get elements from array
@@ -26,7 +26,7 @@
 			$sqlPro = "SELECT progressTask FROM taskowo WHERE login='$login'";
 			$queryPro = mysqli_query($con, $sqlPro);
 
-			$arrayPro;
+			$arrayPro = [""];
 			while ($row = mysqli_fetch_row($queryPro)) {
 				$convert = implode($row);
 				$arrayPro[] = $convert;
@@ -35,7 +35,7 @@
 			$sqlEnd = "SELECT endTask FROM taskowo WHERE login='$login'";
 			$queryEnd = mysqli_query($con, $sqlEnd);
 
-			$arrayEnd;
+			$arrayEnd = [""];
 			while ($row = mysqli_fetch_row($queryEnd)) {
 				$convert = implode($row);
 				$arrayEnd[] = $convert;
@@ -229,7 +229,9 @@
 
 						function all() {
 							//get array from php to js
+				
 						    var arrayAll = <?php echo json_encode($arrayAll); ?>;
+
 						    //get array length 
 						    var length = arrayAll.length;
 
