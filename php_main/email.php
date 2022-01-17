@@ -4,6 +4,14 @@
 
 	session_start();
 
+	require 'PHPMailer/PHPMailer.php';
+	require 'PHPMailer/SMTP.php';
+	require 'PHPMailer/Exception.php';
+
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\SMTP;
+	use PHPMailer\PHPMailer\Exception;
+
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +21,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="images/t.png">
 	<link rel="stylesheet" type="text/css" href="css/style-email.css">
+	<link rel="stylesheet" type="text/css" href="css/style-send-mail.css">
 	<title>Regenerate password</title>
 </head>
 <body>
@@ -30,20 +39,54 @@
 				<input type="text" name="email" id="input" placeholder="Enter e-mail...">
 			</div>
 
-			<div id="buttonDiv">
-				<button id="button" type="submit" name="send">Send</button>
+			<div id="buttonsDiv">
+				<div id="backDiv">
+					<a id="back" href="login"> back</a>
+				</div>
+
+				<div id="submitDiv">
+					<button id="submit" type="submit" name="send">Send</button>
+				</div>
 			</div>
 		</form>
 	</div>
 
 	<?php
 
+	
+		$html = "
+			<div>
+				<div id='background'>
+					<div id='textsDiv'>
+						<div id='text1Div'>
+							<p id='text1'>Password Reset</p>
+						</div>
+						
+						<div id='text2Div'>
+							<p id='text2'>If you have lost your password or wish to reset it, use the link belown to get started.</p>
+						</div>
+					</div>
+
+					<div id='buttonDiv'>
+						<button id='submit'>Reset Your Password</button>
+					</div>
+
+					<div id='bottomTextDiv'>
+						<p id='bottomText'>If you did request a password reset, you can 
+						safely ignore this email. Only person with access toy your email can reset your account password.</p>
+					</div>
+				</div>
+			</div>
+
+		";
+
+
 		if(array_key_exists("send", $_POST)) {
 			printEmail();
 		}
 
 		function printEmail() {
-			global $con;
+			global $con, $html;
 			$email = $_POST['email'];
 
 			$sql = "SELECT * FROM users WHERE email='$email'";
@@ -55,14 +98,47 @@
 			}
 
 			if (isset($array)) {
-				//wysłanie emaila
-				echo "<script>console.log('send!')</script>";
-				print_r($array);
+				//create email
+				$mail = new PHPMailer();
+				//use SMTP
+				$mail->isSMTP();
+				//SMTP host
+				$mail->Host = "wn13.webd.pl";
+				//enable SMTP authorization
+				$mail->SMTPAuth = "true";
+				//type of encryption ssl
+				$mail->SMTPSecure = "ssl";
+				//port SMTP
+				$mail->Port = "465";
+				//emial user
+				$mail->Username = "jkolodziej@mytasks.pl";
+				//mail password
+				$mail->Password = "Kobie098";
+				//email subject
+				$mail->Subject = "Test send";
+				//sender emial
+				$mail->setFrom("jkolodziej@mytasks.pl");
+				//set body on HTML
+				$mail->isHTML(true);
+				//emial body
+				$mail->Body =  html_entity_decode($html);
+				//send emial to
+				$mail->addAddress($email);
+				//send emial
+				if($mail->Send()) {
+					echo "<script>alert('Email Send');</script>";
+				}
+
+				else {
+					echo "Error";
+				}
+
+				$mail->smtpClose();
 			}
 
 			else {
 				//alert if empty
-				echo "empty";
+				echo "<script> alert('Email dosent exist'); </script>";
 			}
 		
 	

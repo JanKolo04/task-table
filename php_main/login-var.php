@@ -54,7 +54,7 @@
 
 								<div id='forgotAndCkeckDiv'>
 									<div id='forgotDiv'>
-										<a id='forgot-text' href='main.html'>Forgot password</a>
+										<a id='forgot-text' href='email'>Forgot password</a>
 									</div>
 
 									<div id='checkDiv'>

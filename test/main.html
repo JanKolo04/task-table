@@ -4,30 +4,32 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Closing tab</title>
 </head>
 
 <body>
-	<div id="div">
-		<div style="background: red;">Red</div>
 
-		<div style="background: green;">Green</div>
+	<div id="background">
+		<div id="textsDiv">
+			<div id="text1Div">
+				<p id="text1">Password Reset</p>
+			</div>
+			
+			<div id="text2Div">
+				<p id="text2">If you have lost your password or wish to reset it, use the link belown to get started.</p>
+			</div>
+		</div>
+
+		<div id="buttonDiv">
+			<button id="submit">Reset Your Password</button>
+		</div>
+
+		<div id="bottomTextDiv">
+			<p id="bottomText">If you did request a password reset, you can 
+			safely ignore this email. Only person with access toy your email can reset your account password.</p>
+		</div>
 	</div>
-
-	<style>
-		#div {
-			background-color: blue;
-			width: 200px;
-			height: 200px;
-			display: flex;
-			flex-wrap: wrap;
-		}
-
-		#div div {
-			width: 50px;
-			height: 50px;
-		}
-	</style>
 
 </body>
 
