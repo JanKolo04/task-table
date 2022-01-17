@@ -6,7 +6,7 @@ $password = "";
 $database = "tasktable";
 
 //connectiong with database
-$con = mysqli_connect($servername, $username, $password, $database);
+$con = mysql_connect($servername, $username, $password, $database);
 
 
 //checking conection
