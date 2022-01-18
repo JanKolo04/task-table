@@ -53,34 +53,6 @@
 
 	<?php
 
-	
-		$html = "
-			<div>
-				<div id='background'>
-					<div id='textsDiv'>
-						<div id='text1Div'>
-							<p id='text1'>Password Reset</p>
-						</div>
-						
-						<div id='text2Div'>
-							<p id='text2'>If you have lost your password or wish to reset it, use the link belown to get started.</p>
-						</div>
-					</div>
-
-					<div id='buttonDiv'>
-						<button id='submit'>Reset Your Password</button>
-					</div>
-
-					<div id='bottomTextDiv'>
-						<p id='bottomText'>If you did request a password reset, you can 
-						safely ignore this email. Only person with access toy your email can reset your account password.</p>
-					</div>
-				</div>
-			</div>
-
-		";
-
-
 		if(array_key_exists("send", $_POST)) {
 			printEmail();
 		}
@@ -111,17 +83,19 @@
 				//port SMTP
 				$mail->Port = "465";
 				//emial user
-				$mail->Username = "jkolodziej@mytasks.pl";
+				$mail->Username = "noreply@mytasks.pl";
 				//mail password
 				$mail->Password = "Kobie098";
 				//email subject
 				$mail->Subject = "Test send";
 				//sender emial
-				$mail->setFrom("jkolodziej@mytasks.pl");
+				$mail->setFrom("noreply@mytasks.pl");
+				//set chars
+				$mail->CharSet = "UTF-8";
 				//set body on HTML
 				$mail->isHTML(true);
 				//emial body
-				$mail->Body =  html_entity_decode($html);
+				$mail->msgHTML(file_get_contents("email-window.html"), __DIR__);
 				//send emial to
 				$mail->addAddress($email);
 				//send emial
