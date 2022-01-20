@@ -36,5 +36,10 @@ Website with tasks
 - [ ] frontend for admin panel
 - [x] add custom url links
 - [ ] create ssl for page
-- [ ] edits mail body and create <b><i>noreply</i></b> mail
+- [x] create <b><i>noreply</i></b> mail
+- [ ] create message for mail with css
+
+
+
+
 
