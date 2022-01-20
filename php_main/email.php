@@ -83,19 +83,19 @@
 				//port SMTP
 				$mail->Port = "465";
 				//emial user
-				$mail->Username = "noreply@mytasks.pl";
+				$mail->Username = "test@mytasks.pl";
 				//mail password
 				$mail->Password = "Kobie098";
 				//email subject
 				$mail->Subject = "Test send";
 				//sender emial
-				$mail->setFrom("noreply@mytasks.pl");
+				$mail->setFrom("test@mytasks.pl");
 				//set chars
 				$mail->CharSet = "UTF-8";
 				//set body on HTML
 				$mail->isHTML(true);
 				//emial body
-				$mail->msgHTML(file_get_contents("email-window.html"), __DIR__);
+				$mail->msgHTML(file_get_contents("email-window.html"));
 				//send emial to
 				$mail->addAddress($email);
 				//send emial
