@@ -22,7 +22,7 @@
 	//emial user
 	$mail->Username = "jkolodziej@mytasks.pl";
 	//mail password
-	$mail->Password = "Kobie098";
+	$mail->Password = "**";
 	//email subject
 	$mail->Subject = "Test send";
 	//sender emial
