@@ -68,9 +68,8 @@
 				$array = $key;
 			}
 
-			$keys = sizeof($array);
 
-			if ($keys > 0) {
+			if (isset($array)) {
 				//create email
 				$mail = new PHPMailer();
 				//use SMTP

@@ -16,17 +16,50 @@ session_start();
         $password = $_POST['passwd'];
         $rpassword = $_POST['rpasswd'];
 
-        //insert into databse
-        $sql = "INSERT INTO users (login, email, password) VALUES ('$login', '$email', '$password')";
+        //get login to check if someone was singed up
+        $checkLogin = "SELECT login FROM users WHERE login='$login'";
+        $queryLogin = mysqli_query($con, $checkLogin);
 
-
-        if ($password != $rpassword) {
-            echo '<script type="text/javascript">alert("Passwords is differends!");</script>';
+        //add results from array
+        $login_arr;
+        foreach($queryLogin as $key) {
+            $login_arr = $key;
         }
 
-        else {
-            $query = mysqli_query($con, $sql);
-            header("Location: login.php");
+
+        //get email to check if someone was singed up
+        $checkEmail = "SELECT email FROM users WHERE email='$email'";
+        $queryEmail = mysqli_query($con, $checkEmail);
+
+        //add results from array
+        $email_arr;
+        foreach($queryEmail as $key) {
+            $email_arr = $key;
+        }
+
+        //if someone wasn't singed up with login and email
+        if(!isset($login_arr) & !isset($email_arr)) {
+            //insert into databse
+            $sql = "INSERT INTO users (login, email, password) VALUES ('$login', '$email', '$password')";
+
+            //if passwords are diferents show alert
+            if ($password != $rpassword) {
+                echo '<script type="text/javascript">alert("Passwords is differends!");</script>';
+            }
+
+            else {
+                $query = mysqli_query($con, $sql);
+                header("Location: login.php");
+            }
+        }
+
+        //if someone was singed up with logi
+        else if(isset($login_arr)) {
+            echo "<script>alert('Someone was singed up about this login');</script>";
+        }
+        //if someone was singed up with email
+        else if(isset($email_arr)) {
+            echo "<script>alert('Someone was singed up about this email');</script>";
         }
     }
 
