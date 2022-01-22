@@ -21,7 +21,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="images/t.png">
 	<link rel="stylesheet" type="text/css" href="css/style-email.css">
-	<link rel="stylesheet" type="text/css" href="css/style-send-mail.css">
 	<title>Regenerate password</title>
 </head>
 <body>
@@ -36,7 +35,7 @@
 
 		<form method="POST">
 			<div id="inputDiv">
-				<input type="text" name="email" id="input" placeholder="Enter e-mail...">
+				<input type="text" name="email" id="input" placeholder="Enter e-mail..." required>
 			</div>
 
 			<div id="buttonsDiv">
@@ -69,7 +68,9 @@
 				$array = $key;
 			}
 
-			if (isset($array)) {
+			$keys = sizeof($array);
+
+			if ($keys > 0) {
 				//create email
 				$mail = new PHPMailer();
 				//use SMTP
@@ -85,7 +86,7 @@
 				//emial user
 				$mail->Username = "test@mytasks.pl";
 				//mail password
-				$mail->Password = "**";
+				$mail->Password = "***";
 				//email subject
 				$mail->Subject = "Test send";
 				//sender emial
