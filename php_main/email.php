@@ -97,15 +97,12 @@
 				//send emial to
 				$mail->addAddress($email);
 				//send emial
-				if($mail->Send()) {
-					echo "<script>alert('Email Send');</script>";
-				}
-
-				else {
-					echo "Error";
+				if(!$mail->Send()) {
+					echo "<script>alert('Message cano't bee send');</script>";
 				}
 
 				$mail->smtpClose();
+				header("Location: login.php");
 			}
 
 			else {
