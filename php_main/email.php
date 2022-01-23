@@ -60,16 +60,14 @@
 			global $con, $html;
 			$email = $_POST['email'];
 
-			$sql = "SELECT * FROM users WHERE email='$email'";
+			$sql = "SELECT email FROM users WHERE email='$email'";
 			$query = mysqli_query($con, $sql);
-
-			$array;
-			foreach($query as $key) {
-				$array = $key;
-			}
+			$array = mysqli_fetch_row($query);
+			
+			$emailDB = $array[0];
 
 
-			if (isset($array)) {
+			if ($email == $emailDB) {
 				//create email
 				$mail = new PHPMailer();
 				//use SMTP
@@ -85,7 +83,7 @@
 				//emial user
 				$mail->Username = "test@mytasks.pl";
 				//mail password
-				$mail->Password = "**";
+				$mail->Password = "Kobie098";
 				//email subject
 				$mail->Subject = "Test send";
 				//sender emial
