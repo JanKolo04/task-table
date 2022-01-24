@@ -27,7 +27,7 @@ Website with tasks
 - [x] add custom url links
 - [ ] create ssl for page
 - [x] create <b><i>noreply</i></b> mail
-- [x] create message for mail with css
+- [ ] create @media for phone user
 
 
 
