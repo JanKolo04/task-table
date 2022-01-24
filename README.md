@@ -21,23 +21,13 @@ Website with tasks
 
 
 
-
-# Notes 
-```txt
-1. Dodać metode do tworzenia historii do głownego kodu
-2. Sprawdzić działanie SQL editor
-```
-
-
-
 ## TASKS
 - [x] forgot password method
 - [x] send email in forgot password after write email
-- [ ] frontend for admin panel
 - [x] add custom url links
 - [ ] create ssl for page
 - [x] create <b><i>noreply</i></b> mail
-- [ ] create message for mail with css
+- [x] create message for mail with css
 
 
 
