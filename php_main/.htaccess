@@ -1,0 +1,11 @@
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#set start page
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^mytasks\.pl$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.mytasks\.pl$
+RewriteRule ^/?$ "https\:\/\/mytasks\.pl\/login" [R=301,L]
+
