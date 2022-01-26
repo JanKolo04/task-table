@@ -28,6 +28,7 @@ Website with tasks
 - [ ] create ssl for page
 - [x] create <b><i>noreply</i></b> mail
 - [ ] create @media for phone user
+- [ ] delete http protocol
 
 
 
