@@ -29,7 +29,7 @@ Website with tasks
 - [x] create <b><i>noreply</i></b> mail
 - [ ] create @media for phone user
 - [ ] delete http protocol in .htaccess
-
+- [ ] check why https cant by active
 
 
 
