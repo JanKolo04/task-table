@@ -32,7 +32,7 @@
 								<td>&nbsp;</td>
 							</tr>
 							<tr>
-								<td style="font-size: 15px; color: black;">Hi, Jan!</td>
+								<td style="font-size: 15px; color: black;">Hi, {{login}}</td>
 							</tr>
 
 							<tr style="line-height: 10px;">
@@ -40,7 +40,7 @@
 							</tr>	
 
 							<tr>
-								<td style="font-size: 15px; color: black;">Sorry to hear you're having trouble logging into Instagram. We can help you get straight back into your account.
+								<td style="font-size: 15px; color: black;">Sorry to hear you're having trouble logging into mytasks. We can help you get straight back into your account.
 								</td>
 							</tr>
 
@@ -57,8 +57,8 @@
 					<table style="width: 500px;">
 						<tbody>
 							<tr>
-								<td style="text-align: center;">
-									<button style="height: 35px; width: 490px; border: none; border-radius: 6px; font-size: 17px; color: white; background-color: #1877f2;">Click to reset</button>
+								<td style="text-align: center; border-radius: 6px; background-color: #1877f2; height: 35px;">
+									<a href="{{link}}" style="height: 35px;width: 496px; border: none; border-radius: 6px; font-size: 17px; color: white; text-decoration: none;">Click here to change</a>
 								</td>
 							</tr>
 

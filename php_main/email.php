@@ -60,12 +60,36 @@
 			global $con, $html;
 			$email = $_POST['email'];
 
-			$sql = "SELECT email FROM users WHERE email='$email'";
+			$sql = "SELECT id,login,email FROM users WHERE email='$email'";
 			$query = mysqli_query($con, $sql);
-			$array = mysqli_fetch_row($query);
 			
-			$emailDB = $array[0];
+			$array = [];
+			foreach($query as $key) {
+				$array = $key;
+			}
+			
+			$emailDB = $array['email'];
 
+
+			$linkArray = [
+				"id" => $array['id'],
+				"login" => $array['login']
+			];
+
+			$queryString = http_build_query($linkArray);
+			$link = "https://www.mytasks.pl/input-passwd?".$queryString;
+
+
+			//repalce data in email message
+			$emailWindow = file_get_contents("email-window.php");
+			$editsData = [
+				"{{login}}" => $linkArray['login'],
+				"{{link}}" => $link
+			];
+
+			foreach($editsData as $key => $value) {
+				$emailWindow = str_replace($key, $value, $emailWindow);
+			}
 
 			if ($email == $emailDB) {
 				//create email
@@ -81,19 +105,19 @@
 				//port SMTP
 				$mail->Port = "465";
 				//emial user
-				$mail->Username = "test@mytasks.pl";
+				$mail->Username = "janek@mytasks.pl";
 				//mail password
-				$mail->Password = "Kobie098";
+				$mail->Password = "***";
 				//email subject
 				$mail->Subject = "Test send";
 				//sender emial
-				$mail->setFrom("test@mytasks.pl");
+				$mail->setFrom("janek@mytasks.pl");
 				//set chars
 				$mail->CharSet = "UTF-8";
 				//set body on HTML
 				$mail->isHTML(true);
 				//emial body
-				$mail->msgHTML(file_get_contents("email-window.html"));
+				$mail->msgHTML($emailWindow);
 				//send emial to
 				$mail->addAddress($email);
 				//send emial
@@ -102,7 +126,6 @@
 				}
 
 				$mail->smtpClose();
-				header("Location: login.php");
 			}
 
 			else {
