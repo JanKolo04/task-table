@@ -19,6 +19,14 @@ Website with tasks
 
 <img width="1851" alt="Zrzut ekranu 2021-12-12 o 23 49 45" src="https://user-images.githubusercontent.com/76879087/145732756-b6562d6c-a525-4130-b7c6-4f2e57e0ebf7.png">
 
+### plan działania
+```txt
+1. Pobieram dane o uzytkowniku
+2. Wstawaim je do linku który jest przypisany do przyciusku
+
+
+```
+
 
 
 ## TASKS
