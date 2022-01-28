@@ -21,10 +21,7 @@ Website with tasks
 
 ### plan działania
 ```txt
-1. Pobieram dane o uzytkowniku
-2. Wstawaim je do linku który jest przypisany do przyciusku
-
-
+1. Po zmianie hasła nie mozna wejsc na strona staje sie nie aktywna
 ```
 
 
