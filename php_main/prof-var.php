@@ -7,7 +7,9 @@
 		include("connection.php");
 
 		function profileFunction() {
-			global $con, $login;
+			global $con;
+
+			$login = $_COOKIE['loginTask'];
 
 			//get all elements from allTask column where login is LOGIN USER
 			$sqlAll = "SELECT allTask FROM taskowo WHERE login='$login'";
@@ -159,133 +161,133 @@
 						//append task to progress
 						tasksHolder2.appendChild(task);
 
-								$.ajax({
-									url: "upload-task.php",
-									method: "post",
-									//pro mozemy nazwac inaczej bo to nazwa do
-									//znalezienia przez POST
-									data: {pro: text},
-									success: function() {
-										return true;
-									}
-								})
+						$.ajax({
+							url: "upload-task.php",
+							method: "post",
+							//pro mozemy nazwac inaczej bo to nazwa do
+							//znalezienia przez POST
+							data: {pro: text},
+							success: function() {
+								return true;
 							}
-
-
-							//instruction for complete button
-							completeButton.onclick = function() {
-								//remove end complete button from task belt
-								completeButton.remove();
-								//remove task from progress
-								tasksHolder2.removeChild(task);
-								//append task to end task
-								tasksHolder3.appendChild(task);
-
-								$.ajax ({
-									url: "upload-task.php",
-									method: "post",
-									data: {end: text},
-									success: function() {
-										return true;
-									}
-								})
-							}
-
-
-
-							//inscruction for delete button
-							removeButton.onclick = function() {
-								//delete task
-								task.remove();
-
-								$.ajax ({
-									url: "upload-task.php",
-									method: "post",
-									data: {remove: text},
-									success: function() {
-										return true;
-									}
-
-								})
-							}
-
-
-							//this code runs every second 
-							setInterval(function(){ 
-
-							  	//all data from all tasks
-							  	var allTaskNumber = tasksHolder1.children.length;
-							  	text1.innerHTML = "All tasks " + allTaskNumber;
-							  	//all data from div progress
-							  	var progressTaskNumber = tasksHolder2.children.length;
-							  	text2.innerHTML = "Tasks in progress " + progressTaskNumber;
-							  	//all data from end task
-							  	var endTaskNumber = tasksHolder3.children.length;
-							  	text3.innerHTML = "End tasks " + endTaskNumber;
-
-							}, 1);
-						}
-
-
-						function all() {
-							//get array from php to js
-				
-						    var arrayAll = <?php echo json_encode($arrayAll); ?>;
-
-						    //get array length 
-						    var length = arrayAll.length;
-
-						    var all = document.getElementById("tasksHolder1");
-							for (var i=0; i<length; ++i) {
-								if (arrayAll[i] != '') {
-								    //variable text is a element from array (text)
-								    var text = arrayAll[i];
-								    createTask(text, all);
-								}
-							}
-						}
-
-
-						function pro() {
-							//get array from php to js
-						    var arrayPro = <?php echo json_encode($arrayPro); ?>;
-						    //get array length 
-						    var length = arrayPro.length;
-
-						    var pro = document.getElementById("tasksHolder2");
-							for (var i=0; i<length; ++i) {
-								if (arrayPro[i] != '') {
-								    //variable text is a element from array (text)
-								    var text = arrayPro[i];
-								    createTask(text, pro);
-
-								}
-							}
-						}
-
-
-						function end() {
-							//get array from php to js
-						    var arrayEnd = <?php echo json_encode($arrayEnd); ?>;
-						    //get array length 
-						    var length = arrayEnd.length;
-
-						    var end = document.getElementById("tasksHolder3");
-							for (var i=0; i<length; ++i) {
-								if (arrayEnd[i] != '') {
-								    //variable text is a element from array (text)
-								    var text = arrayEnd[i];
-								    createTask(text, end);
-
-								}
-							}
-						}
-
-					window.onload = function() {
-						all();
-						pro();
-						end();
+						})
 					}
+
+
+					//instruction for complete button
+					completeButton.onclick = function() {
+						//remove end complete button from task belt
+						completeButton.remove();
+						//remove task from progress
+						tasksHolder2.removeChild(task);
+						//append task to end task
+						tasksHolder3.appendChild(task);
+
+						$.ajax ({
+							url: "upload-task.php",
+							method: "post",
+							data: {end: text},
+							success: function() {
+								return true;
+							}
+						})
+					}
+
+
+
+					//inscruction for delete button
+					removeButton.onclick = function() {
+						//delete task
+						task.remove();
+
+						$.ajax ({
+							url: "upload-task.php",
+							method: "post",
+							data: {remove: text},
+							success: function() {
+								return true;
+							}
+
+						})
+					}
+
+
+					//this code runs every second 
+					setInterval(function(){ 
+
+					  	//all data from all tasks
+					  	var allTaskNumber = tasksHolder1.children.length;
+					  	text1.innerHTML = "All tasks " + allTaskNumber;
+					  	//all data from div progress
+					  	var progressTaskNumber = tasksHolder2.children.length;
+					  	text2.innerHTML = "Tasks in progress " + progressTaskNumber;
+					  	//all data from end task
+					  	var endTaskNumber = tasksHolder3.children.length;
+					  	text3.innerHTML = "End tasks " + endTaskNumber;
+
+					}, 1);
+				}
+
+
+				function all() {
+					//get array from php to js
+		
+				    var arrayAll = <?php echo json_encode($arrayAll); ?>;
+
+				    //get array length 
+				    var length = arrayAll.length;
+
+				    var all = document.getElementById("tasksHolder1");
+					for (var i=0; i<length; ++i) {
+						if (arrayAll[i] != '') {
+						    //variable text is a element from array (text)
+						    var text = arrayAll[i];
+						    createTask(text, all);
+						}
+					}
+				}
+
+
+				function pro() {
+					//get array from php to js
+				    var arrayPro = <?php echo json_encode($arrayPro); ?>;
+				    //get array length 
+				    var length = arrayPro.length;
+
+				    var pro = document.getElementById("tasksHolder2");
+					for (var i=0; i<length; ++i) {
+						if (arrayPro[i] != '') {
+						    //variable text is a element from array (text)
+						    var text = arrayPro[i];
+						    createTask(text, pro);
+
+						}
+					}
+				}
+
+
+				function end() {
+					//get array from php to js
+				    var arrayEnd = <?php echo json_encode($arrayEnd); ?>;
+				    //get array length 
+				    var length = arrayEnd.length;
+
+				    var end = document.getElementById("tasksHolder3");
+					for (var i=0; i<length; ++i) {
+						if (arrayEnd[i] != '') {
+						    //variable text is a element from array (text)
+						    var text = arrayEnd[i];
+						    createTask(text, end);
+
+						}
+					}
+				}
+
+			window.onload = function() {
+				all();
+				pro();
+				end();
+			}
 
 
 			</script>
