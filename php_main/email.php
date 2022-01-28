@@ -60,6 +60,7 @@
 			global $con, $html;
 			$email = $_POST['email'];
 
+			//get id,login and emaik from db where is email from POST
 			$sql = "SELECT id,login,email FROM users WHERE email='$email'";
 			$query = mysqli_query($con, $sql);
 			
@@ -67,26 +68,34 @@
 			foreach($query as $key) {
 				$array = $key;
 			}
-			
+			//email from db for check if is correct
 			$emailDB = $array['email'];
 
 
+
+			/*----------------replace data in email message----------------*/
+			//replace data in email message
+			//create new array with information to url
 			$linkArray = [
 				"id" => $array['id'],
 				"login" => $array['login']
 			];
 
+			//create url with data from array
 			$queryString = http_build_query($linkArray);
+			//put all together
 			$link = "https://www.mytasks.pl/input-passwd?".$queryString;
 
 
 			//repalce data in email message
 			$emailWindow = file_get_contents("email-window.php");
+			//array for data to change
 			$editsData = [
 				"{{login}}" => $linkArray['login'],
 				"{{link}}" => $link
 			];
 
+			//replcae data
 			foreach($editsData as $key => $value) {
 				$emailWindow = str_replace($key, $value, $emailWindow);
 			}
@@ -105,13 +114,13 @@
 				//port SMTP
 				$mail->Port = "465";
 				//emial user
-				$mail->Username = "janek@mytasks.pl";
+				$mail->Username = "sredni@mytasks.pl";
 				//mail password
 				$mail->Password = "***";
 				//email subject
 				$mail->Subject = "Test send";
 				//sender emial
-				$mail->setFrom("janek@mytasks.pl");
+				$mail->setFrom("sredni@mytasks.pl");
 				//set chars
 				$mail->CharSet = "UTF-8";
 				//set body on HTML
