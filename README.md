@@ -21,7 +21,13 @@ Website with tasks
 
 ### plan działania
 ```txt
-1. Po zmianie hasła nie mozna wejsc na strona staje sie nie aktywna
+Nowa metoda zmiany hasła
+1. Po wpisaniu hasła wysle się mail z kodem
+2. Przenisie nas do stroyn gdzie musimy wpisac kod z maila
+3. Po wpisaniu poprawnego przeniesie nas do strony ze zmiana hasła
+
+WYMYŚLEĆ:
+jak ustawic to ze po upływie czasu kod nie bedzie aktywny(COOKIES)
 ```
 
 
