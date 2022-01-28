@@ -116,8 +116,12 @@
 			$first = $_POST['first'];
 			$second = $_POST['second'];
 
+
+			//login from url
+			$login = $_GET['login'];
+
 			//table name and data
-			$sql = "UPDATE test SET password='$first' WHERE login='janek'";
+			$sql = "UPDATE users SET password='$first' WHERE login='$login'";
 			$query = mysqli_query($con, $sql);
 		}
 

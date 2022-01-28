@@ -15,6 +15,12 @@
 		function loginFunction() {
 
 			echo "
+				<div class='baner'>
+					<div class='textBaner'>
+						<h1 id='banerText'>TASK BOARD</h1>
+					</div>
+				</div>
+
 				<div id='main'>
 					<div class='white-background'>
 					

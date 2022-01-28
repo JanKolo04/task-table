@@ -1,6 +1,38 @@
 body {
+	background-color: #e9ebee;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+/*------------BANER------------*/
+
+.baner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 60px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+	box-shadow: 10px 6px 5px #d9d9d9;
+}
+
+.textBaner {
+	display: flex;
+	width: 220px;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#banerText {
+	font-size: 25px;
+	color: #0066ff;
+	text-shadow: 2px 2px #d9d9d9;
+}
+
+
+/*------------MAIN------------*/
 
 #main {
 	position: absolute;
@@ -11,7 +43,6 @@ body {
 	width: 100vw;
 	justify-content: center;
   	align-items: center;
-	background-image: linear-gradient(to right, #00ffff, #cc33ff);
 }
 
 .white-background {
@@ -381,6 +412,19 @@ FOR PHONE USERS
 		text-decoration: underline;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

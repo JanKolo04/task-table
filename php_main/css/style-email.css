@@ -1,16 +1,51 @@
 body {
-	background-image: linear-gradient(to right, #00ffff, #cc33ff);
+	background-color: #e9ebee;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+/*------------BANER------------*/
+
+.baner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 60px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+	box-shadow: 10px 6px 5px #d9d9d9;
+}
+
+.textBaner {
+	display: flex;
+	width: 220px;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#banerText {
+	font-size: 25px;
+	color: #0066ff;
+	text-shadow: 2px 2px #d9d9d9;
+}
+
+
+/*------------MAIN------------*/
+
 #main {
+	/*
 	position: absolute;
 	left: 50%;
 	top: 0;
 	transform: translate(-50%, 50%);
+	*/
 	width: 40%;
 	height: 400px;
 	border-radius: 6px;
+	margin: auto;
+	margin-top: 180px;
 	background-color: white;
 }
 
@@ -119,6 +154,24 @@ body {
     #buttonsDiv {
         flex-direction: column;
     }
+    #back {
+    	margin: auto;
+    }
+
+    #submit {
+    	margin: auto;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 

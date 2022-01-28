@@ -25,6 +25,12 @@
 </head>
 <body>
 
+	<div class='baner'>
+		<div class='textBaner'>
+			<h1 id='banerText'>TASK BOARD</h1>
+		</div>
+	</div>
+
 	<div id="main">
 		<div id="label">
 			<h1 id="text1">Forgot password</h1>
@@ -40,7 +46,7 @@
 
 			<div id="buttonsDiv">
 				<div id="backDiv">
-					<a id="back" href="login"> back</a>
+					<a id="back" href="login">back</a>
 				</div>
 
 				<div id="submitDiv">
@@ -116,7 +122,7 @@
 				//emial user
 				$mail->Username = "sredni@mytasks.pl";
 				//mail password
-				$mail->Password = "***";
+				$mail->Password = "Kobie098";
 				//email subject
 				$mail->Subject = "Test send";
 				//sender emial
