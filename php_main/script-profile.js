@@ -222,26 +222,23 @@ function disableAdd() {
 	  	else if (len > 0) {
 	  		//activae button
 			if(array.at(0) == ' ' & array.at(-1) == ' ') {
-				console.log("Spacja z przodu i z tyłu");
-				addButton.style = "background-color: #66a3ff";
 				addButton.disabled = true;
+				addButton.style = "background-color: #66a3ff";
 			}
 
 			else if (array.at(0) == ' ') {
-				console.log("Spacja na początku");
-				addButton.style = "background-color: #66a3ff";
 				addButton.disabled = true;
+				addButton.style = "background-color: #66a3ff";
 			}
 
 			else if (array.at(-1) == ' ') {
-				console.log("Spacja na koncu");
-				addButton.style = "background-color: #66a3ff";
 				addButton.disabled = true;
+				addButton.style = "background-color: #66a3ff";
 			}
 
 			else {
 				addButton.disabled = false;
-				addButton.style = "background-color: #0066ff"
+				addButton.style = "background-color: #0066ff";
 			}
 
 	  		

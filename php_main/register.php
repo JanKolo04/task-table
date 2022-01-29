@@ -80,50 +80,52 @@ session_start();
 </head>
 <body>
 
-    <div class="main">
-        <div class="white-background">
+    <div class='baner'>
+        <div class='textBaner'>
+            <h1 id='banerText'>TASK BOARD</h1>
+        </div>
+    </div>
 
-
+    <div class="white-background">
         
-            <h1 id="text1">Register</h1>
-            <p id="text2">Enter login e-mail and password to create account</p>
+        <h1 id="text1">Register</h1>
+        <p id="text2">Enter login e-mail and password to create account</p>
 
-            <div class="allStuff">
-                <form method="POST">
-                    <table id="table">
-                        <tr class="record">
-                            <td>
-                                <input type="text" id="login" name="login" required placeholder="Login">
-                            </td>
-                            <td>
-                                <input type="text" id="email" name="email" required placeholder="E-mail">
-                            </td>
-                        </tr>
+        <div class="allStuff">
+            <form method="POST">
+                <table id="table">
+                    <tr class="record">
+                        <td>
+                            <input type="text" id="login" name="login" required placeholder="Login">
+                        </td>
+                        <td>
+                            <input type="text" id="email" name="email" required placeholder="E-mail">
+                        </td>
+                    </tr>
 
-                        <tr class="record">
-                            <td>
-                                <input type="password" id="passwd" name="passwd" required placeholder="Password">
-                                <i class="bi bi-eye-slash" id="togglePassword1"></i>
-                            </td>
-                            <td>
-                                <input type="password" id="rPasswd" name="rpasswd" required placeholder="Repeat Password">
-                                <i class="bi bi-eye-slash" id="togglePassword2"></i>
-                            </td>
-                        </tr>
-                    </table>
+                    <tr class="record">
+                        <td>
+                            <input type="password" id="passwd" name="passwd" required placeholder="Password">
+                            <i class="bi bi-eye-slash" id="togglePassword1"></i>
+                        </td>
+                        <td>
+                            <input type="password" id="rPasswd" name="rpasswd" required placeholder="Repeat Password">
+                            <i class="bi bi-eye-slash" id="togglePassword2"></i>
+                        </td>
+                    </tr>
+                </table>
 
 
-                    <div class="submit-login">
-                        <div id="submit-div">
-                            <button type="submit" name="submit" class="submit" id="submit">Submit</button>
-                        </div>
-
-                        <div id="login-div">
-                            <p id="loginText">If you have an account? <a id="loginLink" href="login">Login</a></p>
-                        </div>
+                <div class="submit-login">
+                    <div id="submit-div">
+                        <button type="submit" name="submit" class="submit" id="submit">Submit</button>
                     </div>
-                </form>
-            </div>
+
+                    <div id="login-div">
+                        <p id="loginText">If you have an account? <a id="loginLink" href="login">Login</a></p>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 

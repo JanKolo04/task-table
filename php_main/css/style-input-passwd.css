@@ -1,7 +1,38 @@
 body {
+	background-color: #e9ebee;
 	font-family: Arial, Helvetica, sans-serif;
-	background-image: linear-gradient(to right, #00ffff, #cc33ff);
 }
+
+/*------------BANER------------*/
+
+.baner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 60px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+	box-shadow: 10px 6px 5px #d9d9d9;
+}
+
+.textBaner {
+	display: flex;
+	width: 220px;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#banerText {
+	font-size: 25px;
+	color: #0066ff;
+	text-shadow: 2px 2px #d9d9d9;
+}
+
+
+/*------------MAIN------------*/
 
 
 #content {
@@ -13,6 +44,7 @@ body {
 	transform: translate(-50%, 40%);
 	border-radius: 6px;
 	background-color: white;
+	box-shadow: 5px 5px 20px #cccccc;
 }
 
 #textHolder {
@@ -35,7 +67,7 @@ body {
 	margin: 0px;
 	font-size: 40px;
 	text-align: center;
-	color: #00ffff;
+	color: #0066ff;
 }
 
 #textDiv2 {
@@ -69,6 +101,7 @@ body {
 }
 
 .input {
+    -webkit-transition: 0.5s;
     font-size: 18px;
     line-height: 48px;
     margin: 10px;
@@ -82,7 +115,7 @@ body {
 }
 
 .input:focus {
-	border-bottom: 1px solid #00ffff;
+	border-bottom: 1px solid #0066ff;
 	outline: none;
 }
 
@@ -99,14 +132,14 @@ i {
 }
 
 #button {
-	width: 100px;
+	padding: 0 20px;
 	height: 48px;
     border: none;
     margin-top: 10px;
     border-radius: 6px;
     font-size: 25px;
     color: white;
-    background-image: linear-gradient(to right, #ff00ff, #6600ff);
+    background-color: #0066ff;
 }
 
 

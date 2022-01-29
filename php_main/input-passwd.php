@@ -16,6 +16,13 @@
 	<title>Register password</title>
 </head>
 <body>
+	
+	<div class='baner'>
+		<div class='textBaner'>
+			<h1 id='banerText'>TASK BOARD</h1>
+		</div>
+	</div>
+
 
 	<div id="content">
 		<div id="textHolder">

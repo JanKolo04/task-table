@@ -69,6 +69,7 @@ body {
 }
 
 #code {
+    -webkit-transition: 0.5s;
 	height: 40px;
 	width: 150px;
 	font-size: 16px;
@@ -97,7 +98,7 @@ body {
 	font-size: 13px;
 	margin-left: 10px;
 	text-decoration: none;
-	color: #1877f2;
+	color: #0066ff;
 }
 
 #link:hover {
@@ -130,7 +131,7 @@ body {
 	border: none;
 	border-radius: 6px;
 	font-size: 16px;
-	background-color: #1877f2;
+	background-color: #0066ff;
 }
 
 

@@ -33,9 +33,9 @@
 						<div class='allStuff'>
 							
 							<form method='post'>
-								<input type='text' name='login' class='login' required placeholder='Login' maxlength='20'>
+								<input type='text' name='login' class='input' required placeholder='Login' maxlength='20'>
 								
-								<input type='password' name='passwd' class='passwd' id='password' required placeholder='Password' maxlength='30'>
+								<input type='password' name='passwd' class='input' id='password' required placeholder='Password' maxlength='30'>
 
 								<i class='bi bi-eye-slash' id='togglePassword'></i>
 

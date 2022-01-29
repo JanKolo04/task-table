@@ -4,6 +4,9 @@ body {
 	font-family: 'Trebuchet MS', sans-serif;
 }
 
+
+/*------------BANER------------*/
+
 .baner {
 	position: absolute;
 	top: 0;
@@ -54,6 +57,8 @@ body {
 	text-decoration: underline;
 }
 
+/*------------MAIN------------*/
+
 
 .header {
 	position: absolute;
@@ -67,13 +72,14 @@ body {
 
 
 .inputDiv {
-	width: calc(100% - 170px);
+	width: calc(100% - 200px);
 	height: 80px;
 	display: flex;
 	align-items: center;
 }
 
 #myText {
+    -webkit-transition: 0.5s;
 	width: 98%;
 	height: 50px;
 	border: none;
@@ -84,7 +90,7 @@ body {
 }
 
 .buttonDiv {
-	width: 170px;
+	width: 200px;
 	height: 80px;
 	display: flex;
 	justify-content: center;
@@ -93,9 +99,10 @@ body {
 
 
 .add_button {
-	font-size: 40px;
+	font-size: 30px;
 	height: 50px;
-	width: 100px;
+	min-width: 100px;
+	padding: 0 20px;
 	background-color: #66a3ff;
 	border: none;
 	border-radius: 5px;
@@ -178,18 +185,18 @@ body {
 	top: 80px;
 	width: 100%;
 	left: 0;
-	height: 680px;
+	height: 700px;
 	display: flex;
   	flex-direction: row;
 }
 
-
+/*-----HOLDERS FOR TASKS-----*/
 #tasks_all {
 	min-width: 180px;
 	width: 660px;
 	margin-left: 20px;
 	margin-right: 20px;
-	height: 100%;
+	height: 680px;
 	display: flex;
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
@@ -209,7 +216,53 @@ body {
 }
 
 
-/*task*/
+#progress_task {
+	min-width: 180px;
+	width: 660px;
+	height: 680px;
+	display: flex;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	background-color: white;
+	box-shadow: 0 10px 10px -3px #cccccc;
+}
+
+#tasksHolder2 {
+	display: flex;
+	width: 80%;
+	height: 620px;
+	margin: auto;
+	flex-direction: column;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+
+#task_end {
+	min-width: 180px;
+	width: 660px;
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 680px;
+	display: flex;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	background-color: white;
+	box-shadow: 0 10px 10px -3px #cccccc;
+}
+
+#tasksHolder3 {
+	display: flex;
+	width: 80%;
+	height: 620px;
+	margin: auto;
+	flex-direction: column;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+
+/*---------task----------*/
 .taskBody {
 	display: flex;
 	flex-direction: column;
@@ -285,51 +338,6 @@ body {
 }
 
 
-
-#progress_task {
-	min-width: 180px;
-	width: 660px;
-	height: 100%;
-	display: flex;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-	background-color: white;
-	box-shadow: 0 10px 10px -3px #cccccc;
-}
-
-#tasksHolder2 {
-	display: flex;
-	width: 80%;
-	height: 620px;
-	margin: auto;
-	flex-direction: column;
-	flex-wrap: wrap;
-	overflow: auto;
-}
-
-
-#task_end {
-	min-width: 180px;
-	width: 660px;
-	margin-left: 20px;
-	margin-right: 20px;
-	height: 100%;
-	display: flex;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-	background-color: white;
-	box-shadow: 0 10px 10px -3px #cccccc;
-}
-
-#tasksHolder3 {
-	display: flex;
-	width: 80%;
-	height: 620px;
-	margin: auto;
-	flex-direction: column;
-	flex-wrap: wrap;
-	overflow: auto;
-}
 
 
 

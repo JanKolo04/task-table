@@ -1,14 +1,39 @@
-.main {
-    position: absolute;
-    display: flex;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(to right, #00ffff, #cc33ff);
+body {
+    background-color: #e9ebee;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+/*------------BANER------------*/
+
+.baner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: 10px 6px 5px #d9d9d9;
+}
+
+.textBaner {
+    display: flex;
+    width: 220px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#banerText {
+    font-size: 25px;
+    color: #0066ff;
+    text-shadow: 2px 2px #d9d9d9;
+}
+
+
+/*------------MAIN------------*/
+
 
 .white-background {
     position: absolute;
@@ -19,6 +44,7 @@
     transform: translate(-50%, -50%);
     border-radius: 6px;
     background-color: white;
+    box-shadow: 5px 5px 20px #cccccc;
 }
 
 
@@ -26,14 +52,12 @@
     font-size: 40px;
     margin-top: 100px;
     text-align: center;
-    color: #00ffff;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #0066ff;
 }
 
 #text2 {
     text-align: center;
     color: #bfbfbf;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -79,7 +103,7 @@ input {
 }
 
 input:focus {
-    border-bottom: 1px solid #00ffff;
+    border-bottom: 1px solid #0066ff;
     outline: none;
 }
 
@@ -96,7 +120,6 @@ input:focus {
     margin-left: 10px;
     font-size: 15px;
     color: #bfbfbf;
-    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
 
@@ -130,7 +153,7 @@ input:focus {
     border-radius: 6px;
     font-size: 25px;
     color: white;
-    background-image: linear-gradient(to right, #ff00ff, #6600ff);
+    background-color: #0066ff;
 }
 
 
@@ -145,14 +168,12 @@ input:focus {
 #loginText {
     font-size: 15px;
     color: #bfbfbf;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 #loginLink {
     font-size: 15px;
-    color: #00ffff;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #0066ff;
     text-decoration: none;
 }
 
