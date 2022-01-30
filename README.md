@@ -33,8 +33,6 @@ jak ustawic to ze po upływie czasu kod nie bedzie aktywny(COOKIES)
 
 
 ## TASKS
-- [x] forgot password method
-- [x] send email in forgot password after write email
 - [x] add custom url links
 - [ ] create ssl for page
 - [x] create <b><i>noreply</i></b> mail
@@ -42,6 +40,7 @@ jak ustawic to ze po upływie czasu kod nie bedzie aktywny(COOKIES)
 - [ ] delete http protocol in .htaccess
 - [ ] check why https cant by active
 - [ ] create php algotim for password reset
+- [ ] chnage button to chnage password to code
 
 
 
