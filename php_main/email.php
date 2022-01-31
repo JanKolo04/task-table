@@ -1,34 +1,30 @@
-<?php
-
-	session_start();
-
-	include("connection.php");
-	include("email-var.php");
-	include("veryfi-var.php");
-
-	require 'PHPMailer/PHPMailer.php';
-	require 'PHPMailer/SMTP.php';
-	require 'PHPMailer/Exception.php';
-
-	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\SMTP;
-	use PHPMailer\PHPMailer\Exception;
-
-
-?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="images/t.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/t.png">
 	<title>Regenerate password</title>
 </head>
 <body>
 
 	<?php
+
+		session_start();
+
+		include("connection.php");
+		include("email-var.php");
+		include("veryfi-var.php");
+
+		require 'PHPMailer/PHPMailer.php';
+		require 'PHPMailer/SMTP.php';
+		require 'PHPMailer/Exception.php';
+
+		use PHPMailer\PHPMailer\PHPMailer;
+		use PHPMailer\PHPMailer\SMTP;
+		use PHPMailer\PHPMailer\Exception;
+
+		
 
 		$send = 0;
 
