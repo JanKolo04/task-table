@@ -6,7 +6,7 @@
 </head>
 <body>
 
-	<table style="width: 500px; margin: auto;">
+	<table style="width: 500px; margin: auto; margin-top: 20px; margin-bottom: 20px;">
 		<tbody>
 			<tr>
 				<td>
@@ -17,7 +17,7 @@
 							</tr>
 
 							<tr style="line-height: 5px;">
-								<td style="border-bottom: 1px solid #e5e5e5;">&nbsp;</td>
+								<td style="width: 500px; border-bottom: 1px solid #e5e5e5;">&nbsp;</td>
 							</tr>
 						</tbody>
 					</table>
@@ -57,13 +57,15 @@
 					<table style="width: 500px;">
 						<tbody>
 							<tr>
-								<td style="text-align: center; border-radius: 6px; background-color: #1877f2; height: 35px;">
-									<a href="{{link}}" style="height: 35px;width: 496px; border: none; border-radius: 6px; font-size: 17px; color: white; text-decoration: none;">Click here to change</a>
+								<td style="text-align: center; border-radius: 6px; height: 50px;">
+									<div style="display: table-cell; height: 49px; width: 120px; border: 1px solid #1877f2; border-radius: 6px; font-size: 17px; color: black; background-color: #e7f3ff; text-align: center; vertical-align: middle;">
+										<b>Kod</b>
+									</div>
 								</td>
 							</tr>
 
 							<tr style="line-height: 40px;">
-								<td style="border-bottom: 1px solid #e5e5e5;">&nbsp;</td>
+								<td style="width: 500px; border-bottom: 1px solid #e5e5e5;">&nbsp;</td>
 							</tr>
 
 							<tr style="line-height: 10px;">
