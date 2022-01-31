@@ -1,8 +1,10 @@
 <?php
 
-	include("connection.php");
-
 	session_start();
+
+	include("connection.php");
+	include("email-var.php");
+	include("veryfi-var.php");
 
 	require 'PHPMailer/PHPMailer.php';
 	require 'PHPMailer/SMTP.php';
@@ -12,58 +14,31 @@
 	use PHPMailer\PHPMailer\SMTP;
 	use PHPMailer\PHPMailer\Exception;
 
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="images/t.png">
-	<link rel="stylesheet" type="text/css" href="css/style-email.css">
+	<link rel="shortcut icon" href="images/t.ico" type="image/x-icon">
 	<title>Regenerate password</title>
 </head>
 <body>
 
-	<div class='baner'>
-		<div class='textBaner'>
-			<h1 id='banerText'>TASK BOARD</h1>
-		</div>
-	</div>
-
-	<div id="main">
-		<div id="label">
-			<h1 id="text1">Forgot password</h1>
-		</div>
-		<div id="textDiv">
-			<p id="text2">Enter e-mail for send message with link to change password</p>
-		</div>
-
-		<form method="POST">
-			<div id="inputDiv">
-				<input type="text" name="email" id="input" placeholder="Enter e-mail..." required>
-			</div>
-
-			<div id="buttonsDiv">
-				<div id="backDiv">
-					<a id="back" href="login">back</a>
-				</div>
-
-				<div id="submitDiv">
-					<button id="submit" type="submit" name="send">Send</button>
-				</div>
-			</div>
-		</form>
-	</div>
-
 	<?php
+
+		$send = 0;
 
 		if(array_key_exists("send", $_POST)) {
 			printEmail();
 		}
 
 		function printEmail() {
-			global $con, $html;
+			global $con, $send;
+
 			$email = $_POST['email'];
 
 			//get id,login and emaik from db where is email from POST
@@ -120,13 +95,13 @@
 				//port SMTP
 				$mail->Port = "465";
 				//emial user
-				$mail->Username = "sredni@mytasks.pl";
+				$mail->Username = "janek@mytasks.pl";
 				//mail password
-				$mail->Password = "***";
+				$mail->Password = "Kobie098";
 				//email subject
-				$mail->Subject = "Test send";
+				$mail->Subject = "Password reset";
 				//sender emial
-				$mail->setFrom("sredni@mytasks.pl");
+				$mail->setFrom("janek@mytasks.pl");
 				//set chars
 				$mail->CharSet = "UTF-8";
 				//set body on HTML
@@ -140,16 +115,31 @@
 					echo "<script>alert('Message cano't bee send');</script>";
 				}
 
-				$mail->smtpClose();
+				else {
+					$mail->smtpClose();
+					$send = 1;
+				}
 			}
 
 			else {
 				//alert if empty
 				echo "<script> alert('Email dosent exist'); </script>";
 			}
-		
-	
 		}
+
+		function page() {
+			global $send;
+
+			if($send == 1) {
+				veryfi();
+			}
+			else {
+				email();
+			}
+		}
+
+		page();
+		
 
 	?>
 

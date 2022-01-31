@@ -34,7 +34,7 @@ body {
 
 /*------------MAIN------------*/
 
-#main {
+#mainVeryfi {
 	height: 320px;
 	width: 500px;
 	border-radius: 6px;
@@ -44,23 +44,23 @@ body {
 	background-color: white;
 }
 
-#divText {
+#mainVeryfi #divText {
 	width: 500px;
 	height: 150px;
 }
 
-#hiDiv {
+#mainVeryfi #hiDiv {
 	height: 60px;
 	display: flex;
 	align-items: center;
 	border-bottom: 1px solid #e5e5e5;
 }
 
-#infoDiv {
+#mainVeryfi #infoDiv {
 	padding: 0 10px;
 }
 
-#inputDiv {
+#mainVeryfi #inputDiv {
 	padding: 20px 0;
 	width: 500px;
 	display: flex;
@@ -68,7 +68,7 @@ body {
 	align-items: center;
 }
 
-#code {
+#mainVeryfi #code {
     -webkit-transition: 0.5s;
 	height: 40px;
 	width: 150px;
@@ -78,55 +78,31 @@ body {
 	color: #8a8d91;
 }
 
-#submitsDiv {
-	height: 80px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+#mainVeryfi #buttonDiv {
 	border-top: 1px solid #e5e5e5;
-}
-
-#haventCodeDiv {
 	height: 80px;
-	width: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: left;
-}
-
-#link {
-	font-size: 13px;
-	margin-left: 10px;
-	text-decoration: none;
-	color: #0066ff;
-}
-
-#link:hover {
-	text-decoration: underline;
-}
-
-#buttonDiv {
-	height: 80px;
-	width: 50%;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: right;
 }
 
-#cancel {
+#mainVeryfi #cancel {
+	line-height: 36px;
 	margin-right: 20px;
-	height: 36px;
-	padding: 0 20px;
+	padding: 0px 20px;
 	border: none;
 	border-radius: 6px;
 	font-size: 16px;
+	text-decoration: none;
+	color: black;
 	background-color: #e4e6eb;
 }
 
-#submit {
+#mainVeryfi #submit {
 	color: white;
 	margin-right: 20px;
-	height: 36px;
+	line-height: 36px;
 	padding: 0 20px;
 	border: none;
 	border-radius: 6px;

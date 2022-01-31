@@ -3,6 +3,9 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="images/t.png">
+	<!-------LINK TO LOGIN VAR-------->
+	<!-------LINK TO PROF VAR---------->
+	
 	<title>Task Table</title>
 </head>
 <body>
@@ -119,7 +122,7 @@
 
 
 		function page() {
-			global $logged, $con, $login;
+			global $logged;
 
 			if ($logged == 0) {
 				loginFunction();

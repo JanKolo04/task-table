@@ -34,7 +34,7 @@ body {
 
 /*------------MAIN------------*/
 
-#main {
+#mainEmail {
 	/*
 	position: absolute;
 	left: 50%;
@@ -50,7 +50,7 @@ body {
 	background-color: white;
 }
 
-#label {
+#mainEmail #label {
 	margin-top: 20px;
 	display: flex;
 	align-items: center;
@@ -58,26 +58,26 @@ body {
 	height: 100px;
 }
 
-#text1 {
+#mainEmail #text1 {
     text-align: center;
 	font-size: 35px;
 	color: #0066ff;
 }
 
-#textDiv {
+#mainEmail #textDiv {
 	display: flex;
 	align-items: top;
 	justify-content: center;
 	height: 60px;
 }
 
-#text2 {
+#mainEmail #text2 {
 	margin: 0px;
 	text-align: center;
 	color: #bfbfbf;
 }
 
-#inputDiv {
+#mainEmail #inputDiv {
     height: 60px;
     width: 100%;
 	display: flex;
@@ -86,7 +86,7 @@ body {
 	height: 70px;
 }
 
-#input {
+#mainEmail #input {
     -webkit-transition: 0.5s;
     font-size: 18px;
     line-height: 48px;
@@ -99,12 +99,12 @@ body {
   	color: black;
 }
 
-#input:focus {
+#mainEmail #input:focus {
 	border-bottom: 1px solid #0066ff;
 	outline: none;
 }
 
-#buttonsDiv {
+#mainEmail #buttonsDiv {
     height: 100px;
     width: 100%;
     display: flex;
@@ -113,7 +113,7 @@ body {
     flex-direction: row;
 }
 
-#backDiv {
+#mainEmail #backDiv {
     height: 60px;
     width: 50%;
     display: flex;
@@ -121,7 +121,7 @@ body {
     align-items: center;
 }
 
-#back {
+#mainEmail #back {
     margin-left: 70px;
     color: #bfbfbf;
 	font-size: 20px;
@@ -129,11 +129,11 @@ body {
     text-decoration: none;
 }
 
-#back:hover {
+#mainEmail #back:hover {
     text-decoration: underline;
 }
 
-#submitDiv {
+#mainEmail #submitDiv {
     height: 60px;
     width: 50%;
     display: flex;
@@ -141,7 +141,7 @@ body {
     align-items: center;
 }
 
-#submit {
+#mainEmail #submit {
 	padding: 0 20px;
 	height: 50px;
 	font-size: 25px;
@@ -153,14 +153,14 @@ body {
 }
 
 @media (max-width:700px) {
-    #buttonsDiv {
+    #mainEmail #buttonsDiv {
         flex-direction: column;
     }
-    #back {
+    #mainEmail #back {
     	margin: auto;
     }
 
-    #submit {
+    #mainEmail #submit {
     	margin: auto;
     }
 }
