@@ -59,7 +59,7 @@
 							<tr>
 								<td style="text-align: center; border-radius: 6px; height: 50px;">
 									<div style="display: table-cell; height: 49px; width: 120px; border: 1px solid #1877f2; border-radius: 6px; font-size: 17px; color: black; background-color: #e7f3ff; text-align: center; vertical-align: middle;">
-										<b>Kod</b>
+										<b>{{code}}</b>
 									</div>
 								</td>
 							</tr>

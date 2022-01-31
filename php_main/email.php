@@ -14,7 +14,7 @@
 
 		include("connection.php");
 		include("email-var.php");
-		include("veryfi-var.php");
+		include("input-passwd.php");
 
 		require 'PHPMailer/PHPMailer.php';
 		require 'PHPMailer/SMTP.php';
@@ -26,14 +26,28 @@
 
 		
 
+		//global varaible for pages
 		$send = 0;
+		$codeStatus = 0;
 
+
+		//run functions sections
 		if(array_key_exists("send", $_POST)) {
 			printEmail();
 		}
 
+		if(array_key_exists("submit", $_POST)) {
+			getCode();
+		}
+
+		if(array_key_exists("submitInput", $_POST)) {
+			run();
+		}
+
+
+		//function  to send email and generate code
 		function printEmail() {
-			global $con, $send;
+			global $con, $send, $emailDB, $numbers;
 
 			$email = $_POST['email'];
 
@@ -51,25 +65,21 @@
 
 
 			/*----------------replace data in email message----------------*/
-			//replace data in email message
-			//create new array with information to url
-			$linkArray = [
-				"id" => $array['id'],
-				"login" => $array['login']
-			];
 
-			//create url with data from array
-			$queryString = http_build_query($linkArray);
-			//put all together
-			$link = "https://www.mytasks.pl/input-passwd?".$queryString;
+			//random numbers
+			$numbers = "";
+			for($i=0; $i<6; $i++) {
+				$random = rand(0,9);
+				$numbers = $numbers.$random;
+			}
 
 
 			//repalce data in email message
 			$emailWindow = file_get_contents("email-window.php");
 			//array for data to change
 			$editsData = [
-				"{{login}}" => $linkArray['login'],
-				"{{link}}" => $link
+				"{{login}}" => $array['login'],
+				"{{code}}" => $numbers
 			];
 
 			//replcae data
@@ -93,7 +103,7 @@
 				//emial user
 				$mail->Username = "janek@mytasks.pl";
 				//mail password
-				$mail->Password = "Kobie098";
+				$mail->Password = "***";
 				//email subject
 				$mail->Subject = "Password reset";
 				//sender emial
@@ -123,19 +133,53 @@
 			}
 		}
 
-		function page() {
-			global $send;
 
-			if($send == 1) {
-				veryfi();
-			}
-			else {
-				email();
+		//code for change 
+		function veryfi() {
+			global $emailDB;
+			$codePage = file_get_contents("veryfi-var.php");
+			$codePage = str_replace("{{email}}", $emailDB, $codePage);
+
+			echo $codePage;
+		}
+
+		//function for get code
+		function getCode() {
+			global $code, $numbers, $codeStatus;
+			$code = $_POST['code'];
+
+			if($code == $numbers) {
+				$codeStatus = 1;
 			}
 		}
 
-		page();
-		
+		//funciton to change password
+		function run() {
+			global $con, $emailDB;
+			//get input passwords
+			$first = $_POST['first'];
+			$second = $_POST['second'];
+
+			//table name and data
+			$sql = "UPDATE users SET password='$first' WHERE login='$emailDB'";
+			$query = mysqli_query($con, $sql);
+		}
+
+
+		//function to show pages
+
+		//if send==1 show veryfi page
+		if($send == 1) {
+			veryfi();
+		}
+
+		else if($codeStatus == 1) {
+			input_passwd();
+		}
+
+		else {
+			email();
+		}
 
 	?>
 
