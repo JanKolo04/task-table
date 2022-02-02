@@ -33,7 +33,7 @@
 
 
 			<div id='buttonDiv'>
-				<a href='login' id='cancel'>Cancel</a>
+				<a href='email' id='undo'>Undo</a>
 				<button id='submit' name="submit" type="submit">Submit</button>
 			</div>
 

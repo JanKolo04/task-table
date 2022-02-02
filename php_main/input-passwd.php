@@ -12,7 +12,7 @@
 
 	<?php
 
-		function input_passwd() {
+		function input_passwd_function() {
 			echo "
 				<div class='baner'>
 					<div class='textBaner'>
@@ -46,6 +46,41 @@
 									<i class='bi bi-eye-slash' id='togglePassword2'></i>
 								</center>
 							</div>
+
+							<script>
+								//input2
+								var button1 = document.getElementById('togglePassword1');
+								var input1 = document.getElementById('first');
+
+								//input 2
+								var button2 = document.getElementById('togglePassword2');
+								var input2 = document.getElementById('second');
+
+
+								button1.onclick = function() {
+									if(input1.type == 'password') {
+										input1.setAttribute('type', 'text');
+										button1.className = 'bi bi-eye';
+									}
+
+									else {
+										input1.setAttribute('type', 'password');
+										button1.className = 'bi bi-eye-slash';
+									}
+								}
+
+								button2.onclick = function() {
+									if(input2.type == 'password') {
+										input2.setAttribute('type', 'text');
+										button2.className = 'bi bi-eye';
+									}
+
+									else {
+										input2.setAttribute('type', 'password');
+										button2.className = 'bi bi-eye-slash';
+									}
+								}
+							</script>
 
 							<div id='submitDiv'>
 								<button id='button' type='submit' name='submitInput'>Submit</button>

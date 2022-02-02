@@ -47,9 +47,10 @@
 
 		//function  to send email and generate code
 		function printEmail() {
-			global $con, $send, $emailDB, $numbers;
+			global $con, $send, $emailDB;
 
 			$email = $_POST['email'];
+			echo "Email: ".$email;
 
 			//get id,login and emaik from db where is email from POST
 			$sql = "SELECT id,login,email FROM users WHERE email='$email'";
@@ -72,6 +73,30 @@
 				$random = rand(0,9);
 				$numbers = $numbers.$random;
 			}
+
+			//add random numbers into data base
+			//add into db for security
+			/*
+				1.Stowrzyc kolumne code w bazie danych user
+				2.Dodać do tej kolumny stworzony kod
+				3.Stworzyć warunek:
+					if(zawartość_kolumny == NULL) {
+						dodac wartośc
+					}
+					else {
+						update wartość
+					}
+				4.W funkcji getCode pobrać zawartośc kolumny
+				  i stworzyć instrukcje z porównaniem
+
+			*/
+
+			//set cookie for mail
+			setcookie("reset", "$emailDB", time() + (86400 * 1), "/"); 
+
+			//update column kod
+			$insert_code = "UPDATE users SET kod='$numbers' WHERE email='$emailDB'";
+			$mysqli_insert_code = mysqli_query($con, $insert_code);
 
 
 			//repalce data in email message
@@ -135,7 +160,7 @@
 
 
 		//code for change 
-		function veryfi() {
+		function veryfiFunction() {
 			global $emailDB;
 			$codePage = file_get_contents("veryfi-var.php");
 			$codePage = str_replace("{{email}}", $emailDB, $codePage);
@@ -145,41 +170,67 @@
 
 		//function for get code
 		function getCode() {
-			global $code, $numbers, $codeStatus;
+			global $codeStatus, $con, $send;
 			$code = $_POST['code'];
 
-			if($code == $numbers) {
+			//get cookie
+			$mailCookie = $_COOKIE['reset'];
+
+			//get code from database
+			$get_code_DB = "SELECT kod FROM users WHERE email='$mailCookie'";
+			$mysqli_get_code_DB = mysqli_query($con, $get_code_DB);
+			$codeDB = mysqli_fetch_row($mysqli_get_code_DB);
+
+			if($code == $codeDB[0]) {
 				$codeStatus = 1;
+			}
+			else {
+				$send = 1;
 			}
 		}
 
 		//funciton to change password
 		function run() {
-			global $con, $emailDB;
+			global $con;
 			//get input passwords
 			$first = $_POST['first'];
 			$second = $_POST['second'];
 
+			/*
+
+			1.add alsert if password is diffrents and if is diffresnts stay on page
+			  $codeStatus = 1;
+
+			*/
+
+			//get cookie
+			$mailCookie = $_COOKIE['reset'];			
+
 			//table name and data
-			$sql = "UPDATE users SET password='$first' WHERE login='$emailDB'";
+			$sql = "UPDATE users SET password='$first' WHERE email='$mailCookie'";
 			$query = mysqli_query($con, $sql);
 		}
 
 
 		//function to show pages
+		function page() {
+			global $send, $codeStatus;
 
-		//if send==1 show veryfi page
-		if($send == 1) {
-			veryfi();
+			//if send==1 show veryfi page
+			if($send == 1) {
+				veryfiFunction();
+			}
+
+			else if($codeStatus == 1) {
+				input_passwd_function();
+			}
+
+			else {
+				emailFunction();
+			}
 		}
 
-		else if($codeStatus == 1) {
-			input_passwd();
-		}
-
-		else {
-			email();
-		}
+		page();
 
 	?>
 

@@ -7,7 +7,7 @@
 
 	<?php
 
-		function email() {
+		function emailFunction() {
 			echo "
 				<div class='baner'>
 					<div class='textBaner'>
