@@ -73,17 +73,6 @@
 			}
 		}
 
-		function loginTask() {
-			global $login, $logged;
-			//set login Task cookie
-			//if user was loged cookies for loginTask was set
-			//and if user check auto login
-			//cookies dosent chnage
-			if ($logged == 1) {
-				setcookie("loginTask", "$login", time() + (86400 * 30), "/"); // 86400 = 1 day
-			}	
-		}
-
 
 		function set() {
 			global $login, $passwd;
@@ -103,33 +92,25 @@
 		function check() {
 			global $logged;
 			//if cookies dosent exist 
-			if(!isset($_COOKIE["login"]) & !isset($_COOKIE["password"])) {
+			if(isset($_COOKIE["login"]) && isset($_COOKIE["password"])) {
 				//run functinon on click
-				if(array_key_exists("submit", $_POST)) {
-					set();
-				}
+				$logged = 1;
 			} 
-
-			//if coockies exist main page has been auto loaded
-			else {
-			     $logged = 1;
-			}
 		}
-
+		set();
 		deleteCookies();
-		loginTask();
 		check();
 
 
 		function page() {
-			global $logged;
+			global $logged, $login;
 
 			if ($logged == 0) {
 				loginFunction();
 			}
 
 			else {
-				profileFunction();
+				profileFunction($login);
 			}
 		}
 

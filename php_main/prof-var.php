@@ -10,10 +10,8 @@
 	<?php
 		include("connection.php");
 
-		function profileFunction() {
+		function profileFunction($login) {
 			global $con;
-
-			$login = $_COOKIE['loginTask'];
 
 			//get all elements from allTask column where login is LOGIN USER
 			$sqlAll = "SELECT allTask FROM taskowo WHERE login='$login'";
@@ -47,7 +45,6 @@
 				$arrayEnd[] = $convert;
 			}
 		
-			ob_start();
 	
 	?>
 
@@ -298,7 +295,6 @@
 
 
 	<?php
-		ob_end_flush();
 
 		echo "
 			<script>
