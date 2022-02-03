@@ -39,8 +39,8 @@ jak ustawic to ze po upływie czasu kod nie bedzie aktywny(COOKIES)
 - [ ] create @media for phone user
 - [ ] delete http protocol in .htaccess
 - [ ] check why https cant by active
-- [ ] create php algotim for password reset
-- [ ] chnage button to chnage password to code
+- [x] create php algotim for password reset
+- [x] chnage button to chnage password to code
 
 
 
