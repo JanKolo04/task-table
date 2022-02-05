@@ -50,7 +50,6 @@
 			global $con, $send, $emailDB;
 
 			$email = $_POST['email'];
-			echo "Email: ".$email;
 
 			//get id,login and emaik from db where is email from POST
 			$sql = "SELECT id,login,email FROM users WHERE email='$email'";

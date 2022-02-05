@@ -13,6 +13,10 @@
 		function profileFunction($login) {
 			global $con;
 
+			if(empty($login)) {
+				$login = $_COOKIE['login'];
+			}
+
 			//get all elements from allTask column where login is LOGIN USER
 			$sqlAll = "SELECT allTask FROM taskowo WHERE login='$login'";
 			$queryAll = mysqli_query($con, $sqlAll);

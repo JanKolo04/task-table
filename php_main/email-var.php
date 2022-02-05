@@ -16,27 +16,28 @@
 				</div>
 
 				<div id='mainEmail'>
-					<div id='label'>
-						<h1 id='text1'>Forgot password</h1>
-					</div>
-					<div id='textDiv'>
-						<p id='text2'>Enter e-mail for send message with link to change password</p>
+					<div id='divText'>
+						<div id='hiDiv'>
+							<h1 style='font-size: 30px; margin: 0px;'>Forgot Password</h1>
+						</div>
+
+						<div id='infoDiv'>
+							<p>Enter e-mail for send message with link to change password</p>
+						</div>
+
 					</div>
 
 					<form method='POST'>
 						<div id='inputDiv'>
-							<input type='text' name='email' id='input' placeholder='Enter e-mail...' required>
+								<input type='text' name='email' id='input' placeholder='Email...'>
 						</div>
 
-						<div id='buttonsDiv'>
-							<div id='backDiv'>
-								<a id='back' href='login'>back</a>
-							</div>
 
-							<div id='submitDiv'>
-								<button id='submit' type='submit' name='send'>Send</button>
-							</div>
+						<div id='buttonDiv'>
+							<a href='login' id='undo'>Cancel</a>
+							<button id='submit' name='send' type='submit'>Send</button>
 						</div>
+
 					</form>
 				</div>";
 		}

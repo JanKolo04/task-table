@@ -14,7 +14,7 @@
 	<div id='mainVeryfi'>
 		<div id='divText'>
 			<div id='hiDiv'>
-				<h1 style='font-size: 25px; margin: 0; margin-left: 10px;'>Veryfi code</h1>
+				<h1 style='font-size: 30px; margin: 0px;'>Veryfi code</h1>
 			</div>
 
 			<div id='infoDiv'>
@@ -22,7 +22,7 @@
 			</div>
 
 			<div id='emailDiv' style='margin-left: 10px;'>
-				<p>Code was sended on email {{email}}</p>
+				<p>Code was sended on email <mark id="email">{{email}}</mark></p>
 			</div>
 		</div>
 
