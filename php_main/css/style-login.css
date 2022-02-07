@@ -28,6 +28,8 @@ body {
 
 
 #banerText {
+	margin: 0px;
+	font-weight: bold;
 	font-size: 25px;
 	color: #0066ff;
 	text-shadow: 2px 2px #d9d9d9;
@@ -68,6 +70,7 @@ body {
 }
 
 #text1 {
+	font-weight: bold;
 	margin: 0px;
 	font-size: 40px;
 	color: #0066ff;
@@ -168,8 +171,6 @@ i {
 	width: 50%;
 	height: 50px;
 	display: flex;
-	justify-content: end;
-	align-items: center;
 	flex-direction: row;
 }
 

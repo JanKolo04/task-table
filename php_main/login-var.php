@@ -75,7 +75,7 @@
 									<a id='forgot-text' href='email'>Forgot password</a>
 								</div>
 
-								<div id='checkDiv'>
+								<div class='d-flex justify-content-end align-items-center' id='checkDiv'>
 									<input type='checkbox' name='checkbox' id='checkbox'>
 									<p id='label'>Remember Me</p>
 								</div>
