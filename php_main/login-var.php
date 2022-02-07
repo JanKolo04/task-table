@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style-login.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
 </head>
 <body>
 
@@ -26,17 +26,27 @@
 
 				<div class='white-background'>
 				
-					<h1 id='text1'>Login</h1>
-					<p id='text2'>Enter your e-mail and password to login</p>
+					<div id='textHolder'>
+						<div id='text1Div'>
+							<h1 id='text1'>Login</h1>
+						</div>
+						<div id='text2Div'>
+							<p id='text2'>Enter your e-mail and password to login</p>
+						</div>
+					</div>
 
 					<div class='allStuff'>
 						
 						<form method='post'>
-							<input type='text' name='login' class='input' required placeholder='Login' maxlength='20'>
-							
-							<input type='password' name='passwd' class='input' id='password' required placeholder='Password' maxlength='30'>
+							<div id='inputLoginDiv'>
+								<input type='text' name='login' class='input' required placeholder='Login' maxlength='20'>
+							</div>
 
-							<i class='bi bi-eye-slash' id='togglePassword'></i>
+							<div id='inputPasswdDiv'>	
+								<input type='password' name='passwd' class='input' id='password' required placeholder='Password' maxlength='30'>
+
+								<i class='bi bi-eye-slash' id='togglePassword'></i>
+							</div>
 
 							<script>
 								var button = document.getElementById('togglePassword');
@@ -67,7 +77,7 @@
 
 								<div id='checkDiv'>
 									<input type='checkbox' name='checkbox' id='checkbox'>
-									<label for='checkbox'>Remember Me</label>
+									<p id='label'>Remember Me</p>
 								</div>
 							</div>
 
