@@ -143,9 +143,8 @@ i {
 }
 
 #divButton {
-	margin-top: 20px;
 	width: 100%;
-	height: 60px;
+	height: 80px;
 	border-bottom-right-radius: 6px;
 	border-bottom-left-radius: 6px;
 }

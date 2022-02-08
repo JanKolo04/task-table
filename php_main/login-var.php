@@ -9,7 +9,6 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/style-login.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
 </head>
 <body>
 
@@ -38,7 +37,7 @@
 					<div class='allStuff'>
 						
 						<form method='post'>
-							<div id="inputsDiv">
+							<div id='inputsDiv'>
 								<div id='inputLoginDiv'>
 									<input type='text' name='login' class='input' required placeholder='Login' maxlength='20'>
 								</div>
