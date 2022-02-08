@@ -28,6 +28,7 @@ body {
 
 
 #banerText {
+	font-weight: bold;
 	margin: 0px;
 	font-size: 25px;
 	color: #0066ff;
@@ -35,12 +36,9 @@ body {
 }
 
 
-.linkBaner {
+#linkBaner {
 	height: 60px;
 	width: calc(100% - 220px);
-	display: flex;
-	align-items: center;
-	justify-content: right;
 }
 
 
@@ -137,7 +135,7 @@ body {
 }
 
 .texts h1 {
-	font-size: 35px;
+	font-size: 30px;
 	font-weight: bold;
 	margin: 0px;
 	color: #0066ff;

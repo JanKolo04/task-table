@@ -4,6 +4,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="images/t.png">
+	<!---bootsptrap---->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-----LINKS FOR EMAIL PAGE----->
+	<link rel="stylesheet" type="text/css" href="css/style-email.css">
+	
+	<!-----LINKS FOR CODE PAGE------>
+	<link rel="stylesheet" type="text/css" href="css/style-veryfi.css">
+
+	<!-----LINKS FOR INPUT PAGE----->
+	<link rel="stylesheet" type="text/css" href="css/style-input-passwd.css">
 	<title>Regenerate password</title>
 </head>
 <body>

@@ -26,6 +26,8 @@ body {
 
 
 #banerText {
+	margin: 0px;
+	font-weigth: bold;
 	font-size: 25px;
 	color: #0066ff;
 	text-shadow: 2px 2px #d9d9d9;
@@ -114,9 +116,6 @@ body {
 	height: 80px;
 	width: 100%;
 	margin-top: 40px;
-	display: flex;
-	align-items: center;
-	justify-content: right;
 }
 
 #mainVeryfi #undo {
@@ -128,6 +127,7 @@ body {
 	font-size: 16px;
 	text-decoration: none;
 	color: black;
+	cursor: pointer;
 	background-color: #e4e6eb;
 }
 
@@ -139,6 +139,7 @@ body {
 	border: none;
 	border-radius: 6px;
 	font-size: 16px;
+	cursor: pointer;
 	background-color: #0066ff;
 }
 

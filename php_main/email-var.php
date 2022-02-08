@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/style-email.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
@@ -18,11 +19,11 @@
 				<div id='mainEmail'>
 					<div id='divText'>
 						<div id='hiDiv'>
-							<h1 style='font-size: 30px; margin: 0px;'>Forgot Password</h1>
+							<h1 style='font-size: 30px; margin: 0px; font-weight: bold;'>Forgot Password</h1>
 						</div>
 
 						<div id='infoDiv'>
-							<p>Enter e-mail for send message with link to change password</p>
+							<p style='margin: 0px;'>Enter e-mail for send message with link to change password</p>
 						</div>
 
 					</div>
@@ -33,7 +34,8 @@
 						</div>
 
 
-						<div id='buttonDiv'>
+						<div class='d-flex justify-content-end align-items-center' id='buttonDiv'>
+
 							<a href='login' id='undo'>Cancel</a>
 							<button id='submit' name='send' type='submit'>Send</button>
 						</div>

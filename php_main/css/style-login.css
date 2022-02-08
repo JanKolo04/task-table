@@ -170,8 +170,6 @@ i {
 #checkDiv {
 	width: 50%;
 	height: 50px;
-	display: flex;
-	flex-direction: row;
 }
 
 #label {

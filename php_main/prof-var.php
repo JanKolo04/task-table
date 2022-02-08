@@ -312,7 +312,7 @@
 					<h1 id='banerText'>TASK BOARD</h1>
 				</div>
 
-				<div class='linkBaner'>
+				<div class='d-flex justify-content-end align-items-center' id='linkBaner'>
 					<form action='login' method='POST'>
 						<input type='submit' name='logout' id='logoutLink' value='Logout'>
 					</form>
