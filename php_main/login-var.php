@@ -38,14 +38,16 @@
 					<div class='allStuff'>
 						
 						<form method='post'>
-							<div id='inputLoginDiv'>
-								<input type='text' name='login' class='input' required placeholder='Login' maxlength='20'>
-							</div>
+							<div id="inputsDiv">
+								<div id='inputLoginDiv'>
+									<input type='text' name='login' class='input' required placeholder='Login' maxlength='20'>
+								</div>
 
-							<div id='inputPasswdDiv'>	
-								<input type='password' name='passwd' class='input' id='password' required placeholder='Password' maxlength='30'>
+								<div id='inputPasswdDiv'>	
+									<input type='password' name='passwd' class='input' id='password' required placeholder='Password' maxlength='30'>
 
-								<i class='bi bi-eye-slash' id='togglePassword'></i>
+									<i class='bi bi-eye-slash' id='togglePassword'></i>
+								</div>
 							</div>
 
 							<script>
