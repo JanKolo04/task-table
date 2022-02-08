@@ -37,7 +37,7 @@ body {
 /*------------MAIN------------*/
 
 #mainVeryfi {
-	height: 400px;
+	height: 390px;
 	width: 600px;
 	border-radius: 6px;
 	margin: auto;
@@ -49,6 +49,8 @@ body {
 #mainVeryfi #divText {
 	width: 100%;
 	height: 180px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 }
 
 #mainVeryfi #hiDiv {
@@ -113,9 +115,11 @@ body {
 
 #mainVeryfi #buttonDiv {
 	border-top: 1px solid #e5e5e5;
-	height: 80px;
+	height: 60px;
 	width: 100%;
-	margin-top: 40px;
+	margin-top: 60px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
 }
 
 #mainVeryfi #undo {

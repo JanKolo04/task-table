@@ -26,6 +26,8 @@ body {
 
 
 #banerText {
+	margin: 0px;
+	font-weight: bold;
 	font-size: 25px;
 	color: #0066ff;
 	text-shadow: 2px 2px #d9d9d9;
@@ -35,77 +37,92 @@ body {
 /*------------MAIN------------*/
 
 
-#content {
-	position: absolute;
-	left: 50%;
-	top: 0px;
-	height: 500px;
+#InputDivMain {
+	margin: auto;
+	margin-top: 200px;
+	height: 440px;
 	width: 40%;
-	transform: translate(-50%, 40%);
 	border-radius: 6px;
 	background-color: white;
 	box-shadow: 5px 5px 20px #cccccc;
 }
 
-#textHolder {
-	margin-top: 30px;
-	height: 140px;
+#InputDivMain #textHolder {
+	height: 160px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	border-top-left-radius: 6px;
+	border-top-left-radius: 6px;
 }
 
-#textDiv1 {
-	height: 100px;
+#InputDivMain #DivMainText {
+	height: 80px;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-bottom: 1px solid #e5e5e5;
 }
 
-#text1 {
+#DivMainText #mainText {
 	margin: 0px;
-	font-size: 40px;
+	font-weight: bold;
+	font-size: 30px;
 	text-align: center;
 	color: #0066ff;
 }
 
-#textDiv2 {
-	height: 30px;
+#InputDivMain #DivInfo {
+	height: 80px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#DivInfo #infoText {
+	text-align: center;
+	margin: 0px;
+	color: black;
+}
+
+
+#InputDivMain #inputsDiv {
+	height: 200px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+#divInputFirst {
+	margin-top: 15px;
+	height: 48px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-#text2 {
-	text-align: center;
-	margin: 0px;
-	color: #bfbfbf;
-}
-
-#stuff {
-	margin-right: auto;
-	margin-left: auto;
-	height: 300px;
-	width: 80%;
-
-}
-
-#inputsDiv {
-	height: 200px;
+#divInputSecond {
+	margin-top: 25px;
+	height: 48px;
 	width: 100%;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
-.input {
+#inputsDiv .input {
     -webkit-transition: 0.5s;
     font-size: 18px;
+    height: 48px;
     line-height: 48px;
     margin: 10px;
-    width: 90%;
+    width: 80%;
   	border: none;
   	border-bottom: 1px solid #bfbfbf;
   	white-space: nowrap;
@@ -124,22 +141,37 @@ i {
 	cursor: pointer;
 }
 
-#submitDiv {
+#divButton {
 	width: 100%;
-	height: 70px;
-	display: flex;
-	justify-content: right;
+	height: 80px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
 }
 
-#button {
-	padding: 0 20px;
-	height: 48px;
+
+#divButton #cancelButton {
+	line-height: 36px; 
+    margin-right: 20px;
+    padding: 0px 20px;
     border: none;
-    margin-top: 10px;
     border-radius: 6px;
-    font-size: 25px;
-    color: white;
-    background-color: #0066ff;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    background-color: #e4e6eb;
+}
+
+#submitButton {
+	margin-right: 20px;
+	line-height: 36px;
+	padding: 0 20px;
+	border: none;
+	border-radius: 6px;
+	font-size: 16px;
+	color: white;
+	cursor: pointer;
+	background-color: #0066ff;
 }
 
 
