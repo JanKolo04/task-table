@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/t.png">
+    <link rel="stylesheet" type="text/css" href="css/style-register.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
+    <title>Register</title>
+</head>
+<body>
+
+
+
 <?php
 session_start();
 
@@ -67,19 +81,6 @@ session_start();
 ?>
 
 
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/t.png">
-    <link rel="stylesheet" type="text/css" href="css/style-register.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
-    <title>Register</title>
-</head>
-<body>
-
     <div class='baner'>
         <div class='textBaner'>
             <h1 id='banerText'>TASK BOARD</h1>
@@ -87,33 +88,38 @@ session_start();
     </div>
 
     <div class="white-background">
-        
-        <h1 id="text1">Register</h1>
-        <p id="text2">Enter login e-mail and password to create account</p>
+    
+        <div id="textsDiv">
+            <div id="mainText">
+                <h1 id="text1">Register</h1>
+            </div>
+            <div id="secondText">
+                <p id="text2">Enter login e-mail and password to create account</p>
+            </div>
+        </div>
 
         <div class="allStuff">
             <form method="POST">
-                <table id="table">
-                    <tr class="record">
-                        <td>
-                            <input type="text" id="login" name="login" required placeholder="Login">
-                        </td>
-                        <td>
-                            <input type="text" id="email" name="email" required placeholder="E-mail">
-                        </td>
-                    </tr>
 
-                    <tr class="record">
-                        <td>
-                            <input type="password" id="passwd" name="passwd" required placeholder="Password">
-                            <i class="bi bi-eye-slash" id="togglePassword1"></i>
-                        </td>
-                        <td>
-                            <input type="password" id="rPasswd" name="rpasswd" required placeholder="Repeat Password">
-                            <i class="bi bi-eye-slash" id="togglePassword2"></i>
-                        </td>
-                    </tr>
-                </table>
+                <div id="inputsDiv">
+                    <div id="loginDiv">
+                        <input type="text" id="login" name="login" required placeholder="Login">   
+                    </div>
+
+                    <div id="registerDiv">
+                        <input type="text" id="email" name="email" required placeholder="E-mail">
+                    </div>
+
+                    <div id="passwd1Div">
+                        <input type="password" id="passwd" name="passwd" required placeholder="Password">
+                        <i class="bi bi-eye-slash" id="togglePassword1"></i>
+                    </div>
+
+                    <div id="passwd2Div">
+                        <input type="password" id="rPasswd" name="rpasswd" required placeholder="Repeat Password">
+                        <i class="bi bi-eye-slash" id="togglePassword2"></i>
+                    </div>
+                </div>
 
 
                 <div class="submit-login">

@@ -36,35 +36,53 @@ body {
 
 
 .white-background {
-    position: absolute;
-    height: 70%;
+    height: 550px;
     width: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
+    margin-top: 140px;
     border-radius: 6px;
     background-color: white;
     box-shadow: 5px 5px 20px #cccccc;
 }
 
+#textsDiv {
+    display: inline-block;
+    height: 180px;
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+#mainText {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+}
 
 #text1 {
+    margin: 0px;
     font-size: 40px;
-    margin-top: 100px;
     text-align: center;
     color: #0066ff;
 }
 
+#secondText {
+    height: auto;
+    width: 100%;
+}
+
 #text2 {
+    margin: 0px;
+    margin-top: 30px;
     text-align: center;
     color: #bfbfbf;
 }
 
 
 .allStuff {
-    margin-top: 50px;
-    height: 300px;
+    height: auto;
     width: 80%;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -72,34 +90,40 @@ body {
 }
 
 
-#table {
+#inputsDiv {
+    display: grid;
+    grid-column-gap: 20px;
     width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.record {
-    text-align: center;
+#inputsDiv div {
+    margin: auto;
+    height: auto;
+    width: 47%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
 }
 
-
-i {
-    margin-left: -20px;
-    cursor: pointer;
-}
 
 input {
     -webkit-transition: 0.5s;
+    padding: 0px;
     font-size: 18px;
-    height: 50px;
-    width: 90%;
+    height: 48px;
+    line-height: 48px;
+    width: 100%;
     border: none;
     border-bottom: 1px solid #bfbfbf;
     white-space: nowrap;
     overflow: hidden;
-    background-color: white;
     color: black;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 0
 }
 
 input:focus {
@@ -107,29 +131,25 @@ input:focus {
     outline: none;
 }
 
-#forgot {
-    margin-top: 20px;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+i {
+    -webkit-transition: 0.5s;
+    margin: 0px;
+    cursor: pointer;
+    height: 48px;
+    line-height: 48px;
+    width: 30px;
+    text-align: center;
+    border-bottom: 1px solid #bfbfbf;
 }
 
-#forgot-text {
-    margin-left: 10px;
-    font-size: 15px;
-    color: #bfbfbf;
-    text-decoration: none;
-}
-
-#forgot:hover {
-    text-decoration: underline;
+input:focus + i{
+    border-bottom: 1px solid #0066ff;
+    outline: none;
 }
 
 
 .submit-login {
-    margin-top: 40px;
+    margin-top: 80px;
     width: 100%;
     height: 55px;
     display: flex;

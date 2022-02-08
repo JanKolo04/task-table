@@ -1,38 +1,38 @@
 body {
     background-color: #e9ebee;
     font-family: Arial, Helvetica, sans-serif;
-	overflow: auto;
+    overflow: auto;
 }
 
 
 /*------------BANER------------*/
 
 .baner {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 60px;
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	background-color: white;
-	box-shadow: 10px 6px 5px #d9d9d9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: 10px 6px 5px #d9d9d9;
 }
 
 .textBaner {
-	display: flex;
-	width: 220px;
-	align-items: center;
-	justify-content: center;
+    display: flex;
+    width: 220px;
+    align-items: center;
+    justify-content: center;
 }
 
 
 #banerText {
-	margin: 0px;
-	font-weight: bold;
-	font-size: 25px;
-	color: #0066ff;
-	text-shadow: 2px 2px #d9d9d9;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #0066ff;
+    text-shadow: 2px 2px #d9d9d9;
 }
 
 
@@ -40,410 +40,215 @@ body {
 
 
 .white-background {
-	height: 600px;
-	width: 35%;
-	margin: auto;
-	margin-top: 120px;
-	border-radius: 6px;
-	box-shadow: 5px 5px 20px #cccccc;
-	background-color: white;
+    height: 600px;
+    width: 35%;
+    margin: auto;
+    margin-top: 140px;
+    border-radius: 6px;
+    box-shadow: 5px 5px 20px #cccccc;
+    background-color: white;
 }
 
 #textHolder {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	width: 100%;
-	height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 180px;
 }
 
 #text1Div {
-	margin-top: 40px;
-	height: 50px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
+    margin-top: 40px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
 }
 
 #text1 {
-	font-weight: bold;
-	margin: 0px;
-	font-size: 40px;
-	color: #0066ff;
+    font-weight: bold;
+    margin: 0px;
+    font-size: 40px;
+    color: #0066ff;
 }
 
 #text2Div {
-	height: 70px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
 }
 
 #text2 {
-	margin: 0px;
-	color: #bfbfbf;
+    margin: 0px;
+    color: #bfbfbf;
 }
 
 
 .allStuff {
-	width: 67%;
-	margin-right: auto;
-	margin-left: auto;
+    width: 67%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-#inputLoginDiv {
-	margin-top: 20px;
-	height: auto;
-	width: 100%;
+#inputsDiv {
+    height: auto;
+    width: 100%;
 }
 
-#inputPasswdDiv {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 20px;
-	height: auto;
-	width: 100%;
+#inputsDiv div {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
+
 
 .input {
     -webkit-transition: 0.5s;
+    padding: 0px;
     font-size: 18px;
     height: 48px;
     line-height: 48px;
     width: 100%;
-  	border: none;
-  	border-bottom: 1px solid #bfbfbf;
-  	white-space: nowrap;
-  	overflow: hidden;
+    border: none;
+    border-bottom: 1px solid #bfbfbf;
+    white-space: nowrap;
+    overflow: hidden;
     background-color: white;
-  	color: black;
+    color: black;
 }
 
 .input:focus {
-	border-bottom: 1px solid #0066ff;
-	outline: none;
+    border-bottom: 1px solid #0066ff;
+    outline: none;
 }
 
 
 i {
-	position: relative;
-	margin-left: -20px;
-	cursor: pointer;
+    -webkit-transition: 0.5s;
+    margin: 0px;
+    cursor: pointer;
+    height: 48px;
+    line-height: 48px;
+    width: 30px;
+    text-align: center;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+.input:focus + i{
+    border-bottom: 1px solid #0066ff;
+    outline: none;
 }
 
 #forgotAndCkeckDiv {
-	margin-top: 20px;
-	display: flex;
-	flex-direction: row;
-	height: 50px;
-	width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
 }
 
 
 #forgotDiv {
-	width: 50%;
-	height: 50px;
-	display: flex;
-	justify-content: left;
-	align-items: center;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 #forgot-text {
-	margin-left: 10px;
-	font-size: 15px;
-	color: #bfbfbf;
-	text-decoration: none;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #bfbfbf;
+    text-decoration: none;
 }
 
 #forgot:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 #checkDiv {
-	width: 50%;
-	height: 50px;
+    width: 50%;
+    height: 50px;
 }
 
 #label {
-	margin: 0px;
-	margin-right: 10px;
-	font-size: 15px;
-	color: #bfbfbf;
+    margin: 0px;
+    margin-right: 10px;
+    font-size: 15px;
+    color: #bfbfbf;
 }
 
 #checkbox {
-	margin-right: 2px;
-	cursor: pointer;
-	font-size: 5px;
+    margin-right: 2px;
+    cursor: pointer;
+    font-size: 5px;
 }
 
 #submit-div {
-	margin-top: 20px;
-	width: 100%;
-	height: 55px;
-	display: flex;
-	justify-content: center;
-  	align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 
 .submit {
-	width: 100%;
-	height: 48px;
+    width: 100%;
+    height: 48px;
     border: none;
     border-radius: 6px;
     font-size: 25px;
     color: white;
-   	display: flex;
-   	justify-content: center;
-   	align-items: center;
-   	cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     background-color: #0066ff;
 }
 
 
 #register-div {
-	margin-top: 30px;
-	width: 100%;
-	height: 50px;
-	display: flex;
-	justify-content: left;
-  	align-items: center;
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 
 #register {
-	margin-left: 10px;
-	font-size: 15px;
-	color: #bfbfbf;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #bfbfbf;
 }
 
 
 #registerLink {
-	font-size: 15px;
-	color: #0066ff;
-	text-decoration: none;
+    font-size: 15px;
+    color: #0066ff;
+    text-decoration: none;
 }
 
 #registerLink:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-MEDIA IN DEVELOP
-FOR BETTER FUNCTIONS 
-FOR PHONE USERS
-*/
-
-@media (max-device-width: 900px)  {
-	.white-background {
-		position: absolute;
-		height: 700px;
-		width: 90vw;
-	  	top: 50%;
-	  	left: 50%;
-	  	transform: translate(-50%, -50%);
-		border-radius: 6px;
-		background-color: white;
-	}
-
-
-	#text1 {
-		font-size: 40px;
-		margin-top: 100px;
-		text-align: center;
-		color: #00ffff;
-	}
-
-	#text2 {
-		font-size: 15px;
-		text-align: center;
-		color: #bfbfbf;
-	}
-
-
-	.allStuff {
-		height: 350px;
-		width: 67%;
-		margin-right: auto;
-		margin-left: auto;
-	}
-
-
-	.login {
-	    font-size: 18px;
-	    line-height: 48px;
-	    margin-top: 20px;
-	    width: 100%;
-	  	border: none;
-	  	border-bottom: 1px solid #bfbfbf;
-	  	white-space: nowrap;
-	  	overflow: hidden;
-	    background-color: white;
-	  	color: black;
-	  	-webkit-transition: 0.5s;
-	}
-
-	.login:focus {
-		border-bottom: 1px solid #00ffff;
-		outline: none;
-	}
-
-
-	.passwd {
-	    font-size: 18px;
-	    line-height: 48px;
-	    width: 100%;
-	  	margin-top: 20px;
-	  	border: none;
-	  	border-bottom: 1px solid #bfbfbf;
-	  	white-space: nowrap;
-	  	overflow: hidden;
-	    background-color: white;
-	  	color: black;
-	  	-webkit-transition: 0.5s;
-	}
-
-	.passwd:focus {
-		border-bottom: 1px solid #00ffff;
-		outline: none;
-	}
-
-	i {
-		margin-left: -20px;
-		cursor: pointer;
-	}
-
-	#forgotAndCkeckDiv {
-		margin-top: 20px;
-		display: flex;
-		flex-direction: row;
-		height: 50px;
-		width: 100%;
-	}
-
-
-	#forgotDiv {
-		width: 50%;
-		height: 50px;
-		display: flex;
-		justify-content: left;
-		align-items: center;
-	}
-
-	#forgot-text {
-		margin-left: 10px;
-		font-size: 15px;
-		color: #bfbfbf;
-		text-decoration: none;
-	}
-
-	#forgot:hover {
-		text-decoration: underline;
-	}
-
-	#checkDiv {
-		width: 50%;
-		height: 50px;
-		display: flex;
-		justify-content: right;
-		align-items: center;
-	}
-
-	label {
-		margin-right: 10px;
-		font-size: 15px;
-		color: #bfbfbf;
-	}
-
-	#checkbox {
-		font-size: 5px;
-	}
-
-	#submit-div {
-		margin-top: 20px;
-		width: 100%;
-		height: 55px;
-		display: flex;
-		justify-content: center;
-	  	align-items: center;
-	}
-
-
-
-	.submit {
-		width: 100%;
-		height: 48px;
-	    border: none;
-	    border-radius: 6px;
-	    font-size: 30px;
-	    color: white;
-	    background-image: linear-gradient(to right, #ff00ff, #6600ff);
-	}
-
-
-	#register-div {
-		margin-top: 30px;
-		width: 100%;
-		height: 50px;
-		display: flex;
-		justify-content: left;
-	  	align-items: center;
-	}
-
-
-	#register {
-		margin-left: 10px;
-		font-size: 15px;
-		color: #bfbfbf;
-	}
-
-
-	#registerLink {
-		font-size: 15px;
-		color: #00ffff;
-		text-decoration: none;
-	}
-
-	#registerLink:hover {
-		text-decoration: underline;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
