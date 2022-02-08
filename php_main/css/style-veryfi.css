@@ -92,6 +92,7 @@ body {
 #mainVeryfi #code {
     -webkit-transition: 0.5s;
     font-size: 18px;
+    height: 48px;
     line-height: 48px;
     margin: 10px;
     width: 50%;
