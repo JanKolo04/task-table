@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
+	<title>Kod</title>
+</head>
+<body>
+
+	<div class="taskBody">
+		<div id="holder">
+			<div class="textDiv">Make coffee</div>
+
+			<div id="flag">
+				<buton id="flagButtonFirst"></button>
+			</div>
+		</div>
+
+		<div class="taskBelt">
+			<button id="removeButton">Remove</button>
+			<button id="takeButton">Take</button>
+		</div>
+	</div>
+
+
+
+
+	<script type="text/javascript">
+	
+		function fun() {
+			//get flag and flagButtonFirst
+			const flagButtonFirst = document.querySelector("#flagButtonFirst");
+			const flag = document.querySelector("#flag");
+
+			//create second button
+			const flagButtonSecond = document.createElement("BUTTON");
+			flagButtonSecond.id = 'flagButtonSecond';
+
+			//function to replace buttons and run animation
+			//for flagButtonFirst
+			flagButtonFirst.addEventListener('click', function() {
+				//remove flagButtonFirst
+				flag.removeChild(flagButtonFirst);
+				//append flagButtonSecond
+				flag.appendChild(flagButtonSecond);
+
+				//change color and set animation
+				flagButtonSecond.style = "background-color: #FC0; animation-name: flagButtonSecond;";
+			});
+
+			//exactly same like in previous function but after 
+			//flagButtonSecond click
+			flagButtonSecond.addEventListener('click', function() {
+				flag.removeChild(flagButtonSecond);
+				flag.appendChild(flagButtonFirst);
+
+				flagButtonFirst.style = "background-color: #e6e6e6; animation-name: flagButtonFirst;"
+			});
+
+
+		}
+
+		fun();
+
+
+
+	</script>
+
+</body>
+</html>
+
+
+
+
+
