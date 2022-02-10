@@ -35,9 +35,16 @@ function add_task() {
 	//add class to task
 	task.className = "taskBody";
 
+	//create holder in task
+	const holderTask = document.createElement("DIV");
+	holderTask.id = "holderTask";
+	holderTask.className = "holderTask";
+	task.appendChild(holderTask);
+
+
 	//create text div
 	var textDiv = document.createElement("DIV");
-	task.appendChild(textDiv);
+	holderTask.appendChild(textDiv);
 	//add class to span
 	textDiv.className = "textDiv";
 	textDiv.id = "textDiv";
@@ -93,6 +100,29 @@ function add_task() {
 
 	//append button to taskBelt
 	taskBelt.appendChild(takeButton);
+
+	//primary task function
+
+	//get flag and flagButtonFirst
+	const flag = document.createElement("DIV");
+	flag.id = "flag";
+	flag.className = "flag";
+	holderTask.appendChild(flag);
+
+	//create second button
+	const flagButtonSecond = document.createElement("BUTTON");
+	flagButtonSecond.className = "flagButtonSecond";
+	flagButtonSecond.id = 'flagButtonSecond';
+
+	//create flagButtonFirst
+	const flagButtonFirst = document.createElement("BUTTON");
+	flagButtonFirst.className = 'flagButtonFirst';
+	flagButtonFirst.id = 'flagButtonFirst';
+	flagButtonFirst.name = 'flagButtonFirst';
+	//append to flag
+	flag.appendChild(flagButtonFirst);
+
+	
 
 
   	//clear text input
@@ -169,6 +199,27 @@ function add_task() {
 
 		})
 	}
+
+	//function to replace buttons and run animation
+	//for flagButtonFirst
+	flagButtonFirst.addEventListener('click', function() {
+		//remove flagButtonFirst
+		flag.removeChild(flagButtonFirst);
+		//append flagButtonSecond
+		flag.appendChild(flagButtonSecond);
+
+		//change color and set animation
+		flagButtonSecond.style = "background-color: #FC0; animation-name: flagButtonSecond;";
+	});
+
+	//exactly same like in previous function but after 
+	//flagButtonSecond click
+	flagButtonSecond.addEventListener('click', function() {
+		flag.removeChild(flagButtonSecond);
+		flag.appendChild(flagButtonFirst);
+
+		flagButtonFirst.style = "background-color: #e6e6e6; animation-name: flagButtonFirst;"
+	});
 
 
 	//this code runs every second 

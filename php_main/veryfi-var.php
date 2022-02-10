@@ -29,7 +29,7 @@
 
 		<form method='POST'>
 			<div id='inputDiv'>
-				<input type='text' name='code' id='code' placeholder='Code...'>
+					<input type='text' name='code' id='code' placeholder='Code...'>
 			</div>
 
 

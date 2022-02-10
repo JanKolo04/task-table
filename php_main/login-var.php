@@ -35,7 +35,6 @@
 					</div>
 
 					<div class='allStuff'>
-						
 						<form method='post'>
 							<div id='inputsDiv'>
 								<div id='inputLoginDiv'>

@@ -2,7 +2,8 @@
 
 	include("connection.php");
 
-	$login = $_COOKIE['loginTask'];
+	$login = $_COOKIE['cookieTask'];
+
 
 	function all() {
 		global $con, $login;
@@ -53,8 +54,6 @@
 
 		$query = mysqli_query($con, $sql);
 	}
-
-
 
 
 	if(isset($_POST['all'])) {

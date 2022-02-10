@@ -289,21 +289,75 @@ body {
   	align-items: center;
 }
 
+.holderTask {
+    height: 70px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+}
 
 .textDiv {
-	text-align: center;
-	word-break:break-all;
-	width: 200px;
-	height: 70px;
-  	display: flex;
-  	justify-content: center;
-  	align-items: center;
-  	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+    text-align: center;
+    word-break:break-all;
+    width: 160px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .text {
 	margin: 0px;
+}
+
+
+.flag {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 60px;
+    box-sizing: content-box;
+    position: relative;
+    top: 0px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    text-align: center;
+}
+.flag:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 13px solid #e6e6e6;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+
+.flagButtonFirst, .flagButtonSecond {
+    position: absolute;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #e6e6e6;
+    animation-duration: 2s;
+    outline: none;
+    border: none;
+}
+
+@keyframes flagButtonFirst {
+    50%{width: 30px; height: 30px;};
+    100%{width: 20px; height: 20px;};
+}
+
+@keyframes flagButtonSecond {
+    50%{width: 30px; height: 30px;};
+    100%{width: 20px; height: 20px;};
 }
 
 

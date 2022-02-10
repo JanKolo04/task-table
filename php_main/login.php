@@ -48,6 +48,7 @@
 		function login() {
 			global $con, $logged, $login, $passwd;
 			$login = $_POST['login'];
+			echo $login;
 			$passwd = $_POST['passwd'];
 
 			$sql = "SELECT login, password FROM users WHERE login='$login'";
@@ -73,6 +74,14 @@
 			else {
 				echo "<script> alert('Login is wrong'); </script>";
 			}
+		}
+
+		//function to set cookie with login after sing in
+		//this function is for get tasks from database
+		function cookieTask() {
+			global $login;
+
+			setcookie("cookieTask", "$login", time() + (86400 * 30), "/");
 		}
 
 
@@ -112,6 +121,7 @@
 			}
 
 			else {
+				cookieTask();
 				profileFunction($login);
 			}
 		}
