@@ -18,6 +18,7 @@
 			}
 
 			//get all elements from allTask column where login is LOGIN USER
+			//function for allTask
 			$sqlAll = "SELECT allTask FROM taskowo WHERE login='$login'";
 			$queryAll = mysqli_query($con, $sqlAll);
 
@@ -61,6 +62,28 @@
 				$arrayAllPrimary[] = $convert;
 			}
 
+			//array for progressTasksPrimary
+			$sqlProPrimary = "SELECT progressTaskPrimary FROM taskowo WHERE login='$login'";
+			$queryProPrimary = mysqli_query($con, $sqlProPrimary);
+
+			$arrayProPrimary = [""];
+			while ($row = mysqli_fetch_row($queryProPrimary)) {
+				$convert = implode($row);
+				$arrayProPrimary[] = $convert;
+			}
+
+
+			//array for endTasksPrimary
+			$sqlEndPrimary = "SELECT endTaskPrimary FROM taskowo WHERE login='$login'";
+			$queryEndPrimary = mysqli_query($con, $sqlEndPrimary);
+
+			$arrayEndPrimary = [""];
+			while ($row = mysqli_fetch_row($queryEndPrimary)) {
+				$convert = implode($row);
+				$arrayEndPrimary[] = $convert;
+			}
+
+
 		
 	
 	?>
@@ -68,28 +91,17 @@
 			<script type="text/javascript">	
 				var taskNumber = 0;
 
-				//create flagButtonFirst
-				const flagButtonFirst = document.createElement("BUTTON");
-				flagButtonFirst.className = 'flagButtonFirst';
-				flagButtonFirst.id = 'flagButtonFirst';
-
-				//create second button
-				const flagButtonSecond = document.createElement("BUTTON");
-				flagButtonSecond.className = "flagButtonSecond";
-				flagButtonSecond.id = 'flagButtonSecond';
-
-
-				function createTask(taskText, holder, buttonFlag) {
+				function createTask(taskText, holder, buttonFlag1, buttonFlag2,checkVar, numberHolder) {
 					//get tasks div
-					var tasksHolder1 = document.getElementById("tasksHolder1");
-					var tasksHolder2 = document.getElementById("tasksHolder2");
-					var tasksHolder3 = document.getElementById("tasksHolder3");
+					const tasksHolder1 = document.getElementById("tasksHolder1");
+					const tasksHolder2 = document.getElementById("tasksHolder2");
+					const tasksHolder3 = document.getElementById("tasksHolder3");
 
-					var text1 = document.getElementById("all_task_text");
-					var text2 = document.getElementById("tasks_in_progress");
-					var text3 = document.getElementById("end_tasks");
+					const text1 = document.getElementById("all_task_text");
+					const text2 = document.getElementById("tasks_in_progress");
+					const text3 = document.getElementById("end_tasks");
 
-				  	for (var i=0; i<1; ++i) {
+				  	for (let i=0; i<1; ++i) {
 					 	//create new div
 					  	var task = document.createElement("DIV");
 
@@ -114,38 +126,51 @@
 					task.className = "taskBody";
 
 					//create holder in task
-					const holderForTextAndFlag = document.createElement("DIV");
+					let holderForTextAndFlag = document.createElement("DIV");
 					holderForTextAndFlag.id = "holderTask";
 					holderForTextAndFlag.className = "holderTask";
 					task.appendChild(holderForTextAndFlag);
 					
 
 					//create text div
-					var textDiv = document.createElement("DIV");
-					holderForTextAndFlag.appendChild(textDiv);
-					//add class to span
+					let textDiv = document.createElement("DIV");
+					//add class
 					textDiv.className = "textDiv";
 					textDiv.id = "textDiv";
+					holderForTextAndFlag.appendChild(textDiv);
 
-					var p = document.createElement("p");
+					let p = document.createElement("p");
 					p.className = "text";
-					textDiv.appendChild(p);
-
 					//append text from text input to task
 					p.innerHTML = taskText;
+					textDiv.appendChild(p);
 
 					
 				  	//cerate task belt
-					var taskBelt = document.createElement("DIV");
+					let taskBelt = document.createElement("DIV");
 					//add class to belt
 					taskBelt.className = "taskBelt";
-
 					//append to task
 					task.appendChild(taskBelt);
 
 
+					//get flag and flagButtonFirst
+					let flag = document.createElement("DIV");
+					flag.id = "flag";
+					flag.className = "flag";
+					holderForTextAndFlag.appendChild(flag);
+
+
+					//append button to flag
+					flag.append(buttonFlag1);
+
+				  	//clear text input
+					document.getElementById('myText').value = '';
+
+
+
 					//create delete button
-					var removeButton = document.createElement("BUTTON");
+					let removeButton = document.createElement("BUTTON");
 					//add name into button
 					removeButton.innerHTML = "Remove";
 					//id for delete button
@@ -153,12 +178,25 @@
 					//class name
 					removeButton.className = "removeButton";
 
-					//append delete button to taskBelt
-					taskBelt.appendChild(removeButton);
 
+					//inscruction for delete button
+					removeButton.onclick = function() {
+						//delete task
+						task.remove();
+
+						$.ajax ({
+							url: "upload-task.php",
+							method: "post",
+							data: {remove: text},
+							success: function() {
+								return true;
+							}
+
+						})
+					}
 
 					//create progress button
-					var takeButton = document.createElement("BUTTON");
+					let takeButton = document.createElement("BUTTON");
 					//add name into button
 					takeButton.innerHTML = "Take";
 					//id for progress button
@@ -166,35 +204,8 @@
 					//class name 
 					takeButton.className = "takeButton";
 
-					//append button to taskBelt
-					taskBelt.appendChild(takeButton);
 
-
-					//get flag and flagButtonFirst
-					const flag = document.createElement("DIV");
-					flag.id = "flag";
-					flag.className = "flag";
-					holderForTextAndFlag.appendChild(flag);
-
-					//append button 
-					flag.appendChild(buttonFlag);
-
-
-				  	//clear text input
-					document.getElementById('myText').value = '';
-
-
-					//create end task button
-					var completeButton = document.createElement("BUTTON");
-					//get id for end button
-					completeButton.id = "completeButton";
-					//class name
-					completeButton.className = "completeButton";
-					//append text 
-					completeButton.innerHTML = "Complete";
-
-
-					var text = p.textContent;
+					let text = p.textContent;
 					//Inscruction for take button
 					takeButton.onclick = function() {
 						//remove take button from task belt
@@ -218,6 +229,15 @@
 						})
 					}
 
+					//create end task button
+					let completeButton = document.createElement("BUTTON");
+					//get id for end button
+					completeButton.id = "completeButton";
+					//class name
+					completeButton.className = "completeButton";
+					//append text 
+					completeButton.innerHTML = "Complete";
+
 
 					//instruction for complete button
 					completeButton.onclick = function() {
@@ -239,35 +259,45 @@
 					}
 
 
-
-					//inscruction for delete button
-					removeButton.onclick = function() {
-						//delete task
-						task.remove();
-
-						$.ajax ({
-							url: "upload-task.php",
-							method: "post",
-							data: {remove: text},
-							success: function() {
-								return true;
-							}
-
-						})
+					if(numberHolder == 1) {
+						taskBelt.appendChild(removeButton);
+						taskBelt.appendChild(takeButton);
+					}
+					else if(numberHolder == 2) {
+						taskBelt.appendChild(removeButton);
+						taskBelt.appendChild(completeButton);
+					}
+					else if(numberHolder == 3) {
+						taskBelt.appendChild(removeButton);
 					}
 
+
+					//variable for use to replace buttons
+					let replaceVar1 = buttonFlag1;
+					let replaceVar2 = buttonFlag2;
+
+					//if checkVar == 0 buttons won't replace
+					if(checkVar == 0) {
+						buttonFlag1 = buttonFlag1;
+						buttonFlag2 = buttonFlag2;
+					}
+					//but if checkvar == 1 buttons will replace
+					else if(checkVar == 1) {
+						buttonFlag1 = replaceVar2;
+						buttonFlag2 = replaceVar1;
+					}
 
 
 					//function to replace buttons and run animation
 					//for flagButtonFirst
-					flagButtonFirst.addEventListener('click', function() {
+					buttonFlag1.addEventListener('click', function() {
 						//remove flagButtonFirst
-						flag.removeChild(flagButtonFirst);
+						flag.removeChild(buttonFlag1);
 						//append flagButtonSecond
-						flag.appendChild(flagButtonSecond);
+						flag.appendChild(buttonFlag2);
 
 						//change color and set animation
-						flagButtonSecond.style = "background-color: #FC0; animation-name: flagButtonSecond;";
+						buttonFlag2.style = "background-color: #FC0; animation-name: flagButtonSecond;";
 
 						$.ajax ({
 							url: "upload-task.php",
@@ -282,11 +312,11 @@
 
 					//exactly same like in previous function but after 
 					//flagButtonSecond click
-					flagButtonSecond.addEventListener('click', function() {
-						flag.removeChild(flagButtonSecond);
-						flag.appendChild(flagButtonFirst);
+					buttonFlag2.addEventListener('click', function() {
+						flag.removeChild(buttonFlag2);
+						flag.appendChild(buttonFlag1);
 
-						flagButtonFirst.style = "background-color: #e6e6e6; animation-name: flagButtonFirst;";
+						buttonFlag1.style = "background-color: #e6e6e6; animation-name: flagButtonFirst;";
 
 						$.ajax ({
 							url: "upload-task.php",
@@ -303,87 +333,158 @@
 					setInterval(function(){ 
 
 					  	//all data from all tasks
-					  	var allTaskNumber = tasksHolder1.children.length;
+					  	let allTaskNumber = tasksHolder1.children.length;
 					  	text1.innerHTML = "All tasks " + allTaskNumber;
 					  	//all data from div progress
-					  	var progressTaskNumber = tasksHolder2.children.length;
+					  	let progressTaskNumber = tasksHolder2.children.length;
 					  	text2.innerHTML = "Tasks in progress " + progressTaskNumber;
 					  	//all data from end task
-					  	var endTaskNumber = tasksHolder3.children.length;
+					  	let endTaskNumber = tasksHolder3.children.length;
 					  	text3.innerHTML = "End tasks " + endTaskNumber;
 
 					}, 1);
 				}
 
 
+				//functions to create buttons
+				function buttonFlagFirst() {
+					//create flagButtonFirst
+					const flagButtonFirst = document.createElement("BUTTON");
+					//set id for button
+					flagButtonFirst.className = 'flagButtonFirst';
+					//set className 
+					flagButtonFirst.id = 'flagButtonFirst';
+					//return button because when i pass this function as argument in createTask func I can use this button in createTask func
+					return flagButtonFirst;
+				}
+
+				//this function will doing same like previous function
+				function buttonFlagSecond() {
+					const flagButtonSecond = document.createElement("BUTTON");
+
+					flagButtonSecond.className = "flagButtonSecond";
+					flagButtonSecond.id = 'flagButtonSecond';
+
+					return flagButtonSecond;
+				}
+
+
+				//function to tun main function and append tasks to allTask
 				function all() {
 					//get array from php to js
-				    let arrayAll = <?php echo json_encode($arrayAll); ?>;
+				    const arrayAll = <?php echo json_encode($arrayAll); ?>;
 
 				    //get array length 
 				    let length = arrayAll.length;
+				    let number = 0;
+				    let numberHolder = 1;
 
 				    let all = document.getElementById("tasksHolder1");
 					for (let i=0; i<length; ++i) {
 						if (arrayAll[i] != '') {
-						    //letiable text is a element from array (text)
+						    //variable text is a element from array (text)
 						    let text = arrayAll[i];
-						    createTask(text, all, flagButtonFirst);
+						    createTask(text, all, buttonFlagFirst(), buttonFlagSecond(), number, numberHolder);
 						}
 					}
 				}
 
-
+				//function to tun main function and append tasks to proTask
 				function pro() {
 					//get array from php to js
-				    let arrayPro = <?php echo json_encode($arrayPro); ?>;
+				    const arrayPro = <?php echo json_encode($arrayPro); ?>;
 				    //get array length 
 				    let length = arrayPro.length;
+				    let number = 0;
+				    let numberHolder = 2;
 
 				    let pro = document.getElementById("tasksHolder2");
 					for (let i=0; i<length; ++i) {
 						if (arrayPro[i] != '') {
 						    //variable text is a element from array (text)
 						    let text = arrayPro[i];
-						    createTask(text, pro, flagButtonFirst);
+						    createTask(text, pro, buttonFlagFirst(), buttonFlagSecond(), number, numberHolder);
 
 						}
 					}
 				}
 
-
+				//function to tun main function and append tasks to endTask
 				function end() {
 					//get array from php to js
-				    let arrayEnd = <?php echo json_encode($arrayEnd); ?>;
+				    const arrayEnd = <?php echo json_encode($arrayEnd); ?>;
 				    //get array length 
 				    let length = arrayEnd.length;
+				    let number = 0;
+				    let numberHolder = 3;
 
 				    let end = document.getElementById("tasksHolder3");
 					for (let i=0; i<length; ++i) {
 						if (arrayEnd[i] != '') {
 						    //variable text is a element from array (text)
 						    let text = arrayEnd[i];
-						    createTask(text, end, flagButtonFirst);
+						    createTask(text, end, buttonFlagFirst(), buttonFlagSecond(), number, numberHolder);
 
 						}
 					}
 				}
 
 
-				//PRIMARY FUNCTIONS 
+				//primary function all
 				function allPrimary() {
-
 					//get array from php to js
-				    let arrayAllPrimary = <?php echo json_encode($arrayAllPrimary); ?>;
+				    const arrayAllPrimary = <?php echo json_encode($arrayAllPrimary); ?>;
 				    //get array length 
 				    let length = arrayAllPrimary.length;
+				    let number = 1
+				    let numberHolder = 1;
 
 				    let all = document.getElementById("tasksHolder1");
 					for (let i=0; i<length; ++i) {
 						if (arrayAllPrimary[i] != '') {
 						    //variable text is a element from array (text)
 						    let text = arrayAllPrimary[i];
-						    createTask(text, all, flagButtonSecond);
+						    createTask(text, all, buttonFlagSecond(), buttonFlagFirst(), number, numberHolder);
+
+						}
+					}
+				}
+
+				//primary function progress
+				function proPrimary() {
+					//get array from php to js
+				    const arrayProPrimary = <?php echo json_encode($arrayProPrimary); ?>;
+				    //get array length 
+				    let length = arrayProPrimary.length;
+				    let number = 1;
+				    let numberHolder = 2;
+
+				    let pro = document.getElementById("tasksHolder2");
+					for (let i=0; i<length; ++i) {
+						if (arrayProPrimary[i] != '') {
+						    //variable text is a element from array (text)
+						    let text = arrayProPrimary[i];
+						   	createTask(text, pro, buttonFlagSecond(), buttonFlagFirst(), number, numberHolder);
+
+						}
+					}
+				}
+
+				//primary function end
+				function endPrimary() {
+					//get array from php to js
+				    const arrayEndPrimary = <?php echo json_encode($arrayEndPrimary); ?>;
+				    //get array length 
+				    let length = arrayEndPrimary.length;
+				    let number = 1;
+				    let numberHolder = 3;
+
+				    let end = document.getElementById("tasksHolder3");
+					for (let i=0; i<length; ++i) {
+						if (arrayEndPrimary[i] != '') {
+						    //variable text is a element from array (text)
+						    let text = arrayEndPrimary[i];
+						    createTask(text, end, buttonFlagSecond(), buttonFlagFirst(), number, numberHolder);
 
 						}
 					}
@@ -391,8 +492,13 @@
 
 			window.onload = function() {
 				//basic functions
+				all();
+				pro();
+				end();
 				//primary functions
 				allPrimary();
+				proPrimary();
+				endPrimary();
 			}
 
 
