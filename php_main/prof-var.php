@@ -31,6 +31,7 @@
 				$arrayAll[] = $convert;
 			}
 
+			//array for progressTask
 			$sqlPro = "SELECT progressTask FROM taskowo WHERE login='$login'";
 			$queryPro = mysqli_query($con, $sqlPro);
 
@@ -40,6 +41,7 @@
 				$arrayPro[] = $convert;
 			}
 
+			//array for endTask
 			$sqlEnd = "SELECT endTask FROM taskowo WHERE login='$login'";
 			$queryEnd = mysqli_query($con, $sqlEnd);
 
@@ -48,6 +50,17 @@
 				$convert = implode($row);
 				$arrayEnd[] = $convert;
 			}
+
+			//array for allTasksPrimary
+			$sqlAllPrimary = "SELECT allTaskPrimary FROM taskowo WHERE login='$login'";
+			$queryAllPrimary = mysqli_query($con, $sqlAllPrimary);
+
+			$arrayAllPrimary = [""];
+			while ($row = mysqli_fetch_row($queryAllPrimary)) {
+				$convert = implode($row);
+				$arrayAllPrimary[] = $convert;
+			}
+
 		
 	
 	?>
@@ -55,8 +68,18 @@
 			<script type="text/javascript">	
 				var taskNumber = 0;
 
-				function createTask(taskText, holder) {
+				//create flagButtonFirst
+				const flagButtonFirst = document.createElement("BUTTON");
+				flagButtonFirst.className = 'flagButtonFirst';
+				flagButtonFirst.id = 'flagButtonFirst';
 
+				//create second button
+				const flagButtonSecond = document.createElement("BUTTON");
+				flagButtonSecond.className = "flagButtonSecond";
+				flagButtonSecond.id = 'flagButtonSecond';
+
+
+				function createTask(taskText, holder, buttonFlag) {
 					//get tasks div
 					var tasksHolder1 = document.getElementById("tasksHolder1");
 					var tasksHolder2 = document.getElementById("tasksHolder2");
@@ -153,18 +176,8 @@
 					flag.className = "flag";
 					holderForTextAndFlag.appendChild(flag);
 
-					//create second button
-					const flagButtonSecond = document.createElement("BUTTON");
-					flagButtonSecond.className = "flagButtonSecond";
-					flagButtonSecond.id = 'flagButtonSecond';
-
-					//create flagButtonFirst
-					const flagButtonFirst = document.createElement("BUTTON");
-					flagButtonFirst.className = 'flagButtonFirst';
-					flagButtonFirst.id = 'flagButtonFirst';
-					flagButtonFirst.name = 'flagButtonFirst';
-					//append to flag
-					flag.appendChild(flagButtonFirst);
+					//append button 
+					flag.appendChild(buttonFlag);
 
 
 				  	//clear text input
@@ -286,7 +299,6 @@
 						})
 					});
 
-
 					//this code runs every second 
 					setInterval(function(){ 
 
@@ -306,18 +318,17 @@
 
 				function all() {
 					//get array from php to js
-		
-				    var arrayAll = <?php echo json_encode($arrayAll); ?>;
+				    let arrayAll = <?php echo json_encode($arrayAll); ?>;
 
 				    //get array length 
-				    var length = arrayAll.length;
+				    let length = arrayAll.length;
 
-				    var all = document.getElementById("tasksHolder1");
-					for (var i=0; i<length; ++i) {
+				    let all = document.getElementById("tasksHolder1");
+					for (let i=0; i<length; ++i) {
 						if (arrayAll[i] != '') {
-						    //variable text is a element from array (text)
-						    var text = arrayAll[i];
-						    createTask(text, all);
+						    //letiable text is a element from array (text)
+						    let text = arrayAll[i];
+						    createTask(text, all, flagButtonFirst);
 						}
 					}
 				}
@@ -325,16 +336,16 @@
 
 				function pro() {
 					//get array from php to js
-				    var arrayPro = <?php echo json_encode($arrayPro); ?>;
+				    let arrayPro = <?php echo json_encode($arrayPro); ?>;
 				    //get array length 
-				    var length = arrayPro.length;
+				    let length = arrayPro.length;
 
-				    var pro = document.getElementById("tasksHolder2");
-					for (var i=0; i<length; ++i) {
+				    let pro = document.getElementById("tasksHolder2");
+					for (let i=0; i<length; ++i) {
 						if (arrayPro[i] != '') {
 						    //variable text is a element from array (text)
-						    var text = arrayPro[i];
-						    createTask(text, pro);
+						    let text = arrayPro[i];
+						    createTask(text, pro, flagButtonFirst);
 
 						}
 					}
@@ -343,25 +354,45 @@
 
 				function end() {
 					//get array from php to js
-				    var arrayEnd = <?php echo json_encode($arrayEnd); ?>;
+				    let arrayEnd = <?php echo json_encode($arrayEnd); ?>;
 				    //get array length 
-				    var length = arrayEnd.length;
+				    let length = arrayEnd.length;
 
-				    var end = document.getElementById("tasksHolder3");
-					for (var i=0; i<length; ++i) {
+				    let end = document.getElementById("tasksHolder3");
+					for (let i=0; i<length; ++i) {
 						if (arrayEnd[i] != '') {
 						    //variable text is a element from array (text)
-						    var text = arrayEnd[i];
-						    createTask(text, end);
+						    let text = arrayEnd[i];
+						    createTask(text, end, flagButtonFirst);
+
+						}
+					}
+				}
+
+
+				//PRIMARY FUNCTIONS 
+				function allPrimary() {
+
+					//get array from php to js
+				    let arrayAllPrimary = <?php echo json_encode($arrayAllPrimary); ?>;
+				    //get array length 
+				    let length = arrayAllPrimary.length;
+
+				    let all = document.getElementById("tasksHolder1");
+					for (let i=0; i<length; ++i) {
+						if (arrayAllPrimary[i] != '') {
+						    //variable text is a element from array (text)
+						    let text = arrayAllPrimary[i];
+						    createTask(text, all, flagButtonSecond);
 
 						}
 					}
 				}
 
 			window.onload = function() {
-				all();
-				pro();
-				end();
+				//basic functions
+				//primary functions
+				allPrimary();
 			}
 
 

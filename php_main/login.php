@@ -48,7 +48,6 @@
 		function login() {
 			global $con, $logged, $login, $passwd;
 			$login = $_POST['login'];
-			echo $login;
 			$passwd = $_POST['passwd'];
 
 			$sql = "SELECT login, password FROM users WHERE login='$login'";
