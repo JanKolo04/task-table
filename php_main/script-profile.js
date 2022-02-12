@@ -1,17 +1,16 @@
 var taskNumber = 0;
 
 function add_task() {
-
 	//get tasks div
-	var tasksHolder1 = document.getElementById("tasksHolder1");
-	var tasksHolder2 = document.getElementById("tasksHolder2");
-	var tasksHolder3 = document.getElementById("tasksHolder3");
+	const tasksHolder1 = document.getElementById("tasksHolder1");
+	const tasksHolder2 = document.getElementById("tasksHolder2");
+	const tasksHolder3 = document.getElementById("tasksHolder3");
 
-	var text1 = document.getElementById("all_task_text");
-	var text2 = document.getElementById("tasks_in_progress");
-	var text3 = document.getElementById("end_tasks");
+	const text1 = document.getElementById("all_task_text");
+	const text2 = document.getElementById("tasks_in_progress");
+	const text3 = document.getElementById("end_tasks");
 
-  	for (var i=0; i<1; ++i) {
+  	for (let i=0; i<1; ++i) {
 	 	//create new div
 	  	var task = document.createElement("DIV");
 
@@ -36,82 +35,18 @@ function add_task() {
 	task.className = "taskBody";
 
 	//create holder in task
-	const holderForTextAndFlag = document.createElement("DIV");
+	let holderForTextAndFlag = document.createElement("DIV");
 	holderForTextAndFlag.id = "holderTask";
 	holderForTextAndFlag.className = "holderTask";
 	task.appendChild(holderForTextAndFlag);
 
 
-	//create text div
-	var textDiv = document.createElement("DIV");
-	holderForTextAndFlag.appendChild(textDiv);
-	//add class to span
-	textDiv.className = "textDiv";
-	textDiv.id = "textDiv";
-
-	var p = document.createElement("p");
-	p.className = "text";
-	textDiv.appendChild(p);
-
-	//append text from text input to task
-	p.innerHTML = document.querySelector('#myText').value;
-
-	
-  	//cerate task belt
-	var taskBelt = document.createElement("DIV");
-	//add class to belt
-	taskBelt.className = "taskBelt";
-
-	//append to task
-	task.appendChild(taskBelt);
-
-	var text = p.textContent;
-	$.ajax({
-		url: "upload-task.php",
-		method: "post",
-		data: {all: text},
-		success: function() {
-			return true;
-		}
-	})
-
-
-	//create delete button
-	var removeButton = document.createElement("BUTTON");
-	//add name into button
-	removeButton.innerHTML = "Remove";
-	//id for delete button
-	removeButton.id = "removeButton";
-	//class name
-	removeButton.className = "removeButton";
-
-	//append delete button to taskBelt
-	taskBelt.appendChild(removeButton);
-
-
-	//create progress button
-	var takeButton = document.createElement("BUTTON");
-	//add name into button
-	takeButton.innerHTML = "Take";
-	//id for progress button
-	takeButton.id = "takeButton";
-	//class name 
-	takeButton.className = "takeButton";
-
-	//append button to taskBelt
-	taskBelt.appendChild(takeButton);
-
-
 	//get flag and flagButtonFirst
-	const flag = document.createElement("DIV");
+	let flag = document.createElement("DIV");
 	flag.id = "flag";
 	flag.className = "flag";
 	holderForTextAndFlag.appendChild(flag);
 
-	//create second button
-	const flagButtonSecond = document.createElement("BUTTON");
-	flagButtonSecond.className = "flagButtonSecond";
-	flagButtonSecond.id = 'flagButtonSecond';
 
 	//create flagButtonFirst
 	const flagButtonFirst = document.createElement("BUTTON");
@@ -121,23 +56,109 @@ function add_task() {
 	//append to flag
 	flag.appendChild(flagButtonFirst);
 
+	//create second button
+	const flagButtonSecond = document.createElement("BUTTON");
+	flagButtonSecond.className = "flagButtonSecond";
+	flagButtonSecond.id = 'flagButtonSecond';
 
-  	//clear text input
-	document.getElementById('myText').value = '';
+
+	//create text div
+	let textDiv = document.createElement("DIV");
+	//add class
+	textDiv.className = "textDiv";
+	textDiv.id = "textDiv";
+	holderForTextAndFlag.appendChild(textDiv);
+
+	let p = document.createElement("p");
+	p.className = "text";
+	//append text from text input to task
+	p.innerHTML = document.querySelector('#myText').value;;
+	textDiv.appendChild(p);
+
+	
+  	//cerate task belt
+	let taskBelt = document.createElement("DIV");
+	//add class to belt
+	taskBelt.className = "taskBelt";
+	//append to task
+	task.appendChild(taskBelt);
 
 
-	//create end task button
-	var completeButton = document.createElement("BUTTON");
-	//get id for end button
-	completeButton.id = "completeButton";
+	//button remove div
+	let buttonRemoveDiv = document.createElement("DIV");
+	//id
+	buttonRemoveDiv.id = "buttonRemoveDiv";
 	//class name
-	completeButton.className = "completeButton";
-	//append text 
-	completeButton.innerHTML = "Complete";
+	buttonRemoveDiv.className = "buttonRemoveDiv";
+	//append button remove Div to holder 
+	holderForTextAndFlag.appendChild(buttonRemoveDiv);
 
+	//create delete button
+	let removeButton = document.createElement("BUTTON");
+	//add name into button
+	removeButton.innerHTML = "X";
+	//id for delete button
+	removeButton.id = "removeButton";
+	//class name
+	removeButton.className = "removeButton";
+	//append to div
+	buttonRemoveDiv.appendChild(removeButton);
+
+	//back button
+	//after click this button task will back to previous holder
+	let backButton = document.createElement("BUTTON");
+	//id
+	backButton.id = "backButton";
+	//className
+	backButton.className = "backButton";
+	//text in button
+	backButton.innerHTML = "Back";
+	//append to taskBelt
+	//I append here this button because this buttin be allways
+	taskBelt.appendChild(backButton);
+
+	//text from task
+	const text = p.textContent;
+	//append to db after create
+	$.ajax({
+		url: "upload-task.php",
+		method: "post",
+		data: {all: text},
+		success: function() {
+			return true;
+		}
+	})
+
+	//inscruction for delete button
+	removeButton.addEventListener('click', function() {
+		//delete task
+		task.remove();
+
+		$.ajax ({
+			url: "upload-task.php",
+			method: "post",
+			data: {remove: text},
+			success: function() {
+				return true;
+			}
+
+		});
+	});
+
+
+	//create progress button
+	let takeButton = document.createElement("BUTTON");
+	//add name into button
+	takeButton.innerHTML = "Take";
+	//id for progress button
+	takeButton.id = "takeButton";
+	//class name 
+	takeButton.className = "takeButton";
+	//append button to takBelt
+	taskBelt.appendChild(takeButton);
 
 	//Inscruction for take button
-	takeButton.onclick = function() {
+	takeButton.addEventListener('click', function() {
 		//remove take button from task belt
 		takeButton.remove();
 		//append end button to task belt
@@ -156,12 +177,21 @@ function add_task() {
 			success: function() {
 				return true;
 			}
-		})
-	}
+		});
+	});
+
+	//create end task button
+	let completeButton = document.createElement("BUTTON");
+	//get id for end button
+	completeButton.id = "completeButton";
+	//class name
+	completeButton.className = "completeButton";
+	//append text 
+	completeButton.innerHTML = "Complete";
 
 
 	//instruction for complete button
-	completeButton.onclick = function() {
+	completeButton.addEventListener('click', function() {
 		//remove end complete button from task belt
 		completeButton.remove();
 		//remove task from progress
@@ -176,28 +206,9 @@ function add_task() {
 			success: function() {
 				return true;
 			}
-		})
-	}
-
-
-
-	//inscruction for delete button
-	removeButton.onclick = function() {
-		//delete task
-		task.remove();
-
-		$.ajax ({
-			url: "upload-task.php",
-			method: "post",
-			data: {remove: text},
-			success: function() {
-				return true;
-			}
-
-		})
-	}
-
-
+		});
+	})
+	
 
 	//function to replace buttons and run animation
 	//for flagButtonFirst
@@ -208,7 +219,7 @@ function add_task() {
 		flag.appendChild(flagButtonSecond);
 
 		//change color and set animation
-		flagButtonSecond.style = "background-color: #FC0; animation-name: flagButtonSecond;";
+		flagButtonSecond.style = "animation-name: flagButtonSecond;";
 
 		$.ajax ({
 			url: "upload-task.php",
@@ -218,28 +229,6 @@ function add_task() {
 				return true;
 			}
 		})
-
-		takeButton.addEventListener('click', function() {
-			$.ajax ({
-				url: "upload-task.php",
-				method: "post",
-				data: {proPrimary: text},
-				success: function() {
-					return true;
-				}
-			})
-		})
-
-		completeButton.addEventListener('click', function() {
-			$.ajax ({
-				url: "upload-task.php",
-				method: "post",
-				data: {endPrimary: text},
-				success: function() {
-					return true;
-				}
-			})			
-		})
 	});
 
 	//exactly same like in previous function but after 
@@ -248,7 +237,7 @@ function add_task() {
 		flag.removeChild(flagButtonSecond);
 		flag.appendChild(flagButtonFirst);
 
-		flagButtonFirst.style = "background-color: #e6e6e6; animation-name: flagButtonFirst;";
+		flagButtonFirst.style = "animation-name: flagButtonFirst;";
 
 		$.ajax ({
 			url: "upload-task.php",
@@ -260,6 +249,9 @@ function add_task() {
 
 		})
 	});
+
+	//clear text input
+	document.getElementById('myText').value = '';
 
 
 	//this code runs every second 

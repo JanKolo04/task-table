@@ -266,27 +266,27 @@ body {
 
 /*---------task----------*/
 .taskBody {
-	display: flex;
-	flex-direction: column;
-	height: 100px;
-	margin: 10px;
-	width: 200px;
-	border-radius: 5px;
-	background-color: #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    margin: 10px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: #e6e6e6;
 }
 
 
 /*task belt*/
 .taskBelt {
-	display: flex;
-	flex-direction: row;
-	height: 30px;
-	width: 200px;
-	border-top: 1px solid;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-  	justify-content: center;
-  	align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    width: 200px;
+    border-top: 1px solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    justify-content: center;
+    align-items: center;
 }
 
 .holderTask {
@@ -296,10 +296,31 @@ body {
     flex-direction: row;
 }
 
+.buttonRemoveDiv {
+    width: 25px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.removeButton {
+	font-size: 15px;
+    width: 25px;
+    height: 20px;
+    margin-top: 5px;
+    border: none;
+    color: red;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: #e6e6e6;
+}
+
 .textDiv {
     text-align: center;
     word-break:break-all;
-    width: 160px;
+    width: 135px;
     height: 70px;
     display: flex;
     justify-content: center;
@@ -309,11 +330,13 @@ body {
 }
 
 .text {
-	margin: 0px;
+    font-size: 16px;
+    margin: 0px;
 }
 
 
 .flag {
+    margin-left: 10px;
     display: flex;
     justify-content: center;
     width: 30px;
@@ -321,7 +344,7 @@ body {
     box-sizing: content-box;
     position: relative;
     top: 0px;
-    background: red;
+    background-color: #0066ff;
     color: white;
     font-size: 11px;
     text-align: center;
@@ -345,15 +368,21 @@ body {
     height: 20px;
     border-radius: 100%;
     animation-duration: 2s;
-    outline: none;
+    animation-direction: normal;
     border: none;
+    cursor: pointer;
 }
 
+.flagButtonFirst:focus, .flagButtonSecond:focus {
+    outline: none;
+}
+
+
 .flagButtonFirst {
-	background-color: #e6e6e6;
+    background-color: #e6e6e6;
 }
 .flagButtonSecond {
-	background-color: #FC0;
+    background-color: #FC0;
 }
 
 @keyframes flagButtonFirst {
@@ -366,41 +395,33 @@ body {
     100%{width: 20px; height: 20px;};
 }
 
-
-#takeButton {
-	display: flex;
-	margin: 4.5px;
-	border-radius: 5px;
-	border: none;
-	width: 60px;
-	height: 20px;
-	background-color: #33cc33;
-  	justify-content: center;
-  	align-items: center;
+.taskBelt button {
+    display: flex;
+    margin: 4.5px;
+    border-radius: 5px;
+    border: none;
+    min-width: 60px;
+    padding: 0px 10px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-#completeButton {
-	display: flex;
-	margin: 4.5px;
-	border-radius: 5px;
-	border: none;
-	width: 60px;
-	height: 20px;
-	background-color: #33cc33;
-  	justify-content: center;
-  	align-items: center;	
+.backButton {
+	color: black;
+	background-color: white;
 }
 
-#removeButton {
-	display: flex;
-	margin: 4.5px;
-	border-radius: 5px;
-	border: none;
-	width: 60px;
-	height: 20px;
-	background-color: #ff0000;	
-	justify-content: center;
-  	align-items: center;
+.takeButton {
+	color: white;
+	background-color: #0066ff;
+}
+
+.completeButton {
+	color: white;
+	background-color: #0066ff;
 }
 
 

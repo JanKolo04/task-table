@@ -130,7 +130,15 @@
 					holderForTextAndFlag.id = "holderTask";
 					holderForTextAndFlag.className = "holderTask";
 					task.appendChild(holderForTextAndFlag);
-					
+
+
+					//get flag and flagButtonFirst
+					let flag = document.createElement("DIV");
+					flag.id = "flag";
+					flag.className = "flag";
+					holderForTextAndFlag.appendChild(flag);
+					//append button to flag
+					flag.append(buttonFlag1);
 
 					//create text div
 					let textDiv = document.createElement("DIV");
@@ -154,33 +162,44 @@
 					task.appendChild(taskBelt);
 
 
-					//get flag and flagButtonFirst
-					let flag = document.createElement("DIV");
-					flag.id = "flag";
-					flag.className = "flag";
-					holderForTextAndFlag.appendChild(flag);
-
-
-					//append button to flag
-					flag.append(buttonFlag1);
-
-				  	//clear text input
-					document.getElementById('myText').value = '';
-
-
+					//button remove div
+					let buttonRemoveDiv = document.createElement("DIV");
+					//id
+					buttonRemoveDiv.id = "buttonRemoveDiv";
+					//class name
+					buttonRemoveDiv.className = "buttonRemoveDiv";
+					//append button remove Div to holder 
+					holderForTextAndFlag.appendChild(buttonRemoveDiv);
 
 					//create delete button
 					let removeButton = document.createElement("BUTTON");
 					//add name into button
-					removeButton.innerHTML = "Remove";
+					removeButton.innerHTML = "X";
 					//id for delete button
 					removeButton.id = "removeButton";
 					//class name
 					removeButton.className = "removeButton";
+					//append to div
+					buttonRemoveDiv.appendChild(removeButton);
 
+					//back button
+					//after click this button task will back to previous holder
+					let backButton = document.createElement("BUTTON");
+					//id
+					backButton.id = "backButton";
+					//className
+					backButton.className = "backButton";
+					//text in button
+					backButton.innerHTML = "Back";
+					//append to taskBelt
+					//I append here this button because this buttin be allways
+					taskBelt.appendChild(backButton);
+
+					//text from task
+					const text = p.textContent;
 
 					//inscruction for delete button
-					removeButton.onclick = function() {
+					removeButton.addEventListener('click', function() {
 						//delete task
 						task.remove();
 
@@ -192,8 +211,9 @@
 								return true;
 							}
 
-						})
-					}
+						});
+					});
+			
 
 					//create progress button
 					let takeButton = document.createElement("BUTTON");
@@ -204,10 +224,8 @@
 					//class name 
 					takeButton.className = "takeButton";
 
-
-					let text = p.textContent;
 					//Inscruction for take button
-					takeButton.onclick = function() {
+					takeButton.addEventListener('click', function() {
 						//remove take button from task belt
 						takeButton.remove();
 						//append end button to task belt
@@ -227,7 +245,7 @@
 								return true;
 							}
 						});
-					}
+					});
 
 					//create end task button
 					let completeButton = document.createElement("BUTTON");
@@ -240,7 +258,7 @@
 
 
 					//instruction for complete button
-					completeButton.onclick = function() {
+					completeButton.addEventListener('click', function() {
 						//remove end complete button from task belt
 						completeButton.remove();
 						//remove task from progress
@@ -256,19 +274,15 @@
 								return true;
 							}
 						});
-					}
+					})
+					
 
 
 					if(numberHolder == 1) {
-						taskBelt.appendChild(removeButton);
 						taskBelt.appendChild(takeButton);
 					}
 					else if(numberHolder == 2) {
-						taskBelt.appendChild(removeButton);
 						taskBelt.appendChild(completeButton);
-					}
-					else if(numberHolder == 3) {
-						taskBelt.appendChild(removeButton);
 					}
 
 
@@ -298,7 +312,7 @@
 						flag.appendChild(buttonFlag2);
 
 						//change color and set animation
-						buttonFlag2.style = "background-color: #FC0; animation-name: flagButtonSecond;";
+						buttonFlag2.style = "animation-name: flagButtonSecond;";
 
 
 						$.ajax ({
@@ -318,7 +332,7 @@
 						flag.removeChild(buttonFlag2);
 						flag.appendChild(buttonFlag1);
 
-						buttonFlag1.style = "background-color: #e6e6e6; animation-name: flagButtonFirst;";
+						buttonFlag1.style = "animation-name: flagButtonFirst;";
 
 						$.ajax ({
 							url: "upload-task.php",
@@ -329,6 +343,9 @@
 							}
 						})
 					});
+
+					//clear text input
+					document.getElementById('myText').value = '';
 
 					//this code runs every second 
 					setInterval(function(){ 
