@@ -70,8 +70,8 @@ function add_task() {
 		url: "upload-task.php",
 		method: "post",
 		data: {all: text},
-		success: function(res) {
-			console.log("Add: ",res);
+		success: function() {
+			return true;
 		}
 	})
 
@@ -153,8 +153,8 @@ function add_task() {
 			//pro mozemy nazwac inaczej bo to nazwa do
 			//znalezienia przez POST
 			data: {pro: text},
-			success: function(res) {
-				console.log("Pro: ",res);
+			success: function() {
+				return true;
 			}
 		})
 	}
@@ -217,7 +217,28 @@ function add_task() {
 			success: function() {
 				return true;
 			}
+		})
 
+		takeButton.addEventListener('click', function() {
+			$.ajax ({
+				url: "upload-task.php",
+				method: "post",
+				data: {proPrimary: text},
+				success: function() {
+					return true;
+				}
+			})
+		})
+
+		completeButton.addEventListener('click', function() {
+			$.ajax ({
+				url: "upload-task.php",
+				method: "post",
+				data: {endPrimary: text},
+				success: function() {
+					return true;
+				}
+			})			
 		})
 	});
 

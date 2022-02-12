@@ -19,25 +19,46 @@
 	function pro() {
 		global $con;
 
-		$pro = ($_POST['pro']);
+		//variables
+		$proPrimary = $_POST['pro'];
+		$pro = $_POST['pro'];
 
+		//standrat update
 		$sql = "UPDATE taskowo SET progressTask='$pro' WHERE allTask='$pro'";
 		$query = mysqli_query($con, $sql);
 
 		$deleteSql = "UPDATE taskowo SET allTask=NULL WHERE allTask='$pro'";
 		$deleteQuery = mysqli_query($con, $deleteSql);
+
+		//functions for primary update
+		$sqlPrimary = "UPDATE taskowo SET progressTaskPrimary='$pro' WHERE allTaskPrimary='$pro'";
+		$queryPrimary = mysqli_query($con, $sqlPrimary);
+
+		$deleteSqlPrimary = "UPDATE taskowo SET allTaskPrimary=NULL WHERE allTaskPrimary='$pro'";
+		$deleteQueryPriimary = mysqli_query($con, $deleteSqlPrimary);
+
 	}
 
 	function endd() {
 		global $con;
 
+		//variables
+		$endPrimary = $_POST['end'];
 		$end = $_POST['end'];
 
+		//standart update
 		$sql = "UPDATE taskowo SET endTask='$end' WHERE progressTask='$end'";
 		$query = mysqli_query($con, $sql);
 
 		$deleteSql = "UPDATE taskowo SET progressTask=NULL WHERE progressTask='$end'";
 		$deleteQuery = mysqli_query($con, $deleteSql);
+
+		//functions for primary update
+		$sqlPrimary = "UPDATE taskowo SET endTaskPrimary='$end' WHERE progressTaskPrimary='$end'";
+		$queryPrimary = mysqli_query($con, $sqlPrimary);
+
+		$deleteSqlPrimary = "UPDATE taskowo SET progressTaskPrimary=NULL WHERE progressTaskPrimary='$end'";
+		$deleteQueryPriimary = mysqli_query($con, $deleteSqlPrimary);
 	}
 
 
@@ -129,6 +150,7 @@
 			$deleteOldEndQuery = mysqli_query($con, $deleteOldEnd);
 		}
 	}
+
 
 
 	if(isset($_POST['all'])) {

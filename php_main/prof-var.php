@@ -226,7 +226,7 @@
 							success: function() {
 								return true;
 							}
-						})
+						});
 					}
 
 					//create end task button
@@ -255,7 +255,7 @@
 							success: function() {
 								return true;
 							}
-						})
+						});
 					}
 
 
@@ -288,6 +288,7 @@
 					}
 
 
+
 					//function to replace buttons and run animation
 					//for flagButtonFirst
 					buttonFlag1.addEventListener('click', function() {
@@ -298,6 +299,7 @@
 
 						//change color and set animation
 						buttonFlag2.style = "background-color: #FC0; animation-name: flagButtonSecond;";
+
 
 						$.ajax ({
 							url: "upload-task.php",
@@ -325,7 +327,6 @@
 							success: function() {
 								return true;
 							}
-
 						})
 					});
 
