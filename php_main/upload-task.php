@@ -86,6 +86,8 @@
 			$arrayP = $key;
 		}
 
+		$lenArray = sizeof($arrayP);
+
 		if($arrayP['allTask'] != "") {
 			$moveToAll = "UPDATE taskowo SET allTaskPrimary='$taskP' WHERE allTask='$taskP'";
 			$moveToAllQuery = mysqli_query($con, $moveToAll);
@@ -152,6 +154,41 @@
 	}
 
 
+	//back function
+	function backTask() {
+		global $con;
+
+		$taskB = $_POST['taskBack'];
+
+		//check in wich holder is 
+		$checkTask = "SELECT progressTask, endTask FROM taskowo WHERE (progressTask='$taskB' OR endTask='$taskB')";
+		$query = mysqli_query($con, $checkTask);
+		//move to array results from query
+		$array = [];
+		foreach ($query as $key) {
+			$array = $key;
+		}
+
+
+		if($array['progressTask'] != "") {
+			$moveToPro = "UPDATE taskowo SET allTask='$taskB' WHERE progressTask='$taskB'";
+			$moveToProQuery = mysqli_query($con, $moveToPro);
+
+			$deleteOldPro = "UPDATE taskowo SET progressTask=NULL WHERE progressTask='$taskB'";
+			$deleteOldProQuery = mysqli_query($con, $deleteOldPro);
+		}
+
+		else if($array['endTask'] != "") {
+			$moveToEnd = "UPDATE taskowo SET progressTask='$taskB' WHERE endTask='$taskB'";
+			$moveToAllQuery = mysqli_query($con, $moveToEnd);
+
+			$deleteOldEnd = "UPDATE taskowo SET endTask=NULL WHERE endTask='$taskB'";
+			$deleteOldEndQuery = mysqli_query($con, $deleteOldEnd);
+		}
+
+	}
+
+
 
 	if(isset($_POST['all'])) {
 		all();
@@ -175,6 +212,10 @@
 
 	if(isset($_POST['removePrimaryTask'])) {
 		primaryRemove();
+	}
+
+	if(isset($_POST['taskBack'])) {
+		backTask();
 	}
 
 ?>

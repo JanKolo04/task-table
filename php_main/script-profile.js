@@ -117,6 +117,44 @@ function add_task() {
 	//I append here this button because this buttin be allways
 	taskBelt.appendChild(backButton);
 
+	setInterval(function() {
+		if(tasksHolder1.contains(task)) {
+			backButton.disabled = true;
+			backButton.style = "color:#bfbfbf;";
+		}
+		else {
+			backButton.disabled = false;
+			backButton.style = "color:black";
+		}
+	});
+
+	//function for backButton
+	backButton.addEventListener('click', function() {
+
+		if(tasksHolder2.contains(task)) {
+			backButton.disabled = false;
+			tasksHolder2.removeChild(task);
+			tasksHolder1.appendChild(task);
+			backButton.style = "color:black;";
+		}
+		else if(tasksHolder3.contains(task)) {
+			backButton.disabled = false;
+			tasksHolder3.removeChild(task);
+			tasksHolder2.appendChild(task);
+			backButton.style = "color:black;";
+		}
+
+		$.ajax ({
+			url: "upload-task.php",
+			method: "post",
+			data: {taskBack: text},
+			success: function() {
+				return true;
+			}
+		});
+	});
+
+
 	//text from task
 	const text = p.textContent;
 	//append to db after create
