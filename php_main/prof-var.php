@@ -19,71 +19,51 @@
 
 			//get all elements from allTask column where login is LOGIN USER
 			//function for allTask
-			$sqlAll = "SELECT allTask FROM taskowo WHERE login='$login'";
+			$sqlAll = "SELECT allTask, allTaskPrimary FROM taskowo WHERE login='$login'";
 			$queryAll = mysqli_query($con, $sqlAll);
 
 			//array
 			$arrayAll = [""];
 			//append to array $row elements from query
+			$i=0;
 			while ($row = mysqli_fetch_row($queryAll)) {
-				//get elements from array
-				$convert = implode($row);
-				//and append to arrayAll
-				$arrayAll[] = $convert;
+				foreach($queryAll as $key=>$value) {
+					$arrayAll[$i] = $value;
+					$i++;
+				}
 			}
 
+
+
 			//array for progressTask
-			$sqlPro = "SELECT progressTask FROM taskowo WHERE login='$login'";
+			$sqlPro = "SELECT progressTask, progressTaskPrimary FROM taskowo WHERE login='$login'";
 			$queryPro = mysqli_query($con, $sqlPro);
 
+			//array
 			$arrayPro = [""];
+			//append to array $row elements from query
+			$x=0;
 			while ($row = mysqli_fetch_row($queryPro)) {
-				$convert = implode($row);
-				$arrayPro[] = $convert;
+				foreach($queryPro as $key=>$value) {
+					$arrayPro[$x] = $value;
+					$x++;
+				}
 			}
 
 			//array for endTask
-			$sqlEnd = "SELECT endTask FROM taskowo WHERE login='$login'";
+			$sqlEnd = "SELECT endTask, endTaskPrimary FROM taskowo WHERE login='$login'";
 			$queryEnd = mysqli_query($con, $sqlEnd);
 
+			//array
 			$arrayEnd = [""];
+			//append to array $row elements from query
+			$y=0;
 			while ($row = mysqli_fetch_row($queryEnd)) {
-				$convert = implode($row);
-				$arrayEnd[] = $convert;
+				foreach($queryEnd as $key=>$value) {
+					$arrayEnd[$y] = $value;
+					$y++;
+				}
 			}
-
-			//array for allTasksPrimary
-			$sqlAllPrimary = "SELECT allTaskPrimary FROM taskowo WHERE login='$login'";
-			$queryAllPrimary = mysqli_query($con, $sqlAllPrimary);
-
-			$arrayAllPrimary = [""];
-			while ($row = mysqli_fetch_row($queryAllPrimary)) {
-				$convert = implode($row);
-				$arrayAllPrimary[] = $convert;
-			}
-
-			//array for progressTasksPrimary
-			$sqlProPrimary = "SELECT progressTaskPrimary FROM taskowo WHERE login='$login'";
-			$queryProPrimary = mysqli_query($con, $sqlProPrimary);
-
-			$arrayProPrimary = [""];
-			while ($row = mysqli_fetch_row($queryProPrimary)) {
-				$convert = implode($row);
-				$arrayProPrimary[] = $convert;
-			}
-
-
-			//array for endTasksPrimary
-			$sqlEndPrimary = "SELECT endTaskPrimary FROM taskowo WHERE login='$login'";
-			$queryEndPrimary = mysqli_query($con, $sqlEndPrimary);
-
-			$arrayEndPrimary = [""];
-			while ($row = mysqli_fetch_row($queryEndPrimary)) {
-				$convert = implode($row);
-				$arrayEndPrimary[] = $convert;
-			}
-
-
 		
 	
 	?>
@@ -436,17 +416,30 @@
 					//get array from php to js
 				    const arrayAll = <?php echo json_encode($arrayAll); ?>;
 
-				    //get array length 
-				    let length = arrayAll.length;
-				    let number = 0;
+				    //primary number
+				    let numberPrimary = 1;
+
+				    //function for basics tasks
+				    //len of array
+				    let len = arrayAll.length;
+				    //not primary
+				    let numberBasic = 0;
+				    //holder number
 				    let numberHolder = 1;
 
+
 				    let all = document.getElementById("tasksHolder1");
-					for (let i=0; i<length; ++i) {
-						if (arrayAll[i] != '') {
+					for (let i=0; i<len; ++i) {
+						if(arrayAll[i]["allTask"] != null) {
 						    //variable text is a element from array (text)
-						    let text = arrayAll[i];
-						    createTask(text, all, buttonFlagFirst(), buttonFlagSecond(), number, numberHolder);
+						    let textBasic = arrayAll[i]["allTask"];
+						    createTask(textBasic, all, buttonFlagFirst(), buttonFlagSecond(), numberBasic, numberHolder);
+						}
+
+						else if(arrayAll[i]["allTaskPrimary"] != null) {
+						    //variable text is a element from array (text)
+						    let textPrimary = arrayAll[i]["allTaskPrimary"];
+						    createTask(textPrimary, all, buttonFlagSecond(), buttonFlagFirst(), numberPrimary, numberHolder);
 						}
 					}
 				}
@@ -456,17 +449,27 @@
 					//get array from php to js
 				    const arrayPro = <?php echo json_encode($arrayPro); ?>;
 				    //get array length 
-				    let length = arrayPro.length;
-				    let number = 0;
+				    let len = arrayPro.length;
+				    //not primary task
+				    let numberBasic = 0;
+				    //holder number
 				    let numberHolder = 2;
 
-				    let pro = document.getElementById("tasksHolder2");
-					for (let i=0; i<length; ++i) {
-						if (arrayPro[i] != '') {
-						    //variable text is a element from array (text)
-						    let text = arrayPro[i];
-						    createTask(text, pro, buttonFlagFirst(), buttonFlagSecond(), number, numberHolder);
+				    //primary task
+				    let numberPrimary = 1;
 
+				    let pro = document.getElementById("tasksHolder2");
+					for (let i=0; i<len; ++i) {
+						if(arrayPro[i]["progressTask"] != null) {
+						    //variable text is a element from array (text)
+						    let textBasic = arrayPro[i]["progressTask"];
+						    createTask(textBasic, pro, buttonFlagFirst(), buttonFlagSecond(), numberBasic, numberHolder);
+						}
+
+						else if(arrayPro[i]["progressTaskPrimary"] != null) {
+						    //variable text is a element from array (text)
+						    let textPrimary = arrayPro[i]["progressTaskPrimary"];
+						    createTask(textPrimary, pro, buttonFlagSecond(), buttonFlagFirst(), numberPrimary, numberHolder);
 						}
 					}
 				}
@@ -476,91 +479,36 @@
 					//get array from php to js
 				    const arrayEnd = <?php echo json_encode($arrayEnd); ?>;
 				    //get array length 
-				    let length = arrayEnd.length;
-				    let number = 0;
+				    let len = arrayEnd.length;
+				    //not primary task
+				    let numberBasic = 0;
+				    //primary task
+				    let numberPrimary = 1;
+				    //holder number
 				    let numberHolder = 3;
 
 				    let end = document.getElementById("tasksHolder3");
-					for (let i=0; i<length; ++i) {
-						if (arrayEnd[i] != '') {
+					for (let i=0; i<len; ++i) {
+						if(arrayEnd[i]["endTask"] != null) {
 						    //variable text is a element from array (text)
-						    let text = arrayEnd[i];
-						    createTask(text, end, buttonFlagFirst(), buttonFlagSecond(), number, numberHolder);
+						    let textBasic = arrayEnd[i]["endTask"];
+						    createTask(textBasic, end, buttonFlagFirst(), buttonFlagSecond(), numberBasic, numberHolder);
+						}
 
+						else if(arrayEnd[i]["endTaskPrimary"] != null) {
+						    //variable text is a element from array (text)
+						    let textPrimary = arrayEnd[i]["endTaskPrimary"];
+						    createTask(textPrimary, end, buttonFlagSecond(), buttonFlagFirst(), numberPrimary, numberHolder);
 						}
 					}
 				}
 
-
-				//primary function all
-				function allPrimary() {
-					//get array from php to js
-				    const arrayAllPrimary = <?php echo json_encode($arrayAllPrimary); ?>;
-				    //get array length 
-				    let length = arrayAllPrimary.length;
-				    let number = 1
-				    let numberHolder = 1;
-
-				    let all = document.getElementById("tasksHolder1");
-					for (let i=0; i<length; ++i) {
-						if (arrayAllPrimary[i] != '') {
-						    //variable text is a element from array (text)
-						    let text = arrayAllPrimary[i];
-						    createTask(text, all, buttonFlagSecond(), buttonFlagFirst(), number, numberHolder);
-
-						}
-					}
-				}
-
-				//primary function progress
-				function proPrimary() {
-					//get array from php to js
-				    const arrayProPrimary = <?php echo json_encode($arrayProPrimary); ?>;
-				    //get array length 
-				    let length = arrayProPrimary.length;
-				    let number = 1;
-				    let numberHolder = 2;
-
-				    let pro = document.getElementById("tasksHolder2");
-					for (let i=0; i<length; ++i) {
-						if (arrayProPrimary[i] != '') {
-						    //variable text is a element from array (text)
-						    let text = arrayProPrimary[i];
-						   	createTask(text, pro, buttonFlagSecond(), buttonFlagFirst(), number, numberHolder);
-
-						}
-					}
-				}
-
-				//primary function end
-				function endPrimary() {
-					//get array from php to js
-				    const arrayEndPrimary = <?php echo json_encode($arrayEndPrimary); ?>;
-				    //get array length 
-				    let length = arrayEndPrimary.length;
-				    let number = 1;
-				    let numberHolder = 3;
-
-				    let end = document.getElementById("tasksHolder3");
-					for (let i=0; i<length; ++i) {
-						if (arrayEndPrimary[i] != '') {
-						    //variable text is a element from array (text)
-						    let text = arrayEndPrimary[i];
-						    createTask(text, end, buttonFlagSecond(), buttonFlagFirst(), number, numberHolder);
-
-						}
-					}
-				}
 
 			window.onload = function() {
-				//basic functions
+				//fucntions
 				all();
 				pro();
 				end();
-				//primary functions
-				allPrimary();
-				proPrimary();
-				endPrimary();
 			}
 
 
