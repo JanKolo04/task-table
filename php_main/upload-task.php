@@ -61,7 +61,7 @@
 		$deleteQueryPriimary = mysqli_query($con, $deleteSqlPrimary);
 	}
 
-
+	//delete task function
 	function remove() {
 		global $con;
 
@@ -154,14 +154,14 @@
 	}
 
 
-	//back function
+	//back function basic
 	function backTask() {
 		global $con;
 
 		$taskB = $_POST['taskBack'];
 
 		//check in wich holder is 
-		$checkTask = "SELECT progressTask, endTask FROM taskowo WHERE (progressTask='$taskB' OR endTask='$taskB')";
+		$checkTask = "SELECT progressTask, endTask, progressTaskPrimary, endTaskPrimary FROM taskowo WHERE (progressTask='$taskB' OR endTask='$taskB' OR progressTaskPrimary='$taskB' OR endTaskPrimary='$taskB')";
 		$query = mysqli_query($con, $checkTask);
 		//move to array results from query
 		$array = [];
@@ -169,7 +169,7 @@
 			$array = $key;
 		}
 
-
+		//if task is in progress back to all
 		if($array['progressTask'] != "") {
 			$moveToPro = "UPDATE taskowo SET allTask='$taskB' WHERE progressTask='$taskB'";
 			$moveToProQuery = mysqli_query($con, $moveToPro);
@@ -177,7 +177,7 @@
 			$deleteOldPro = "UPDATE taskowo SET progressTask=NULL WHERE progressTask='$taskB'";
 			$deleteOldProQuery = mysqli_query($con, $deleteOldPro);
 		}
-
+		//if task is in end back to pregress
 		else if($array['endTask'] != "") {
 			$moveToEnd = "UPDATE taskowo SET progressTask='$taskB' WHERE endTask='$taskB'";
 			$moveToAllQuery = mysqli_query($con, $moveToEnd);
@@ -186,7 +186,24 @@
 			$deleteOldEndQuery = mysqli_query($con, $deleteOldEnd);
 		}
 
+		else if($array['progressTaskPrimary'] != "") {
+			$moveToProPrimary = "UPDATE taskowo SET allTaskPrimary='$taskB' WHERE progressTaskPrimary='$taskB'";
+			$moveToProQueryPrimary = mysqli_query($con, $moveToProPrimary);
+
+			$deleteOldProPrimary = "UPDATE taskowo SET progressTaskPrimary=NULL WHERE progressTaskPrimary='$taskB'";
+			$deleteOldProQueryPrimary = mysqli_query($con, $deleteOldProPrimary);
+		}
+		//if task is in end back to pregress
+		else if($array['endTaskPrimary'] != "") {
+			$moveToEndPrimary = "UPDATE taskowo SET progressTaskPrimary='$taskB' WHERE endTaskPrimary='$taskB'";
+			$moveToAllQueryPrimary = mysqli_query($con, $moveToEndPrimary);
+
+			$deleteOldEndPrimary = "UPDATE taskowo SET endTaskPrimary=NULL WHERE endTaskPrimary='$taskB'";
+			$deleteOldEndQueryPrimary = mysqli_query($con, $deleteOldEndPrimary);
+		}
+
 	}
+
 
 
 

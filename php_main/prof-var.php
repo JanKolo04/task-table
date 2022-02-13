@@ -207,18 +207,26 @@
 					});
 
 					backButton.addEventListener('click', function() {
-
+						//if task is in progress then back to all
 						if(tasksHolder2.contains(task)) {
-							backButton.disabled = false;
+							//turn on button
+							//remove task from progress
 							tasksHolder2.removeChild(task);
+							//apend task to all
 							tasksHolder1.appendChild(task);
-							backButton.style = "color:black;";
+							//remove complete button
+							taskBelt.removeChild(completeButton);
+							//append take button
+							taskBelt.appendChild(takeButton);
 						}
+						//if task is in end then back to progress
 						else if(tasksHolder3.contains(task)) {
-							backButton.disabled = false;
+							//remove task from end
 							tasksHolder3.removeChild(task);
+							//append task to progress
 							tasksHolder2.appendChild(task);
-							backButton.style = "color:black;";
+							//remove add complete button
+							taskBelt.appendChild(completeButton);
 						}
 
 						$.ajax ({
