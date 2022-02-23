@@ -211,27 +211,27 @@
 		all();
 	}
 
-	if(isset($_POST['pro'])) {
+	else if(isset($_POST['pro'])) {
 		pro();
 	}
 
-	if(isset($_POST['end'])) {
+	else if(isset($_POST['end'])) {
 		endd();
 	}
 
-	if(isset($_POST['remove'])) {
+	else if(isset($_POST['remove'])) {
 		remove();
 	}
 
-	if(isset($_POST['addPrimaryTask'])) {
+	else if(isset($_POST['addPrimaryTask'])) {
 		primaryAdd();
 	}
 
-	if(isset($_POST['removePrimaryTask'])) {
+	else if(isset($_POST['removePrimaryTask'])) {
 		primaryRemove();
 	}
 
-	if(isset($_POST['taskBack'])) {
+	else if(isset($_POST['taskBack'])) {
 		backTask();
 	}
 
