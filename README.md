@@ -29,4 +29,11 @@ Website with tasks
 - [x] create php algotim for password reset
 - [x] chnage button to chnage password to code
 - [ ] create new <b>readme</b>
-- [ ] chnage arragement for inputs in register
+
+
+
+
+
+
+
+
